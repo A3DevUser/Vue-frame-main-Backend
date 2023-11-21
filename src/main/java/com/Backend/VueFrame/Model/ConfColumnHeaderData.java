@@ -52,6 +52,9 @@ public class ConfColumnHeaderData {
 	@Column(name = "GRID_ID")
 	private String gridId;
 	
+	@Column(name = "HIDE_SHOW")
+	private String hideShow;
+	
 	
 
 	public String getColumnId() {
@@ -140,8 +143,6 @@ public class ConfColumnHeaderData {
 	}
 	
 	
-
-	
 	public String getSubSecWidth() {
 		return subSecWidth;
 	}
@@ -159,8 +160,6 @@ public class ConfColumnHeaderData {
 	}
 
 
-	
-
 	public String getNumber() {
 		return number;
 	}
@@ -176,13 +175,19 @@ public class ConfColumnHeaderData {
 	public void setGridId(String gridId) {
 		this.gridId = gridId;
 	}
+	
+	
+	public String getHideShow() {
+		return hideShow;
+	}
 
+	public void setHideShow(String hideShow) {
+		this.hideShow = hideShow;
+	}
 	
-	
-	
-	public ConfColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
-			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
-			String subSecType, String number, String gridId) {
+	public ConfColumnHeaderData(String columnId, String formId, String fieldName, String accessor,
+			String columnFilterType, String secId, String cellType, String width, String subSecName, String subSecId,
+			String subSecWidth, String subSecType, String number, String gridId, String hideShow) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -198,15 +203,13 @@ public class ConfColumnHeaderData {
 		this.subSecType = subSecType;
 		this.number = number;
 		this.gridId = gridId;
+		this.hideShow = hideShow;
 	}
 
-	
 	public ConfColumnHeaderData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	
 	
 	
 }
