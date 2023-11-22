@@ -210,8 +210,6 @@ public class ConfColumnHeaderData {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	
 	
 	
 }
