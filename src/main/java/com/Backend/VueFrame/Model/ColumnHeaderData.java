@@ -73,6 +73,8 @@ public class ColumnHeaderData {
 	private String hideShow;
 	
 	
+	
+	
 	public String getColumnId() {
 		return columnId;
 	}

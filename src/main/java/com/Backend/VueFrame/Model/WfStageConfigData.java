@@ -29,23 +29,7 @@ public class WfStageConfigData {
 	@Column(name = "ROLE")
 	private String role;
 	
-	@Column(name = "PROCESS_INSTANCE_ID")
-	private String processInstanceId;
 	
-	@Column(name = "INSTANCE_ID")
-	private String instanceId;
-	
-	@Column(name = "CREATED_ID")
-	private String createdId;
-	
-	@Column(name = "CREATED_ON")
-	private String createdOn;
-	
-	@Column(name = "MODIFIED_BY")
-	private String modifiedBy;
-	
-	@Column(name = "MODIFIED_ON")
-	private String modifiedOn;
 	
 	@Column(name = "OBJ_ID")
 	private String objId;
@@ -53,9 +37,14 @@ public class WfStageConfigData {
 	@Column(name = "FORM_ID")
 	private String formId;
 	
-	@Column(name = "CURRENT_USER")
-	private String currentUser;
-
+	@Column(name = "IS_START_STAGE")
+	private String isStartSatge;
+	
+	@Column(name = "IS_END_STAGE")
+	private String isEndStage;
+	
+	@Column (name = "CONFIG_NAME")
+    private String configName;
 	
 	public String getConfigId() {
 		return configId;
@@ -113,53 +102,7 @@ public class WfStageConfigData {
 		this.role = role;
 	}
 
-	public String getProcessInstanceId() {
-		return processInstanceId;
-	}
-
-	public void setProcessInstanceId(String processInstanceId) {
-		this.processInstanceId = processInstanceId;
-	}
-
-	public String getInstanceId() {
-		return instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getCreatedId() {
-		return createdId;
-	}
-
-	public void setCreatedId(String createdId) {
-		this.createdId = createdId;
-	}
-
-	public String getCreatedOn() {
-		return createdOn;
-	}
-
-	public void setCreatedOn(String createdOn) {
-		this.createdOn = createdOn;
-	}
-
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-
-	public void setModifiedBy(String modifiedBy) {
-		this.modifiedBy = modifiedBy;
-	}
-
-	public String getModifiedOn() {
-		return modifiedOn;
-	}
-
-	public void setModifiedOn(String modifiedOn) {
-		this.modifiedOn = modifiedOn;
-	}
+	
 
 	public String getObjId() {
 		return objId;
@@ -177,17 +120,37 @@ public class WfStageConfigData {
 		this.formId = formId;
 	}
 
-	public String getCurrentUser() {
-		return currentUser;
+	
+
+	public String getIsStartSatge() {
+		return isStartSatge;
 	}
 
-	public void setCurrentUser(String currentUser) {
-		this.currentUser = currentUser;
+	public void setIsStartSatge(String isStartSatge) {
+		this.isStartSatge = isStartSatge;
 	}
+
+	public String getIsEndStage() {
+		return isEndStage;
+	}
+
+	public void setIsEndStage(String isEndStage) {
+		this.isEndStage = isEndStage;
+	}
+
+	public String getConfigName() {
+		return configName;
+	}
+
+	public void setConfigName(String configName) {
+		this.configName = configName;
+	}
+
+	
 
 	public WfStageConfigData(String configId, String stage, String status, String action, String org,
-			String nextApprover, String role, String processInstanceId, String instanceId, String createdId,
-			String createdOn, String modifiedBy, String modifiedOn, String objId, String formId, String currentUser) {
+			String nextApprover, String role, String objId, String formId, String isStartSatge, String isEndStage,
+			String configName) {
 		super();
 		this.configId = configId;
 		this.stage = stage;
@@ -196,15 +159,11 @@ public class WfStageConfigData {
 		this.org = org;
 		this.nextApprover = nextApprover;
 		this.role = role;
-		this.processInstanceId = processInstanceId;
-		this.instanceId = instanceId;
-		this.createdId = createdId;
-		this.createdOn = createdOn;
-		this.modifiedBy = modifiedBy;
-		this.modifiedOn = modifiedOn;
 		this.objId = objId;
 		this.formId = formId;
-		this.currentUser = currentUser;
+		this.isStartSatge = isStartSatge;
+		this.isEndStage = isEndStage;
+		this.configName = configName;
 	}
 
 	public WfStageConfigData() {

@@ -104,9 +104,9 @@ public class WorkflowController {
 	 
 	 //Get table data in JSON Format
 	 @GetMapping("getTableData")
-	 public List<String> getJsonTableData(@RequestParam(name = "GRID_ID") List<String> gridIds) {
+	 public String getJsonTableData(@RequestParam String formId) {
 		 
-		 List<String> list = workFlowServ.getJsonData(gridIds);
-		 return list;
+		 System.out.println("INSIDE getJsonTableData");
+		 return workFlowServ.getJsonData(formId);
 	 }
 }

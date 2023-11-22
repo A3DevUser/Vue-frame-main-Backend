@@ -51,8 +51,10 @@ public List<WorkflowData> setWorkflowData(@RequestParam List<WorkflowData> setDa
 	}
 
 
-public List<String> getJsonData(List<String> jsonObject) {
-	List<String> list = workFlowRepo.getJsonDataFromTable(jsonObject);
-	return list;
+public String getJsonData(String formId) {
+	System.out.println("iNSIDE getJsonData formId = " + formId);
+	System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId));
+	return workFlowRepo.getJsonDataFromTable(formId);
+	
 }
 }
