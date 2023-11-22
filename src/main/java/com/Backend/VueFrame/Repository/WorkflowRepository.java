@@ -46,6 +46,24 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	@Query(value = "select VF_GET_JSON_OBJ.VF_MULT_GRID_JSON(:formId) from dual", nativeQuery = true)
 	  String getJsonDataFromTable(@Param("formId") String formId);
 	
+	
+	 @Procedure(procedureName = "SET_GRID_DATA_1")
+		void setGridData1(@Param("VF_STAGE") String VF_STAGE,
+				          @Param("VF_STATUS") String VF_STATUS,
+	                       @Param("VF_ACTION") String VF_ACTION,
+	                       @Param("VF_ORGANISATION_ID") String VF_ORGANISATION_ID,
+	                       @Param("VF_ROLE") String VF_ROLE,
+	                       @Param("VF_PROCESS_INSTANCE_ID") String VF_PROCESS_INSTANCE_ID,
+	                       @Param("VF_INSTANCE_ID") String VF_INSTANCE_ID,
+	                       @Param("VF_CREATED_BY") String VF_CREATED_BY,
+	                       @Param("VF_CREATED_ON") String VF_CREATED_ON,
+	                       @Param("VF_MODIFIED_ON") String VF_MODIFIED_ON,
+	                       @Param("VF_MODIFIED_BY") String VF_MODIFIED_BY,
+	                       @Param("OBJ_ID") String OBJ_ID,
+	                       @Param("formId") String formId,
+	                       @Param("VF_CURRENT_USER") String VF_CURRENT_USER,
+	                       @Param("VF_OBJ_ID") String VF_OBJ_ID);
+	
 }
 
 

@@ -77,9 +77,28 @@ public class WorkflowController {
 	
 	 
 	@PostMapping("setWorkFlowGridData")
-	 public void callSetGridData(@RequestParam String gridId) {
-		 workFlowServ.callSetGridData(gridId);
-	 }
+    public void setWFGridData(@RequestBody Map<String, String> request) {
+		workFlowServ.setWFGridData1(
+				request.get("VF_STAGE"),
+				request.get("VF_STATUS"),
+				request.get("VF_ACTION"),
+				request.get("VF_ORGANISATION_ID"),
+				request.get("VF_ROLE"),
+				request.get("VF_PROCESS_INSTANCE_ID	"),
+				request.get("VF_INSTANCE_ID"),
+				request.get("VF_CREATED_BY"),
+				request.get("VF_CREATED_ON"),
+				request.get("VF_MODIFIED_ON"),
+				request.get("VF_MODIFIED_BY"),
+				request.get("OBJ_ID"),
+				request.get("formId"),
+				request.get("VF_CURRENT_USER"),
+				request.get("VF_OBJ_ID"));
+		
+		
+	}
+				
+	
 //	 
 	 
 	 @PostMapping("setWorkflowData")
@@ -120,11 +139,11 @@ public class WorkflowController {
 //		 }
 	 
 	 
-	 @PostMapping("getWfMainData")
-	    public Map<String, String> getWfData(@RequestBody Map<String, String> params) {
-		 Map<String, String> list = workFlowServ.getWfData(params);
-		 return list;
-	       
-	    }
+//	 @PostMapping("getWfMainData")
+//	    public Map<String, String> getWfData(@RequestBody Map<String, String> params) {
+//		 Map<String, String> list = workFlowServ.getWfData(params);
+//		 return list;
+//	       
+//	    }
 	
 }
