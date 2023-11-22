@@ -1,6 +1,9 @@
 package com.Backend.VueFrame.Services;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,4 +60,34 @@ public String getJsonData(String formId) {
 	return workFlowRepo.getJsonDataFromTable(formId);
 	
 }
+
+
+public Map<String, String> getWfData(@RequestBody Map<String, String> params) {
+    // Your logic here, if needed
+
+    // Creating a response map for demonstration purposes
+    Map<String, String> response = new HashMap<>();
+    response.put("stage", params.get("stage"));
+    response.put("status", params.get("status"));
+    response.put("action", params.get("action"));
+    response.put("org", params.get("org"));
+    response.put("role", params.get("role"));
+    response.put("pid", params.get("pid"));
+    response.put("instanceId", params.get("instanceId"));
+    response.put("createdBy", params.get("createdBy"));
+    response.put("createdOn", params.get("createdOn"));
+    response.put("modifiedOn", params.get("modifiedOn"));
+    response.put("modifiedBy", params.get("modifiedBy"));
+    response.put("objId", params.get("objId"));
+    response.put("formId", params.get("formId"));
+    response.put("currentUser", params.get("currentUser"));
+
+
+    
+
+    return response;
+}
+          
+          
+
 }
