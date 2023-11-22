@@ -99,4 +99,23 @@ public class WorkflowController {
 		 
 		 return obj;
 	 }
+	 
+	 
+	 
+	 //Get table data in JSON Format
+	 @GetMapping("getTableData")
+	 public String getJsonTableData(@RequestParam String formId) {
+		 
+		 System.out.println("INSIDE getJsonTableData");
+		 return workFlowServ.getJsonData(formId);
+	 }
+	 
+	 
+//	//Get table data in JSON Format
+//		 @GetMapping("getTableData")
+//		 public String getJsonTableData(@RequestParam String formId) {
+//			 
+//			 System.out.println("INSIDE getJsonTableData");
+//			 return workFlowServ.getJsonData(formId);
+//		 }
 }

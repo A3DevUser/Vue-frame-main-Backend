@@ -39,6 +39,38 @@ public class GridData {
 	
 	@Column(name = "ORDER_ID")
 	private String orderId;
+	
+	@Column(name = "MROW_GRID_ID")
+	private String mrGridId;
+	
+	@Column(name = "WIDTH")
+    private String width;
+	
+	@Column(name = "HEIGHT")
+	private String height;
+	
+	@Column(name = "IS_VIEW")
+	private String isView;
+	
+	
+	
+	
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
 
 	public String getOrderId() {
 		return orderId;
@@ -117,8 +149,27 @@ public class GridData {
 	
 
 	
+	public String getMrGridId() {
+		return mrGridId;
+	}
+
+	public void setMrGridId(String mrGridId) {
+		this.mrGridId = mrGridId;
+	}
+
+
+	public String getIsView() {
+		return isView;
+	}
+
+	public void setIsView(String isView) {
+		this.isView = isView;
+	}
+
+	
+
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow, String isMain, String orderId) {
+			String isMrow, String isMain, String orderId, String mrGridId, String width, String height, String isView) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -129,6 +180,10 @@ public class GridData {
 		this.isMrow = isMrow;
 		this.isMain = isMain;
 		this.orderId = orderId;
+		this.mrGridId = mrGridId;
+		this.width = width;
+		this.height = height;
+		this.isView = isView;
 	}
 
 	public GridData() {
