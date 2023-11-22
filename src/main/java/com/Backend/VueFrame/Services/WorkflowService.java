@@ -67,20 +67,20 @@ public Map<String, String> getWfData(@RequestBody Map<String, String> params) {
 
     // Creating a response map for demonstration purposes
     Map<String, String> response = new HashMap<>();
-    response.put("stage", params.get("stage"));
-    response.put("status", params.get("status"));
-    response.put("action", params.get("action"));
-    response.put("org", params.get("org"));
-    response.put("role", params.get("role"));
-    response.put("pid", params.get("pid"));
-    response.put("instanceId", params.get("instanceId"));
-    response.put("createdBy", params.get("createdBy"));
-    response.put("createdOn", params.get("createdOn"));
-    response.put("modifiedOn", params.get("modifiedOn"));
-    response.put("modifiedBy", params.get("modifiedBy"));
-    response.put("objId", params.get("objId"));
+    response.put("VF_STAGE", params.get("VF_STAGE"));
+    response.put("VF_STATUS", params.get("VF_STATUS"));
+    response.put("VF_ACTION", params.get("VF_ACTION"));
+    response.put("VF_ORGANISATION_ID", params.get("VF_ORGANISATION_ID"));
+    response.put("VF_ROLE", params.get("VF_ROLE"));
+    response.put("VF_PROCESS_INSTANCE_ID", params.get("VF_PROCESS_INSTANCE_ID"));
+    response.put("VF_INSTANCE_ID", params.get("VF_INSTANCE_ID"));
+    response.put("VF_CREATED_BY", params.get("VF_CREATED_BY"));
+    response.put("VF_CREATED_ON", params.get("VF_CREATED_ON"));
+    response.put("VF_MODIFIED_ON", params.get("VF_MODIFIED_ON"));
+    response.put("VF_MODIFIED_BY", params.get("VF_MODIFIED_BY"));
+    response.put("OBJ_ID", params.get("OBJ_ID"));
     response.put("formId", params.get("formId"));
-    response.put("currentUser", params.get("currentUser"));
+    response.put("VF_CURRENT_USER", params.get("VF_CURRENT_USER"));
 
 
     
