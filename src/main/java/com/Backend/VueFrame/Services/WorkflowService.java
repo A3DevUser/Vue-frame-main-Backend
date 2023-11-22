@@ -25,6 +25,8 @@ public class WorkflowService {
 	
 	
 	public void callInsertDataFromDynamicJsonArray(String json) {
+		
+		System.out.println("json = " + json);
 		workFlowRepo.insertDataFromDynamicJsonArray(json);
 		
 		
