@@ -118,4 +118,13 @@ public class WorkflowController {
 //			 System.out.println("INSIDE getJsonTableData");
 //			 return workFlowServ.getJsonData(formId);
 //		 }
+	 
+	 
+	 @PostMapping("getWfMainData")
+	    public Map<String, String> getWfData(@RequestBody Map<String, String> params) {
+		 Map<String, String> list = workFlowServ.getWfData(params);
+		 return list;
+	       
+	    }
+	
 }
