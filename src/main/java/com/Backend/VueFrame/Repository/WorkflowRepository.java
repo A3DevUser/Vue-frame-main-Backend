@@ -43,6 +43,9 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 			String setWfSequence();
 
 	
+	@Query(value = "select VF_MULT_GRID_JSON(:jsonObject) from dual", nativeQuery = true)
+	List<String> getJsonDataFromTable(@Param("jsonObject") List<String> jsonObject);
+	
 }
 
 

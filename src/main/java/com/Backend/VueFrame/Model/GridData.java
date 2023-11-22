@@ -39,6 +39,9 @@ public class GridData {
 	
 	@Column(name = "ORDER_ID")
 	private String orderId;
+	
+	@Column(name = "MROW_GRID_ID")
+	private String mrGridId;
 
 	public String getOrderId() {
 		return orderId;
@@ -117,8 +120,18 @@ public class GridData {
 	
 
 	
+	public String getMrGridId() {
+		return mrGridId;
+	}
+
+	public void setMrGridId(String mrGridId) {
+		this.mrGridId = mrGridId;
+	}
+
+	
+
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow, String isMain, String orderId) {
+			String isMrow, String isMain, String orderId, String mrGridId) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -129,6 +142,7 @@ public class GridData {
 		this.isMrow = isMrow;
 		this.isMain = isMain;
 		this.orderId = orderId;
+		this.mrGridId = mrGridId;
 	}
 
 	public GridData() {

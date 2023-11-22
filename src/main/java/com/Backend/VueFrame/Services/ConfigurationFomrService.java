@@ -63,10 +63,17 @@ public class ConfigurationFomrService {
     
     public GridData setGridId(@RequestBody GridData setData) {
 	    String seq = gridRepo.setGridSequence();
+
 	    String formattedGridId = "GID-" + seq;
+
+	    
 	    setData.setGridId(formattedGridId);
+
 	    return setData;
 	}
+    
+    
+   
     
     
 //    public void setGridId(HashMap<String, String> gridMap) {

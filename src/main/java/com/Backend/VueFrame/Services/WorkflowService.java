@@ -49,4 +49,10 @@ public List<WorkflowData> setWorkflowData(@RequestParam List<WorkflowData> setDa
 		
 		return list;
 	}
+
+
+public List<String> getJsonData(List<String> jsonObject) {
+	List<String> list = workFlowRepo.getJsonDataFromTable(jsonObject);
+	return list;
+}
 }
