@@ -1,5 +1,6 @@
 package com.Backend.VueFrame.Services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,12 +85,21 @@ public class ConfigurationFomrService {
 //        }
 //    }
     //set Grid Data in GridTable
-	    public List<GridData> setGridData(@RequestParam List<GridData> setData) {
-			
-			List<GridData> list = gridRepo.saveAll(setData);
-			
-			return list;
-		}
+    public List<GridData> setGridData(@RequestBody List<GridData> setData) {
+        List<GridData> updatedGridDataList = new ArrayList<>();
+
+        for (GridData gridData : setData) {
+            // Set isView based on dbTableName (example logic, replace with your own logic)
+            String isView = gridData.getDbTableName() + "_VIEW";
+            gridData.setIsView(isView);
+
+            // Save the updated GridData
+            GridData savedGridData = gridRepo.save(gridData);
+            updatedGridDataList.add(savedGridData);
+        }
+
+        return updatedGridDataList;
+    }
      
       //Set SectionId in Section Table
 	    public SectionData setSectionId(@RequestBody SectionData setData) {
