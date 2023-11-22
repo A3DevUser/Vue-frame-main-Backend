@@ -42,6 +42,32 @@ public class GridData {
 	
 	@Column(name = "MROW_GRID_ID")
 	private String mrGridId;
+	
+	@Column(name = "WIDTH")
+    private String width;
+	
+	@Column(name = "HEIGHT")
+	private String height;
+	
+	
+	
+	
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
 
 	public String getOrderId() {
 		return orderId;
@@ -130,8 +156,10 @@ public class GridData {
 
 	
 
+	
+
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow, String isMain, String orderId, String mrGridId) {
+			String isMrow, String isMain, String orderId, String mrGridId, String width, String height) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -143,6 +171,8 @@ public class GridData {
 		this.isMain = isMain;
 		this.orderId = orderId;
 		this.mrGridId = mrGridId;
+		this.width = width;
+		this.height = height;
 	}
 
 	public GridData() {

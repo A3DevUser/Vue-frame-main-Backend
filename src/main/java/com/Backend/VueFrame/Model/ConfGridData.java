@@ -36,7 +36,31 @@ public class ConfGridData {
 	@Column(name = "API")
 	private String api;
 	
+	@Column(name = "WIDTH")
+    private String width;
 	
+	@Column(name = "HEIGHT")
+	private String height;
+	
+	
+	
+	
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
 	public String getApi() {
 		return api;
 	}
@@ -105,8 +129,10 @@ public class ConfGridData {
 	
 
 	
+	
+
 	public ConfGridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId,
-			String formId, String isMrow, String api) {
+			String formId, String isMrow, String api, String width, String height) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -116,6 +142,8 @@ public class ConfGridData {
 		this.formId = formId;
 		this.isMrow = isMrow;
 		this.api = api;
+		this.width = width;
+		this.height = height;
 	}
 
 	public ConfGridData() {
