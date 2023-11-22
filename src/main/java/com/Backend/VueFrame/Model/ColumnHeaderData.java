@@ -69,6 +69,9 @@ public class ColumnHeaderData {
 	@Column(name = "DB_COLUMN_CONST")
 	private String dbcolConst;
 	
+	@Column(name = "HIDE_SHOW")
+	private String hideShow;
+	
 	
 	public String getColumnId() {
 		return columnId;
@@ -191,7 +194,6 @@ public class ColumnHeaderData {
 	}
 	
 	
-
 	public String getDbcolLimit() {
 		return dbcolLimit;
 	}
@@ -207,12 +209,20 @@ public class ColumnHeaderData {
 	public void setDbcolConst(String dbcolConst) {
 		this.dbcolConst = dbcolConst;
 	}
-
 	
+	public String getHideShow() {
+		return hideShow;
+	}
 
+	public void setHideShow(String hideShow) {
+		this.hideShow = hideShow;
+	}
+	
+	
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
-			String subSecType, String number, String gridId, String sticky, String dbcolLimit, String dbcolConst) {
+			String subSecType, String number, String gridId, String sticky, String dbcolLimit, String dbcolConst,
+			String hideShow) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -231,7 +241,9 @@ public class ColumnHeaderData {
 		this.sticky = sticky;
 		this.dbcolLimit = dbcolLimit;
 		this.dbcolConst = dbcolConst;
+		this.hideShow = hideShow;
 	}
+	
 
 	public ColumnHeaderData() {
 		super();
