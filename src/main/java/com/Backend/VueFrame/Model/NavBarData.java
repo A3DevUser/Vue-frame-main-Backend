@@ -46,9 +46,6 @@ public class NavBarData {
 	@Column(name = "is_sec_flag")
 	private String isSecFlag;
 	
-	@Column(name = "TARGET_ID")
-	private String targetId;
-	
 
 	public String getIsSecFlag() {
 		return isSecFlag;
@@ -134,17 +131,9 @@ public class NavBarData {
 		this.compType = compType;
 	}
 
-	public String getTargetId() {
-		return targetId;
-	}
 
-	public void setTargetId(String targetId) {
-		this.targetId = targetId;
-	}
-
-	
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
-			String navType, String url, String number, String compType, String isSecFlag, String targetId) {
+			String navType, String url, String number, String compType, String isSecFlag) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
@@ -156,7 +145,6 @@ public class NavBarData {
 		this.number = number;
 		this.compType = compType;
 		this.isSecFlag = isSecFlag;
-		this.targetId = targetId;
 	}
 
 	public NavBarData() {
