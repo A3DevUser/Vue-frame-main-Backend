@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Backend.VueFrame.Model.ColumnHeaderData;
+import com.Backend.VueFrame.Model.GenerateSequenceData;
 import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.SectionData;
@@ -34,7 +35,10 @@ public class ConfigurationFomrService {
 	
 	@Autowired
 	private ColumnHeaderRepository columnRepo;
-	
+//	
+//    @Autowired
+//    private GenerateSeqRepository generateSeqRepo;
+//	
 
 	
 	//Generate FomrId
@@ -145,11 +149,20 @@ public class ConfigurationFomrService {
   		return list;
   	}
 
-	public String getmrowUpdate(String formId) {
+	
+      public String getmrowUpdate(String formId) {
 		return gridRepo.getMrowData(formId);
 	}
 
-          
+      
+      
+//      public List<GenerateSequenceData> setSeqData(@RequestBody List<String> setData) {
+//    	  
+//    	  List<GenerateSequenceData> list = generateSeqRepo.saveAll(setData);
+//    	  
+//    	  return list;
+//      }
+//      
 	
 	}
 	

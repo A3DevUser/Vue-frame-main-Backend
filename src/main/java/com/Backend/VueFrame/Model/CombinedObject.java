@@ -9,6 +9,7 @@ public class CombinedObject {
 	private String dbTableName;
 	private String isMain;
 	private String isMrow;
+	private String seqId;
 	
 	
 	public String getNavName() {
@@ -56,8 +57,19 @@ public class CombinedObject {
 		this.isMrow = isMrow;
 	}
 	
+	
+	
+	public String getSeqId() {
+		return seqId;
+	}
+	public void setSeqId(String seqId) {
+		this.seqId = seqId;
+	}
+	
+	
+	
 	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
-			String isMain, String isMrow) {
+			String isMain, String isMrow, String seqId) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -66,6 +78,7 @@ public class CombinedObject {
 		this.dbTableName = dbTableName;
 		this.isMain = isMain;
 		this.isMrow = isMrow;
+		this.seqId = seqId;
 	}
 	public CombinedObject() {
 		super();

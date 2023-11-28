@@ -45,20 +45,22 @@ public class SecurityConfig {
 		return http.csrf().disable()
 				.cors()
 				.and()
-//				.authorizeHttpRequests() 
+				.authorizeHttpRequests() 
 //				.regexMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken").permitAll() 
-////				.antMatchers(AUTH_WHITELIST).permitAll()
+				.regexMatchers("/*").permitAll()
+//				.antMatchers(AUTH_WHITELIST).permitAll()
 //				.and() 
 //				.authorizeHttpRequests().regexMatchers("/VF/*").authenticated() 
 //				.and() 
 //			 	.authorizeHttpRequests().regexMatchers("/VF/*").authenticated() 
-				.authorizeHttpRequests(
-			              (authorizeHttpRequests) ->
-			                  authorizeHttpRequests
-			                      .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken")
-			                      .permitAll()
-			                      .anyRequest()
-			                      .authenticated())
+			 	.and()
+//				.authorizeHttpRequests(
+//			              (authorizeHttpRequests) ->
+//			                  authorizeHttpRequests
+//			                      .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken")
+//			                      .permitAll()
+//			                      .anyRequest()
+//			                      .authenticated())
 				.sessionManagement() 
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS) 
 				.and() 
