@@ -14,7 +14,7 @@ import com.Backend.VueFrame.Services.FieldConfigServices;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class FieldConfigController {
 	
 	@Autowired

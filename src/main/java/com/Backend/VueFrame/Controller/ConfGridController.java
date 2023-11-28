@@ -14,7 +14,7 @@ import com.Backend.VueFrame.Services.ConfGridService;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ConfGridController {
 	
 	

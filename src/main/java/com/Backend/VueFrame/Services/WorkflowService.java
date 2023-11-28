@@ -73,19 +73,25 @@ public String generateObjId(String formId) {
 }
 
 
+public String setConfigData(String formId) {
+	
+	String setData = workFlowRepo.setConfigData(formId);
+	
+	return setData;
+}
+
+
 public void setWFGridData1(
         String VF_STAGE,
         String VF_STATUS,
         String VF_ACTION,
         String VF_ORGANISATION_ID,
         String VF_ROLE,
-        String VF_PROCESS_INSTANCE_ID,
         String VF_INSTANCE_ID,
         String VF_CREATED_BY,
         String VF_CREATED_ON,
         String VF_MODIFIED_ON,
         String VF_MODIFIED_BY,
-        String OBJ_ID,
         String formId,
         String VF_CURRENT_USER,
         String VF_OBJ_ID
@@ -96,13 +102,11 @@ public void setWFGridData1(
             VF_ACTION,
             VF_ORGANISATION_ID,
             VF_ROLE,
-            VF_PROCESS_INSTANCE_ID,
             VF_INSTANCE_ID,
             VF_CREATED_BY,
             VF_CREATED_ON,
             VF_MODIFIED_ON,
             VF_MODIFIED_BY,
-            OBJ_ID,
             formId,
             VF_CURRENT_USER,
             VF_OBJ_ID

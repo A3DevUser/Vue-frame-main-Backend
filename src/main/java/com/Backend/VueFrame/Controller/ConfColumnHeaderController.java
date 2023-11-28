@@ -15,7 +15,7 @@ import com.Backend.VueFrame.Services.ConfColumnHeaderService;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ConfColumnHeaderController {
 	
 	@Autowired

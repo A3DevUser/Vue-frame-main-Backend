@@ -23,7 +23,7 @@ import com.Backend.VueFrame.Services.LoggerService;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ColumnHeaderController {
 	
 	

@@ -21,7 +21,7 @@ import com.Backend.VueFrame.security.JwtService;
 
 @RestController
 @RequestMapping("/auth") 
-//@CrossOrigin(origins  =  "*")
+@CrossOrigin(origins  =  "*")
 public class UserController { 
 
 	@Autowired

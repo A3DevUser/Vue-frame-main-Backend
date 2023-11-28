@@ -84,13 +84,11 @@ public class WorkflowController {
 				request.get("VF_ACTION"),
 				request.get("VF_ORGANISATION_ID"),
 				request.get("VF_ROLE"),
-				request.get("VF_PROCESS_INSTANCE_ID	"),
 				request.get("VF_INSTANCE_ID"),
 				request.get("VF_CREATED_BY"),
 				request.get("VF_CREATED_ON"),
 				request.get("VF_MODIFIED_ON"),
 				request.get("VF_MODIFIED_BY"),
-				request.get("OBJ_ID"),
 				request.get("formId"),
 				request.get("VF_CURRENT_USER"),
 				request.get("VF_OBJ_ID"));
@@ -146,11 +144,7 @@ public class WorkflowController {
 //	       
 //	    }
 	 
-<<<<<<< HEAD
-	 
-	 
-	 
-=======
+
 	 @GetMapping("generateObjId")
 	 public String getObjId(@RequestParam String formId) {
 		 
@@ -160,6 +154,13 @@ public class WorkflowController {
 		 
 		 return objId;
 	 }
->>>>>>> cb94e5e18ec181171a03a95b1e57e39b53ab1005
+	 
+	 
+	 @GetMapping("getConfigData")
+	 public String getConfigData(@RequestParam String formId) {
+		 
+		 String setData = workFlowServ.setConfigData(formId);
+		 return setData;
+	 }
 	
 }

@@ -16,7 +16,7 @@ import com.Backend.VueFrame.Services.NavBarServices;
 
 @RestController
 @RequestMapping("/VF")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class NavBarController {
 
 	

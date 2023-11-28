@@ -14,7 +14,7 @@ import com.Backend.VueFrame.Services.VfActActionsServices;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class VfActActionsController {
 	
 	@Autowired

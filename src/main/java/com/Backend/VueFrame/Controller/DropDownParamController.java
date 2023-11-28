@@ -20,7 +20,7 @@ import com.Backend.VueFrame.Model.DropDownParamModel;
 import com.Backend.VueFrame.Services.DropDownParamService;
 
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RestController
 public class DropDownParamController {
 	

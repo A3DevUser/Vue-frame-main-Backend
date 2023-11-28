@@ -14,7 +14,7 @@ import com.Backend.VueFrame.Services.WfEmailConfigServices;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class WfEmailConfigController {
 	
 	@Autowired

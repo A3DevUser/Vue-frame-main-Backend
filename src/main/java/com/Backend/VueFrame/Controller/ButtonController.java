@@ -14,7 +14,7 @@ import com.Backend.VueFrame.Services.ButtonServices;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ButtonController {
 	
 	

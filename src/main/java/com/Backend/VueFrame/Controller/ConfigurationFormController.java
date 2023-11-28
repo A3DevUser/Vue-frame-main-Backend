@@ -28,7 +28,7 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ConfigurationFormController {
 	
 

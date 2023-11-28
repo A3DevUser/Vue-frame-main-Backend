@@ -28,65 +28,63 @@ import com.Backend.VueFrame.security.JwtAuthFilter;
 @EnableMethodSecurity
 public class SecurityConfig { 
 
-	@Autowired
-	private JwtAuthFilter authFilter; 
+                @Autowired
+                private JwtAuthFilter authFilter; 
 
-	// User Creation 
-	@Bean
-	@Primary
-	public UserDetailsService userDetailsService() { 
-		return new UserInfoService(); 
-	} 
+                // User Creation 
+                @Bean
+                @Primary
+                public UserDetailsService userDetailsService() { 
+                                return new UserInfoService(); 
+                } 
 
-	// Configuring HttpSecurity
-		
-	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception { 
-		return http.csrf().disable()
-				.cors()
-				.and()
-				.authorizeHttpRequests() 
-//				.regexMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken").permitAll() 
-				.regexMatchers("/*").permitAll()
-//				.antMatchers(AUTH_WHITELIST).permitAll()
-//				.and() 
-//				.authorizeHttpRequests().regexMatchers("/VF/*").authenticated() 
-//				.and() 
-//			 	.authorizeHttpRequests().regexMatchers("/VF/*").authenticated() 
-			 	.and()
-//				.authorizeHttpRequests(
-//			              (authorizeHttpRequests) ->
-//			                  authorizeHttpRequests
-//			                      .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken")
-//			                      .permitAll()
-//			                      .anyRequest()
-//			                      .authenticated())
-				.sessionManagement() 
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS) 
-				.and() 
-				.authenticationProvider(authenticationProvider()) 
-				.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class) 
-				.build(); 
-	} 
+                // Configuring HttpSecurity
+                                
+                @Bean
+                public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception { 
+                                return http.csrf().disable()
+                                                                .cors()
+                                                                .and()
+//                                                            .authorizeHttpRequests() 
+//                                                            .regexMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken").permitAll() 
+////                                                        .antMatchers(AUTH_WHITELIST).permitAll()
+//                                                            .and() 
+//                                                            .authorizeHttpRequests().regexMatchers("/VF/*").authenticated() 
+//                                                            .and() 
+//                                                           .authorizeHttpRequests().regexMatchers("/VF/*").authenticated() 
+                                                                .authorizeHttpRequests(
+                                                              (authorizeHttpRequests) ->
+                                                                  authorizeHttpRequests
+                                                                      .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken")
+                                                                      .permitAll()
+                                                                      .anyRequest()
+                                                                      .authenticated())
+                                                                .sessionManagement() 
+                                                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) 
+                                                                .and() 
+                                                                .authenticationProvider(authenticationProvider()) 
+                                                                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class) 
+                                                                .build(); 
+                } 
 
-	// Password Encoding 
-	@Bean
-	public PasswordEncoder passwordEncoder() { 
-		return new BCryptPasswordEncoder(); 
-	} 
+                // Password Encoding 
+                @Bean
+                public PasswordEncoder passwordEncoder() { 
+                                return new BCryptPasswordEncoder(); 
+                } 
 
-	@Bean
-	public AuthenticationProvider authenticationProvider() { 
-		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(); 
-		authenticationProvider.setUserDetailsService(userDetailsService()); 
-		authenticationProvider.setPasswordEncoder(passwordEncoder()); 
-		return authenticationProvider; 
-	} 
+                @Bean
+                public AuthenticationProvider authenticationProvider() { 
+                                DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(); 
+                                authenticationProvider.setUserDetailsService(userDetailsService()); 
+                                authenticationProvider.setPasswordEncoder(passwordEncoder()); 
+                                return authenticationProvider; 
+                } 
 
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception { 
-		return config.getAuthenticationManager(); 
-	} 
+                @Bean
+                public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception { 
+                                return config.getAuthenticationManager(); 
+                } 
 
 
-} 
+}

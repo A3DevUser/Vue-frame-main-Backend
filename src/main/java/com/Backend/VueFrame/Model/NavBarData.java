@@ -134,7 +134,6 @@ public class NavBarData {
 		this.compType = compType;
 	}
 
-<<<<<<< HEAD
 
 	public String getSeqId() {
 		return seqId;
@@ -145,8 +144,7 @@ public class NavBarData {
 	}
 
 	
-=======
->>>>>>> cb94e5e18ec181171a03a95b1e57e39b53ab1005
+
 
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
 			String navType, String url, String number, String compType, String isSecFlag, String seqId) {

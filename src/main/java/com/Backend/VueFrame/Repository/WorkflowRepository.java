@@ -13,6 +13,8 @@ import org.springframework.data.repository.query.Param;
 import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.WorkflowData;
 
+import io.micrometer.core.lang.Nullable;
+
 public interface WorkflowRepository extends JpaRepository<WorkflowData, String> {
 
 	List<WorkflowData> getByFormId(String formId);
@@ -53,23 +55,26 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	                       @Param("VF_ACTION") String VF_ACTION,
 	                       @Param("VF_ORGANISATION_ID") String VF_ORGANISATION_ID,
 	                       @Param("VF_ROLE") String VF_ROLE,
-	                       @Param("VF_PROCESS_INSTANCE_ID") String VF_PROCESS_INSTANCE_ID,
 	                       @Param("VF_INSTANCE_ID") String VF_INSTANCE_ID,
 	                       @Param("VF_CREATED_BY") String VF_CREATED_BY,
 	                       @Param("VF_CREATED_ON") String VF_CREATED_ON,
 	                       @Param("VF_MODIFIED_ON") String VF_MODIFIED_ON,
 	                       @Param("VF_MODIFIED_BY") String VF_MODIFIED_BY,
-	                       @Param("OBJ_ID") String OBJ_ID,
 	                       @Param("formId") String formId,
 	                       @Param("VF_CURRENT_USER") String VF_CURRENT_USER,
 	                       @Param("VF_OBJ_ID") String VF_OBJ_ID);
 	 
-<<<<<<< HEAD
-=======
+
 	 
 	 @Procedure(procedureName = "VF_GENERATE_SEQUENCE", outputParameterName = "v_result")
 	   String generateObjId(@Param("formId") String formId);
->>>>>>> cb94e5e18ec181171a03a95b1e57e39b53ab1005
+	 
+	 
+	 @Procedure(procedureName = "VF_CONFIG_DATA_OBJ", outputParameterName = "v_result")
+	 String setConfigData(@Param("p_form_id") String formId);
+	 
+	 
+	 
 	
 }
 
