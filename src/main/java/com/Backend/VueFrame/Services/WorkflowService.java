@@ -28,6 +28,8 @@ public class WorkflowService {
 	
 	
 	public void callInsertDataFromDynamicJsonArray(String json) {
+		
+		System.out.println("json = " + json);
 		workFlowRepo.insertDataFromDynamicJsonArray(json);
 		
 		
@@ -58,6 +60,15 @@ public String getJsonData(String formId) {
 	System.out.println("iNSIDE getJsonData formId = " + formId);
 	System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId));
 	return workFlowRepo.getJsonDataFromTable(formId);
+	
+}
+
+
+public String generateObjId(String formId) {
+	
+	String objId = workFlowRepo.generateObjId(formId);
+	
+	return objId;
 	
 }
 

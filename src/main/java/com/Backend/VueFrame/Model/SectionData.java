@@ -36,6 +36,7 @@ public class SectionData {
 	@Column(name = "ORDER_ID")
 	private String orderId;
 	
+	
 	public String getOrderId() {
 		return orderId;
 	}
@@ -76,8 +77,6 @@ public class SectionData {
 		this.secStoredValue = secStoredValue;
 	}
 	
-	
-
 	public String getIsOpen() {
 		return isOpen;
 	}
@@ -87,7 +86,6 @@ public class SectionData {
 	}
 
 	
-
 	public String getWidth() {
 		return width;
 	}
@@ -103,7 +101,7 @@ public class SectionData {
 	public void setHeight(String height) {
 		this.height = height;
 	}
-	
+
 
 	public SectionData(String secId, String formId, String secName, String secStoredValue, String isOpen, String width,
 			String height, String orderId) {
@@ -117,8 +115,6 @@ public class SectionData {
 		this.height = height;
 		this.orderId = orderId;
 	}
-
-
 
 	public SectionData() {
 		super();

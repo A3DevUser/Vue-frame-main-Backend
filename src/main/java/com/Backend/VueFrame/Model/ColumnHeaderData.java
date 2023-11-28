@@ -73,8 +73,6 @@ public class ColumnHeaderData {
 	private String hideShow;
 	
 	
-	
-	
 	public String getColumnId() {
 		return columnId;
 	}
@@ -220,7 +218,7 @@ public class ColumnHeaderData {
 		this.hideShow = hideShow;
 	}
 	
-	
+
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
 			String subSecType, String number, String gridId, String sticky, String dbcolLimit, String dbcolConst,
@@ -245,7 +243,6 @@ public class ColumnHeaderData {
 		this.dbcolConst = dbcolConst;
 		this.hideShow = hideShow;
 	}
-	
 
 	public ColumnHeaderData() {
 		super();

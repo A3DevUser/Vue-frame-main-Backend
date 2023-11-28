@@ -53,8 +53,6 @@ public class GridData {
 	private String isView;
 	
 	
-	
-	
 	public String getWidth() {
 		return width;
 	}
@@ -166,7 +164,6 @@ public class GridData {
 		this.isView = isView;
 	}
 
-	
 
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
 			String isMrow, String isMain, String orderId, String mrGridId, String width, String height, String isView) {

@@ -64,6 +64,12 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	                       @Param("VF_CURRENT_USER") String VF_CURRENT_USER,
 	                       @Param("VF_OBJ_ID") String VF_OBJ_ID);
 	 
+<<<<<<< HEAD
+=======
+	 
+	 @Procedure(procedureName = "VF_GENERATE_SEQUENCE", outputParameterName = "v_result")
+	   String generateObjId(@Param("formId") String formId);
+>>>>>>> cb94e5e18ec181171a03a95b1e57e39b53ab1005
 	
 }
 
