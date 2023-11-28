@@ -145,5 +145,15 @@ public class WorkflowController {
 //		 return list;
 //	       
 //	    }
+	 
+	 @GetMapping("generateObjId")
+	 public String getObjId(@RequestParam String formId) {
+		 
+		 String objId = workFlowServ.generateObjId(formId);
+		 
+		 System.out.println(objId);
+		 
+		 return objId;
+	 }
 	
 }

@@ -64,6 +64,15 @@ public String getJsonData(String formId) {
 }
 
 
+public String generateObjId(String formId) {
+	
+	String objId = workFlowRepo.generateObjId(formId);
+	
+	return objId;
+	
+}
+
+
 public void setWFGridData1(
         String VF_STAGE,
         String VF_STATUS,
