@@ -49,6 +49,9 @@ public class NavBarData {
 	@Column(name  ="SEQ_ID")
 	private String seqId;
 	
+	@Column(name = "CATEGORY")
+	private String cat;
+	
 
 	public String getIsSecFlag() {
 		return isSecFlag;
@@ -146,8 +149,18 @@ public class NavBarData {
 	
 
 
+	public String getCat() {
+		return cat;
+	}
+
+	public void setCat(String cat) {
+		this.cat = cat;
+	}
+
+	
+
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
-			String navType, String url, String number, String compType, String isSecFlag, String seqId) {
+			String navType, String url, String number, String compType, String isSecFlag, String seqId, String cat) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
@@ -160,6 +173,7 @@ public class NavBarData {
 		this.compType = compType;
 		this.isSecFlag = isSecFlag;
 		this.seqId = seqId;
+		this.cat = cat;
 	}
 
 	public NavBarData() {

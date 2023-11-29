@@ -10,6 +10,7 @@ public class CombinedObject {
 	private String isMain;
 	private String isMrow;
 	private String seqId;
+	private String cat;
 	
 	
 	public String getNavName() {
@@ -68,8 +69,19 @@ public class CombinedObject {
 	
 	
 	
+	
+	
+	public String getCat() {
+		return cat;
+	}
+	public void setCat(String cat) {
+		this.cat = cat;
+	}
+	
+	
+	
 	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
-			String isMain, String isMrow, String seqId) {
+			String isMain, String isMrow, String seqId, String cat) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -79,6 +91,7 @@ public class CombinedObject {
 		this.isMain = isMain;
 		this.isMrow = isMrow;
 		this.seqId = seqId;
+		this.cat = cat;
 	}
 	public CombinedObject() {
 		super();

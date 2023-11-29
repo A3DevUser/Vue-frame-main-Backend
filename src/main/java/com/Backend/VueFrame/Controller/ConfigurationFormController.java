@@ -55,6 +55,7 @@ public class ConfigurationFormController {
 	                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
 	                navBarData.setNavigate("/GridForm");
 	                navBarData.setSeqId(combinedObject.getSeqId());
+	                navBarData.setCat(combinedObject.getCat());
 
 	                navBarDataList.add(navBarData);
 
