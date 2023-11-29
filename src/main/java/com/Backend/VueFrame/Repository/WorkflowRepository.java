@@ -45,8 +45,15 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 			String setWfSequence();
 
 	
-	@Query(value = "select VF_GET_JSON_OBJ.VF_MULT_GRID_JSON(:formId) from dual", nativeQuery = true)
-	  String getJsonDataFromTable(@Param("formId") String formId);
+//	@Query(value = "select VF_GET_JSON_OBJ.VF_MULT_GRID_JSON(:formId) from dual", nativeQuery = true)
+//	  String getJsonDataFromTable(@Param("formId") String formId);
+//	
+	
+	 
+	 @Procedure(procedureName = "VF_MULT_GRID_JSON_PROC", outputParameterName = "v_obj")
+	   String getJsonDataFromTable(@Param("P_FORM_ID") String formId);
+	 
+	 
 	
 	
 	 @Procedure(procedureName = "SET_GRID_DATA_1")
