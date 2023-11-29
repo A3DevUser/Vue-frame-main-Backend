@@ -20,7 +20,7 @@ import com.Backend.VueFrame.Services.WorkflowService;
 
 @RestController
 @RequestMapping("VF/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class WorkflowController {
 
 	
