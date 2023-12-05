@@ -17,6 +17,8 @@ import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.LoggerService;
 import com.Backend.VueFrame.Services.WorkflowService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 @RestController
 @RequestMapping("VF/")
@@ -44,7 +46,7 @@ public class WorkflowController {
 //    }
 //	
 	@PostMapping("callWorkflowProcedure")
-	public String insertData(@RequestBody(required = false) String json) {
+	public String insertData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException{
 	    if (json != null) {
 	        logServ.log("e", "Error", "Error Details" + json);
 	        logServ.log("d", "Debug Subject", "Debug Details" + json);
@@ -76,25 +78,25 @@ public class WorkflowController {
 	
 	
 	 
-	@PostMapping("setWorkFlowGridData")
-    public void setWFGridData(@RequestBody Map<String, String> request) {
-		workFlowServ.setWFGridData1(
-				request.get("VF_STAGE"),
-				request.get("VF_STATUS"),
-				request.get("VF_ACTION"),
-				request.get("VF_ORGANISATION_ID"),
-				request.get("VF_ROLE"),
-				request.get("VF_INSTANCE_ID"),
-				request.get("VF_CREATED_BY"),
-				request.get("VF_CREATED_ON"),
-				request.get("VF_MODIFIED_ON"),
-				request.get("VF_MODIFIED_BY"),
-				request.get("formId"),
-				request.get("VF_CURRENT_USER"),
-				request.get("VF_OBJ_ID"));
-		
-		
-	}
+//	@PostMapping("setWorkFlowGridData")
+//    public void setWFGridData(@RequestBody Map<String, String> request) {
+//		workFlowServ.setWFGridData1(
+//				request.get("VF_STAGE"),
+//				request.get("VF_STATUS"),
+//				request.get("VF_ACTION"),
+//				request.get("VF_ORGANISATION_ID"),
+//				request.get("VF_ROLE"),
+//				request.get("VF_PROCESS_INSTANCE_ID"),
+//				request.get("VF_INSTANCE_ID"),
+//				request.get("VF_CREATED_BY"),
+//				request.get("VF_CREATED_ON"),
+//				request.get("VF_MODIFIED_ON"),
+//				request.get("VF_MODIFIED_BY"),
+//				request.get("formId"),
+//				request.get("VF_CURRENT_USER"),
+//				request.get("VF_OBJ_ID"));
+//		
+//	}
 				
 	
 //	 
@@ -121,10 +123,10 @@ public class WorkflowController {
 	 
 	 //Get table data in JSON Format
 	 @GetMapping("getTableData")
-	 public String getJsonTableData(@RequestParam String formId) {
+	 public String getJsonTableData(@RequestParam String formId, @RequestParam String VF_CURRENT_USER) {
 		 
 		 System.out.println("INSIDE getJsonTableData");
-		 return workFlowServ.getJsonData(formId);
+		 return workFlowServ.getJsonData(formId, VF_CURRENT_USER);
 	 }
 	 
 	 

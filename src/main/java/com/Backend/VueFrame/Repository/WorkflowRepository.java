@@ -49,28 +49,49 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //	  String getJsonDataFromTable(@Param("P_FORM_ID") String formId);
 //	
 //	
-//	 
+//	 fetch grid data from table using formId
 	 @Procedure(procedureName = "VF_MULT_GRID_JSON_PROC", outputParameterName = "v_obj")
-	   String getJsonDataFromTable(@Param("P_FORM_ID") String formId);
+	   String getJsonDataFromTable(@Param("P_FORM_ID") String formId, @Param("P_USER_ID") String VF_CURRENT_USER);
 	 
 //	 
 	
-	
-	 @Procedure(procedureName = "SET_GRID_DATA_1")
-		void setGridData1(@Param("VF_STAGE") String VF_STAGE,
-				          @Param("VF_STATUS") String VF_STATUS,
-	                       @Param("VF_ACTION") String VF_ACTION,
-	                       @Param("VF_ORGANISATION_ID") String VF_ORGANISATION_ID,
-	                       @Param("VF_ROLE") String VF_ROLE,
-	                       @Param("VF_INSTANCE_ID") String VF_INSTANCE_ID,
-	                       @Param("VF_CREATED_BY") String VF_CREATED_BY,
-	                       @Param("VF_CREATED_ON") String VF_CREATED_ON,
-	                       @Param("VF_MODIFIED_ON") String VF_MODIFIED_ON,
-	                       @Param("VF_MODIFIED_BY") String VF_MODIFIED_BY,
-	                       @Param("formId") String formId,
-	                       @Param("VF_CURRENT_USER") String VF_CURRENT_USER,
-	                       @Param("VF_OBJ_ID") String VF_OBJ_ID);
+	//for set workflow data in table
+//	 @Procedure(procedureName = "SET_GRID_DATA_1")
+//		void setGridData1(@Param("v_curr_stage") String VF_STAGE,
+//				          @Param("v_status") String VF_STATUS,
+//	                       @Param("v_action") String VF_ACTION,
+//	                       @Param("v_VF_ORGANISATION_ID") String VF_ORGANISATION_ID,
+//	                       @Param("v_VF_ROLE") String VF_ROLE,
+//	                       @Param("v_process_inst_id") String VF_PROCESS_INSTANCE_ID,
+//	                       @Param("v_instance_id") String VF_INSTANCE_ID,
+//	                       @Param("v_created_by") String VF_CREATED_BY,
+//	                       @Param("v_created_on") String VF_CREATED_ON,
+//	                       @Param("v_modified_on") String VF_MODIFIED_ON,
+//	                       @Param("v_modified_by") String VF_MODIFIED_BY,
+//	                       @Param("v_form_id") String formId,
+//	                       @Param("v_curr_user") String VF_CURRENT_USER,
+//	                       @Param("v_obj_id") String VF_OBJ_ID);
+//	 
+
+	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') FROM VF_GRID_DETAILS WHERE GRID_ID = :grid_id", nativeQuery = true)
+	 String getIsMain(@Param("grid_id") String grid_id);
 	 
+	//change by akshay
+	 @Procedure(procedureName = "SET_GRID_DATA_2")
+		void setGridData1(@Param("v_curr_stage") String VF_STAGE,
+				          @Param("v_status") String VF_STATUS,
+	                       @Param("v_action") String VF_ACTION,
+	                       @Param("v_VF_ORGANISATION_ID") String VF_ORGANISATION_ID,
+	                       @Param("v_VF_ROLE") String VF_ROLE,
+	                       @Param("v_process_inst_id") String VF_PROCESS_INSTANCE_ID,
+	                       @Param("v_instance_id") String VF_INSTANCE_ID,
+	                       @Param("v_created_by") String VF_CREATED_BY,
+	                       @Param("v_created_on") String VF_CREATED_ON,
+	                       @Param("v_modified_on") String VF_MODIFIED_ON,
+	                       @Param("v_modified_by") String VF_MODIFIED_BY,
+	                       @Param("v_form_id") String formId,
+	                       @Param("v_curr_user") String VF_CURRENT_USER,
+	                       @Param("v_main_obj_id") String VF_MAIN_OBJ_ID);
 
 	 
 	 @Procedure(procedureName = "VF_GENERATE_SEQUENCE", outputParameterName = "v_result")
@@ -79,6 +100,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 
 	 @Procedure(procedureName = "VF_CONFIG_DATA_OBJ", outputParameterName = "v_result")
 	 String setConfigData(@Param("p_form_id") String formId);
+	 
 	 
 	 
 	 
