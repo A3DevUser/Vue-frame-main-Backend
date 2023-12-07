@@ -56,6 +56,7 @@ public class ConfigurationFormController {
 	                navBarData.setNavigate("/GridForm");
 	                navBarData.setSeqId(combinedObject.getSeqId());
 	                navBarData.setCat(combinedObject.getCat());
+	                navBarData.setTargetId(combinedObject.getTargetId());
 
 	                navBarDataList.add(navBarData);
 
@@ -67,6 +68,7 @@ public class ConfigurationFormController {
 	                gridData.setDbTableName(combinedObject.getDbTableName());
 	                gridData.setIsMrow(combinedObject.getIsMrow());
 	                gridData.setIsMain("true");
+	                gridData.setTargetId(combinedObject.getTargetId());
 	                
 	                
 	                // Set other GridData fields as needed

@@ -40,8 +40,7 @@ public class WorkflowService {
 //    }
 	
 	
-public void callInsertDataFromDynamicJsonArray(String json) throws JsonMappingException, JsonProcessingException
-{
+public void callInsertDataFromDynamicJsonArray(String json) throws JsonMappingException, JsonProcessingException {
 		
 		System.out.println("json = " + json);
 		workFlowRepo.insertDataFromDynamicJsonArray(json);

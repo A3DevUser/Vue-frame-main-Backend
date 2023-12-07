@@ -72,6 +72,9 @@ public class ColumnHeaderData {
 	@Column(name = "HIDE_SHOW")
 	private String hideShow;
 	
+	@Column(name = "TARGET_ID")
+	private String targetId;
+	
 	
 	public String getColumnId() {
 		return columnId;
@@ -218,11 +221,21 @@ public class ColumnHeaderData {
 		this.hideShow = hideShow;
 	}
 	
+	
+	public String getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
 
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
 			String subSecType, String number, String gridId, String sticky, String dbcolLimit, String dbcolConst,
-			String hideShow) {
+			String hideShow, String targetId) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -242,7 +255,9 @@ public class ColumnHeaderData {
 		this.dbcolLimit = dbcolLimit;
 		this.dbcolConst = dbcolConst;
 		this.hideShow = hideShow;
+		this.targetId = targetId;
 	}
+	
 
 	public ColumnHeaderData() {
 		super();

@@ -48,8 +48,8 @@ public class WorkflowController {
 	@PostMapping("callWorkflowProcedure")
 	public String insertData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException{
 	    if (json != null) {
-	        logServ.log("e", "Error", "Error Details" + json);
-	        logServ.log("d", "Debug Subject", "Debug Details" + json);
+//	        logServ.log("e", "Error", "Error Details" + json);
+//	        logServ.log("d", "Debug Subject", "Debug Details" + json);
 	        workFlowServ.callInsertDataFromDynamicJsonArray(json);
 	    }
 
