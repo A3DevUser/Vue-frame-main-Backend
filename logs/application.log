@@ -1,92 +1,55 @@
-11:23:53.975 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19h47m33s99ms892µs700ns).
-12:05:46.720 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m58s411ms851µs300ns).
-14:26:13.307 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m2s259ms133µs300ns).
-14:41:51.422 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
-14:41:52.086 [Thread-8] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-14:41:52.089 [Thread-8] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-14:41:52.126 [Thread-8] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
-14:41:52.210 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
- java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
- java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
- app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:259)
- app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:241)
- app//oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:346)
-14:41:52.213 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [InterruptTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@17.0.1/java.lang.Object.wait(Native Method)
- java.base@17.0.1/java.util.TimerThread.mainLoop(Timer.java:563)
- java.base@17.0.1/java.util.TimerThread.run(Timer.java:516)
-14:41:52.217 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
- java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
- java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
- java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
- java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
- java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
- java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
- java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
- java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
-14:41:52.224 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@17.0.1/sun.nio.ch.Net.connect0(Native Method)
- java.base@17.0.1/sun.nio.ch.Net.connect(Net.java:579)
- java.base@17.0.1/sun.nio.ch.Net.connect(Net.java:586)
- java.base@17.0.1/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
- java.base@17.0.1/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
- app//oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
- app//oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
- app//oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:381)
- app//oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:304)
- app//oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:266)
- app//oracle.net.nt.ConnOption.connect(ConnOption.java:238)
- app//oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:967)
- app//oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:648)
- app//oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:569)
- app//oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:933)
- app//oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
- app//oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2372)
- app//oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:657)
- app//oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1042)
- app//oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
- app//oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:733)
- app//oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:649)
- app//com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
- app//com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
- app//com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
- app//com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
- app//com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
- app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
- app//com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
- java.base@17.0.1/java.util.concurrent.FutureTask.run(FutureTask.java:264)
- java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
- java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
- java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
-14:41:52.235 [Thread-8] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-14:41:52.277 [Thread-8] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
-14:41:52.373 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-14:41:52.561 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-14:42:22.444 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-14:42:23.431 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 10612 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
-14:42:23.432 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
-14:42:24.112 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-14:42:24.274 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 161 ms. Found 20 JPA repository interfaces.
-14:42:24.618 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-14:42:24.619 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:42:24.619 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-14:42:24.620 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
-14:42:24.681 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:42:24.682 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1245 ms
-14:42:24.818 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
-14:53:07.174 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 12700 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
-14:53:07.178 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
-14:53:07.254 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in D:\Users\swapnalig\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/D:/Users/swapnalig/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-14:53:07.254 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-14:53:07.254 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-14:53:08.981 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-14:53:09.135 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 142 ms. Found 20 JPA repository interfaces.
-14:53:10.181 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-14:53:10.192 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-14:53:10.198 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-14:53:10.198 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
-14:53:10.332 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:53:10.333 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3078 ms
-14:53:10.805 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:36:30.505 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.Backend.VueFrame.VueframeBackendApplicationTests], using SpringBootContextLoader
+10:36:30.518 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.Backend.VueFrame.VueframeBackendApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:36:30.519 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.Backend.VueFrame.VueframeBackendApplicationTests]: VueframeBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:36:30.693 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.Backend.VueFrame.VueframeBackendApplication for test class com.Backend.VueFrame.VueframeBackendApplicationTests
+10:36:30.898 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+10:36:30.937 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6c5945a7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2f05be7f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@640f11a1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5c10f1c3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7ac2e39b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@78365cfa, org.springframework.test.context.transaction.TransactionalTestExecutionListener@64a8c844, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3f6db3fb, org.springframework.test.context.event.EventPublishingTestExecutionListener@52de51b6, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@18c5069b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3a0d172f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@68ad99fe, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@485e36bc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@781f10f2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2a79d4b1]
+10:36:31.050 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+10:36:31.497 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/Users/swapnalig/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/D:/Users/swapnalig/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+10:36:31.530 [main] INFO  c.B.V.VueframeBackendApplicationTests - Starting VueframeBackendApplicationTests using Java 17.0.1 on CPL-DEV-170 with PID 6200 (started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+10:36:31.532 [main] INFO  c.B.V.VueframeBackendApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10:36:33.277 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10:36:33.523 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 229 ms. Found 20 JPA repository interfaces.
+10:36:34.894 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:37:20.006 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.Backend.VueFrame.VueframeBackendApplicationTests], using SpringBootContextLoader
+10:37:20.017 [main] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.Backend.VueFrame.VueframeBackendApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:37:20.019 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.Backend.VueFrame.VueframeBackendApplicationTests]: VueframeBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:37:20.173 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.Backend.VueFrame.VueframeBackendApplication for test class com.Backend.VueFrame.VueframeBackendApplicationTests
+10:37:20.319 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+10:37:20.349 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@315f43d5, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@68fa0ba8, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6c5945a7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2f05be7f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@640f11a1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5c10f1c3, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7ac2e39b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@78365cfa, org.springframework.test.context.event.EventPublishingTestExecutionListener@64a8c844, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3f6db3fb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@52de51b6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@18c5069b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3a0d172f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@68ad99fe, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@485e36bc]
+10:37:20.467 [main] INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+10:37:20.894 [main] WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/Users/swapnalig/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/D:/Users/swapnalig/.m2/repository/org/json/json/20231013/json-20231013.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+10:37:20.928 [main] INFO  c.B.V.VueframeBackendApplicationTests - Starting VueframeBackendApplicationTests using Java 17.0.1 on CPL-DEV-170 with PID 18920 (started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+10:37:20.929 [main] INFO  c.B.V.VueframeBackendApplicationTests - No active profile set, falling back to 1 default profile: "default"
+10:37:22.672 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10:37:22.921 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 231 ms. Found 20 JPA repository interfaces.
+10:37:24.033 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:37:24.942 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:37:25.098 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+10:37:25.232 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+10:37:25.549 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+10:37:25.831 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+10:37:27.406 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+10:37:27.422 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10:37:31.783 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+10:37:31.858 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36a59d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51751265, org.springframework.security.web.context.SecurityContextPersistenceFilter@d91e8c7, org.springframework.security.web.header.HeaderWriterFilter@1a899fcd, org.springframework.web.filter.CorsFilter@7f59f4e4, org.springframework.security.web.authentication.logout.LogoutFilter@74fda9ed, com.Backend.VueFrame.security.JwtAuthFilter@30b29f55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77afdbc5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b718c45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5295a774, org.springframework.security.web.session.SessionManagementFilter@6e6ec71f, org.springframework.security.web.access.ExceptionTranslationFilter@3445341, org.springframework.security.web.access.intercept.AuthorizationFilter@6cca70e3]
+10:37:32.734 [main] INFO  c.B.V.VueframeBackendApplicationTests - Started VueframeBackendApplicationTests in 12.306 seconds (JVM running for 13.813)
+10:37:33.140 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+10:37:33.144 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+10:37:33.947 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
