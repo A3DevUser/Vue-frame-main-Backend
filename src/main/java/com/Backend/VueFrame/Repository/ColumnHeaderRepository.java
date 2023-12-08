@@ -30,7 +30,7 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
             + "COLUMN_FILTER_TYPE, \r\n"
             + "SEC_ID,DECODE(:emd,'yes',CELL_TYPE,'add',CELL_TYPE,'no',null,null) as CELL_TYPE,\r\n"
             + "WIDTH, SUB_SEC_ID, SUB_SEC_NAME, SUB_SEC_WIDTH, \r\n"
-            + "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY , DB_COLUMN_LIMIT, DB_COLUMN_CONST, HIDE_SHOW\r\n"
+            + "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY , DB_COLUMN_LIMIT, DB_COLUMN_CONST, HIDE_SHOW, TARGET_ID\r\n"
             + "from vf_column_header where FORM_ID = :formId\r\n"
             + "and (CELL_TYPE not in ('modalBtn','import','export','iEdropDown','link') or CELL_TYPE is null)\r\n"
             + "union\r\n"
@@ -39,7 +39,7 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
             + "COLUMN_FILTER_TYPE, \r\n"
             + "SEC_ID, CELL_TYPE, WIDTH, \r\n"
             + "SUB_SEC_ID, SUB_SEC_NAME, SUB_SEC_WIDTH, \r\n"
-            + "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY, DB_COLUMN_LIMIT, DB_COLUMN_CONST, HIDE_SHOW \r\n"
+            + "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY, DB_COLUMN_LIMIT, DB_COLUMN_CONST, HIDE_SHOW, TARGET_ID \r\n"
             + "from vf_column_header where FORM_ID = :formId\r\n"
             + "and CELL_TYPE in ('modalBtn','import','export','iEdropDown','link')", nativeQuery = true)
 	List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);	

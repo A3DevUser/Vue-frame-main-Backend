@@ -11,6 +11,7 @@ public class CombinedObject {
 	private String isMrow;
 	private String seqId;
 	private String cat;
+	private String targetId;
 	
 	
 	public String getNavName() {
@@ -68,9 +69,6 @@ public class CombinedObject {
 	}
 	
 	
-	
-	
-	
 	public String getCat() {
 		return cat;
 	}
@@ -79,9 +77,16 @@ public class CombinedObject {
 	}
 	
 	
+	public String getTargetId() {
+		return targetId;
+	}
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+	
 	
 	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
-			String isMain, String isMrow, String seqId, String cat) {
+			String isMain, String isMrow, String seqId, String cat, String targetId) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -92,7 +97,9 @@ public class CombinedObject {
 		this.isMrow = isMrow;
 		this.seqId = seqId;
 		this.cat = cat;
+		this.targetId = targetId;
 	}
+	
 	public CombinedObject() {
 		super();
 		// TODO Auto-generated constructor stub

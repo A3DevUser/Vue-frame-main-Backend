@@ -52,6 +52,9 @@ public class GridData {
 	@Column(name = "IS_VIEW")
 	private String isView;
 	
+	@Column(name = "TARGET_ID")
+	private String targetId;
+	
 	
 	public String getWidth() {
 		return width;
@@ -163,10 +166,21 @@ public class GridData {
 	public void setIsView(String isView) {
 		this.isView = isView;
 	}
+	
+	
+	public String getTargetId() {
+		return targetId;
+	}
 
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
 
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow, String isMain, String orderId, String mrGridId, String width, String height, String isView) {
+			String isMrow, String isMain, String orderId, String mrGridId, String width, String height, String isView,
+			String targetId) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -181,6 +195,7 @@ public class GridData {
 		this.width = width;
 		this.height = height;
 		this.isView = isView;
+		this.targetId = targetId;
 	}
 
 	public GridData() {

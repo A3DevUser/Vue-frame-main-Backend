@@ -9,12 +9,12 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="user_details")
+@Table(name="VF_USER_TABLE")
 public class UserInfo { 
 
 	@Id
 	@Column(name="USERID")
-	private int id; 
+	private String id; 
 	
 	@Column(name="USERNAME")
 	private String name;
@@ -34,12 +34,12 @@ public class UserInfo {
 	@Column(name="VF_ROLE")
 	private String roles;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String setId) {
+		this.id = setId;
 	}
 
 	public String getName() {
@@ -90,7 +90,7 @@ public class UserInfo {
 		this.roles = roles;
 	}
 
-	public UserInfo(int id, String name, String firstName, String lastName, String email, String password,
+	public UserInfo(String id, String name, String firstName, String lastName, String email, String password,
 			String roles) {
 		super();
 		this.id = id;

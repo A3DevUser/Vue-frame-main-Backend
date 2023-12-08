@@ -49,6 +49,11 @@ public class WfStageConfigData {
 	@Column (name = "NEXT_STAGE")
 	private String nextStage;
 	
+	@Column (name = "WF_ID")
+	private String wfId;
+	
+	
+	
 	@Column (name  ="NEXT_STATUS")
 	private String nextStatus;
 	
@@ -170,11 +175,25 @@ public class WfStageConfigData {
 	public void setNextStatus(String nextStatus) {
 		this.nextStatus = nextStatus;
 	}
+	
+	
 
 	
+	public String getWfId() {
+		return wfId;
+	}
+
+	public void setWfId(String wfId) {
+		this.wfId = wfId;
+	}
+	
+	
+
+	
+
 	public WfStageConfigData(String configId, String stage, String status, String action, String org,
 			String nextApprover, String role, String objId, String formId, String isStartSatge, String isEndStage,
-			String configName, String nextStage, String nextStatus) {
+			String configName, String nextStage, String wfId, String nextStatus) {
 		super();
 		this.configId = configId;
 		this.stage = stage;
@@ -189,6 +208,7 @@ public class WfStageConfigData {
 		this.isEndStage = isEndStage;
 		this.configName = configName;
 		this.nextStage = nextStage;
+		this.wfId = wfId;
 		this.nextStatus = nextStatus;
 	}
 

@@ -8,7 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.UserInfo;
 import com.Backend.VueFrame.Repository.UserInfoRepository;
 
@@ -32,14 +34,30 @@ public class UserInfoService implements UserDetailsService {
 		return userDetail.map(UserInfoDetails::new) 
 				.orElseThrow(() -> new UsernameNotFoundException("User not found " + username)); 
 	} 
+	
+	
+	
+//	public String addUser(UserInfo userInfo) { 
+//		userInfo.setPassword(encoder.encode(userInfo.getPassword()));
+//		userInfo.setId(114);
+//		repository.save(userInfo); 
+//		return "User Added Successfully"; 
+//	} 
 
-	public String addUser(UserInfo userInfo) { 
-		userInfo.setPassword(encoder.encode(userInfo.getPassword()));
-		userInfo.setId(114);
-		repository.save(userInfo); 
-		return "User Added Successfully"; 
-	} 
+	
+	 public String addUser(@RequestBody UserInfo userInfo) {
+	        String seq = repository.setUserId();
+	        String UserId = "USER-" + seq;
+	        userInfo.setId(UserId);
 
+	        userInfo.setPassword(encoder.encode(userInfo.getPassword()));
+
+	        repository.save(userInfo);
+
+	        return "User Added Successfully";
+	    }
+	
+	
 
 } 
 

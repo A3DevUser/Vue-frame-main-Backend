@@ -59,5 +59,6 @@ public class UserInfoDetails implements UserDetails {
 	@Override
 	public boolean isEnabled() { 
 		return true; 
+		
 	} 
 } 
