@@ -29,7 +29,7 @@ public class RptExpressionController {
 	
 	
 	@PostMapping("setRptExpData")
-	 public List<RptExpression> setRptExpData(@RequestBody List<RptExpression> setData) {
+	 public String setRptExpData(@RequestBody List<RptExpression> setData) {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -41,14 +41,13 @@ public class RptExpressionController {
 		  
 		 List<RptExpression> list = rptExpressionServs.setRptExpData(setData);
 		 
-//		 for (RptExpression i : setData) {
-//			 String v_result = rptExpressionRepo.setRptQueryColumns(i.getExpId(), i.getDsId(), i.getExpression());
-//			 
-//			 System.out.println(v_result);
-//		 }
+		 String v_result = null;
 		 
-		 System.out.println(list);
+		 for (RptExpression i : setData) {
+			 v_result = rptExpressionRepo.setRptQueryColumns(i.getExpId(), i.getDsId(), i.getExpression());
+			 
+		 }
 		 
-		 return list;
+		 return v_result;
 	 }
 }
