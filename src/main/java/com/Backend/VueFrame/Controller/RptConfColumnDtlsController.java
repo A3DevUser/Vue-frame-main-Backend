@@ -9,20 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Backend.VueFrame.Model.RptConfSecDtls;
-import com.Backend.VueFrame.Services.RptConfSecDtlsServices;
+import com.Backend.VueFrame.Model.RptConfColumnDtls;
+import com.Backend.VueFrame.Services.RptConfColumnDtlsServices;
 
 @RestController
 @RequestMapping("VF/")
 @CrossOrigin(origins = "*")
-public class RptConfSecDtlsController {
+public class RptConfColumnDtlsController {
 	
 	@Autowired
-	private RptConfSecDtlsServices rptConfSecDtlsServs;
+	private RptConfColumnDtlsServices rptConfColumnDtlsServs;
 	
-	@GetMapping("getRptConfSec")
-	public List<RptConfSecDtls> getRptConfSec(@RequestParam String formId) {
+	
+	@GetMapping("getRptConfCol")
+	public List<RptConfColumnDtls> getRptConfGen(@RequestParam String formId) {
 		
-		return rptConfSecDtlsServs.getRptConfSec(formId);
+		return rptConfColumnDtlsServs.getRptConfGen(formId);
 	}
 }

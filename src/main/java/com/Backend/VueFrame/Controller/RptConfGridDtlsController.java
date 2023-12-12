@@ -21,7 +21,7 @@ public class RptConfGridDtlsController {
 	private RptConfGridDtlsServices rptConfGridDtlsServs;
 	
 	
-	@GetMapping("getRptConfGen")
+	@GetMapping("getRptConfGrid")
 	public List<RptConfGridDtls> getRptConfGen(@RequestParam String formId) {
 		
 		return rptConfGridDtlsServs.getRptConfGen(formId);

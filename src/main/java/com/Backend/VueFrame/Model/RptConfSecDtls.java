@@ -9,10 +9,11 @@ import javax.persistence.Table;
 @Table(name = "VF_RPT_CONF_SECTION_DTLS")
 public class RptConfSecDtls {
 	
-	@Id
+	
 	@Column(name = "FORM_ID")
 	private String formId;
 	
+	@Id
 	@Column(name = "SEC_ID")
 	private String secId;
 	
