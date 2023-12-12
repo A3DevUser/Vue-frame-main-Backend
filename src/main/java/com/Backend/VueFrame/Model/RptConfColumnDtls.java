@@ -17,10 +17,10 @@ public class RptConfColumnDtls {
 	private String columnId;
 	
 	@Column(name = "COLUMN_NAME")
-	private String columnName;
+	private String fieldName;
 	
 	@Column(name = "COLUMN_STORED_VALUE")
-	private String columnStoredValue;
+	private String accessor;
 	
 	@Column(name = "COLUMN_FILTER_TYPE")
 	private String columnFilterType;
@@ -75,20 +75,21 @@ public class RptConfColumnDtls {
 		this.columnId = columnId;
 	}
 
-	public String getColumnName() {
-		return columnName;
+	
+	public String getFieldName() {
+		return fieldName;
 	}
 
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
+	public void setFieldName(String fieldName) {
+		this.fieldName = fieldName;
 	}
 
-	public String getColumnStoredValue() {
-		return columnStoredValue;
+	public String getAccessor() {
+		return accessor;
 	}
 
-	public void setColumnStoredValue(String columnStoredValue) {
-		this.columnStoredValue = columnStoredValue;
+	public void setAccessor(String accessor) {
+		this.accessor = accessor;
 	}
 
 	public String getColumnFilterType() {
@@ -188,15 +189,14 @@ public class RptConfColumnDtls {
 	}
 	
 	
-
-	public RptConfColumnDtls(String formId, String columnId, String columnName, String columnStoredValue,
-			String columnFilterType, String secId, String cellType, String width, String subSecId, String subSecName,
-			String subSecWidth, String subSecType, String orderBy, String categoryId, String gridId, String hideShow) {
+	public RptConfColumnDtls(String formId, String columnId, String fieldName, String accessor, String columnFilterType,
+			String secId, String cellType, String width, String subSecId, String subSecName, String subSecWidth,
+			String subSecType, String orderBy, String categoryId, String gridId, String hideShow) {
 		super();
 		this.formId = formId;
 		this.columnId = columnId;
-		this.columnName = columnName;
-		this.columnStoredValue = columnStoredValue;
+		this.fieldName = fieldName;
+		this.accessor = accessor;
 		this.columnFilterType = columnFilterType;
 		this.secId = secId;
 		this.cellType = cellType;
@@ -210,6 +210,7 @@ public class RptConfColumnDtls {
 		this.gridId = gridId;
 		this.hideShow = hideShow;
 	}
+	
 
 	public RptConfColumnDtls() {
 		super();

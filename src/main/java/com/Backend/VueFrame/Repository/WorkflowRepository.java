@@ -42,7 +42,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 
 
 	@Query(value = "SELECT VF_WF_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-			String setWfSequence();
+		String setWfSequence();
 
 	
 //	@Procedure(procedureName = "VF_GET_JSON_OBJ.VF_MULT_GRID_JSON")
