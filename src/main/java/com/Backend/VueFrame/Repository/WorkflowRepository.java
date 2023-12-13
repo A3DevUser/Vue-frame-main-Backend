@@ -77,7 +77,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 String getIsMain(@Param("grid_id") String grid_id);
 	 
 	//change by akshay
-	 @Procedure(procedureName = "SET_GRID_DATA_2")
+	 @Procedure(procedureName = "vf_workflow_set_data")
 		void setGridData1(@Param("v_curr_stage") String VF_STAGE,
 				          @Param("v_status") String VF_STATUS,
 	                       @Param("v_action") String VF_ACTION,
