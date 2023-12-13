@@ -104,17 +104,15 @@ public class WorkflowController {
 	 @PostMapping("setWorkflowData")
 	 public Object setWorkflowData(@RequestBody List<WorkflowData> setData) {
 		 
-	        Map<String,Object> obj = new HashMap<>();
+	     Map<String,Object> obj = new HashMap<>();
 
-		 
 		 for (WorkflowData wf :  setData) {
 			 workFlowServ.setWfId(wf);
              obj.put("wfId",wf.getWfId());
              obj.put("formId",wf.getFormId());
-
-
 		 }
-			 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
+			 
+		 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
 		 
 		 return obj;
 	 }
