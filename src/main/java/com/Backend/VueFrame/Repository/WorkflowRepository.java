@@ -42,7 +42,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 
 
 	@Query(value = "SELECT VF_WF_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-			String setWfSequence();
+		String setWfSequence();
 
 	
 //	@Procedure(procedureName = "VF_GET_JSON_OBJ.VF_MULT_GRID_JSON")
@@ -77,7 +77,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 String getIsMain(@Param("grid_id") String grid_id);
 	 
 	//change by akshay
-	 @Procedure(procedureName = "vf_workflow_set_data")
+	 @Procedure(procedureName = "SET_GRID_DATA_2")
 		void setGridData1(@Param("v_curr_stage") String VF_STAGE,
 				          @Param("v_status") String VF_STATUS,
 	                       @Param("v_action") String VF_ACTION,
