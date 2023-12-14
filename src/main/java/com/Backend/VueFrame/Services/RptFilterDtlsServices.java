@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.RptFilterDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Repository.RptFilterDtlsRepository;
@@ -30,5 +31,12 @@ public class RptFilterDtlsServices {
 		List<RptFilterDtls> list = rptFilterDtlsRepo.saveAllAndFlush(setData);
 		
 		return list;
+	}
+	
+	
+	public List<RptFilterDtls> getRptFilData(@RequestParam String rptId) {
+		
+		return rptFilterDtlsRepo.getByRptId(rptId);
+
 	}
 }
