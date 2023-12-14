@@ -45,9 +45,9 @@ public class RptDetailsController {
 	 }
 	
 	
-	@GetMapping("getRptData")
-	public List<RptDetails> getRptData(@RequestParam String rptId) {
+	 @GetMapping("getRptData")
+	 public List<RptDetails> getRptData(@RequestParam String rptId) {
 		
-		return rptDetailsServs.getRptData(rptId);
-	}
+		 return rptDetailsServs.getRptData(rptId);
+	 }
 }

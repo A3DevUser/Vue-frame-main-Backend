@@ -16,4 +16,6 @@ public interface RptExpressionRepository extends JpaRepository<RptExpression, St
 	@Procedure(procedureName = "VF_RPT_QUERY_COLUMNS", outputParameterName = "v_result")
 	String setRptQueryColumns(@Param("p_exp_id") String expId, @Param("p_ds_id") String dsId, @Param("P_QUERY") String pQuery);
 	
+	@Procedure(procedureName = "get_rpt_query_result", outputParameterName = "v_result")
+	String getRptQueryResult(@Param("v_rptid") String rptId);
 }
