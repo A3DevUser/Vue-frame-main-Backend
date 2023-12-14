@@ -31,8 +31,8 @@ public class RptColumnDtlsController {
 
 		 for (RptColumnDtls i :  setData) {
 			 rptColumnDtlsServs.setRptColId(i);
-             obj.put("rptColId",i.getRptColId());
              obj.put("rptId",i.getRptId());
+             obj.put("dsId", i.getDsId());
 		 }
 			 
 		 List<RptColumnDtls> list = rptColumnDtlsServs.setRptColDtls(setData);
