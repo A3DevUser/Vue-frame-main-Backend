@@ -33,7 +33,7 @@ public class RptDetailsController {
 		 for (RptDetails i :  setData) {
 			 rptDetailsServs.setRptIdSeq(i);
              obj.put("rptId",i.getRptId());
-             obj.put("rptDataSrc",i.getRptDataSrc());
+             obj.put("dsId",i.getDsId());
 		 }
 			 
 		 List<RptDetails> list = rptDetailsServs.setRptData(setData);
