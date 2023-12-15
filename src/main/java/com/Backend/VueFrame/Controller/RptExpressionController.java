@@ -1,5 +1,7 @@
 package com.Backend.VueFrame.Controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,4 +63,15 @@ public class RptExpressionController {
 		
 		return v_result;
 	}
+	
+	
+	@GetMapping("getRptQueryWithFilter")
+	 public String getRptQueryWithFilter(@RequestParam String rptId, @RequestParam String pjson) throws UnsupportedEncodingException {
+		String str = URLDecoder.decode(pjson,"UTF-8");
+		System.out.println(str);
+		String v_result = rptExpressionRepo.getRptQueryWithFilter(rptId, pjson);
+		
+		return v_result;
+	}
+	
 }
