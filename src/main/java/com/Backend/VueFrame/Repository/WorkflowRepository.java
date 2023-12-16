@@ -76,8 +76,14 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') FROM VF_GRID_DETAILS WHERE GRID_ID = :grid_id", nativeQuery = true)
 	 String getIsMain(@Param("grid_id") String grid_id);
 	 
+	 @Query(value = "SELECT COLUMN_NAME FROM VF_DEFAULT_COLS", nativeQuery = true)
+	 List<String> getDefaultCols();
+	 
+	 @Query(value = "SELECT VF_IMPORT_EXPORT_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+	 String getImportVfObjIdSeq();
+	 
 	//change by akshay
-	 @Procedure(procedureName = "SET_GRID_DATA_2")
+	 @Procedure(procedureName = "SET_WF_DTLS")
 		void setGridData1(@Param("v_curr_stage") String VF_STAGE,
 				          @Param("v_status") String VF_STATUS,
 	                       @Param("v_action") String VF_ACTION,

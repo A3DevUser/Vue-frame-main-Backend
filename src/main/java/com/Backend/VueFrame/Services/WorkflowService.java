@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,7 +41,7 @@ public class WorkflowService {
 //    }
 	
 	
-public void callInsertDataFromDynamicJsonArray(String json) throws JsonMappingException, JsonProcessingException {
+	public void callInsertDataFromDynamicJsonArray(String json) throws JsonMappingException, JsonProcessingException {
 		
 		System.out.println("json = " + json);
 		workFlowRepo.insertDataFromDynamicJsonArray(json);
@@ -77,6 +78,78 @@ public void callInsertDataFromDynamicJsonArray(String json) throws JsonMappingEx
 		}
 		
     }
+	
+	
+	public void callImportExportAddData(String json) throws JsonMappingException, JsonProcessingException {
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		List<Map<String, String>> list = mapper.readValue(json, ArrayList.class);
+		
+		List<Map<String, String>> returnList = new ArrayList<>();
+		
+		Map<String, String> objIdMap = new HashMap<>();
+		
+		List<String> defCols = workFlowRepo.getDefaultCols();
+	
+		
+		for(Map<String, String> obj : list) {
+			// {single object}
+			String isMain = workFlowRepo.getIsMain(obj.get("GRID_ID"));
+			
+			if(isMain.equals("true")) {
+				
+				for(String colName : defCols) {
+					if(colName.equals("VF_MAIN_OBJ_ID")) {
+						String generatedObjId = workFlowRepo.generateObjId(obj.get("formId"));
+						obj.put(colName, generatedObjId);
+						
+						objIdMap.put(obj.get("MAIN OBJ ID"), generatedObjId);
+					}
+					else {
+						obj.put(colName, "");
+					}
+				}	
+				
+				System.out.println(obj);
+				
+				returnList.add(obj);
+			}
+		}
+		
+		System.out.println(objIdMap);
+		
+		for(Map<String, String> obj : list) {
+			
+			String isMain = workFlowRepo.getIsMain(obj.get("GRID_ID"));
+
+			if(isMain.equals("false")) {
+				
+				for(String colName : defCols) {
+					if(colName.equals("VF_MAIN_OBJ_ID")) {
+						String val = obj.get("MAIN OBJ ID");
+						obj.put(colName, objIdMap.get(val));
+					}
+					else if(colName.equals("VF_OBJ_ID")) {
+						String v_grid_id = obj.get("GRID_ID");
+						String getImportVfObjId = workFlowRepo.getImportVfObjIdSeq();
+						String formatedObjId = v_grid_id+"-"+getImportVfObjId;
+						obj.put(colName, formatedObjId);
+					}
+				}
+				
+				System.out.println(obj);
+				returnList.add(obj);
+			}
+		}
+		
+		System.out.println(returnList);
+		String StrReturnList = mapper.writeValueAsString(returnList);
+		
+		System.out.println(StrReturnList);
+		callInsertDataFromDynamicJsonArray(StrReturnList);
+		
+	}
 
 	
 	public void callSetGridData(String gridId) {

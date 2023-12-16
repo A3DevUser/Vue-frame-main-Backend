@@ -46,7 +46,7 @@ public class WorkflowController {
 //    }
 //	
 	@PostMapping("callWorkflowProcedure")
-	public String insertData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException{
+	public String insertData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException {
 	    if (json != null) {
 //	        logServ.log("e", "Error", "Error Details" + json);
 //	        logServ.log("d", "Debug Subject", "Debug Details" + json);
@@ -54,6 +54,13 @@ public class WorkflowController {
 	    }
 
 	    return json;
+	}
+	
+	
+	@PostMapping("importExportAddData")
+	public void importExportAddData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException {
+		
+		workFlowServ.callImportExportAddData(json);
 	}
 	
 	
