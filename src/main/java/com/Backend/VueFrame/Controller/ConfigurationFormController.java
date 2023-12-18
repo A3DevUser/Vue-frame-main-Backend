@@ -41,6 +41,10 @@ public class ConfigurationFormController {
 
 	    @PostMapping("postConfigData")
 	    public Object configureAll(@RequestBody List<CombinedObject> combinedObjectList) {
+	    	for(CombinedObject i : combinedObjectList) {
+	    		System.out.println(i);
+	    	}
+	    	
 	        List<NavBarData> navBarDataList = new ArrayList<>();
 	        List<GridData> gridDataList = new ArrayList<>();
 	        Map<String,Object> obj = new HashMap<>();
