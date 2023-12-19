@@ -58,6 +58,7 @@ public class WorkflowService {
 			
 			if (isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 				System.out.println(obj.get("GRID_ID"));
+				System.out.println("workflow running - "+obj);
 				
 				workFlowRepo.setGridData1(
 							obj.get("VF_STAGE"),
@@ -97,13 +98,13 @@ public class WorkflowService {
 			// {single object}
 			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
 			
-			System.out.println(isMainAndFomrIdMap);
+			String formId = isMainAndFomrIdMap.get("FORM_ID");
 			
 			if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 				
 				for(String colName : defCols) {
 					if(colName.equals("VF_MAIN_OBJ_ID")) {
-						String generatedObjId = workFlowRepo.generateObjId(isMainAndFomrIdMap.get("FORM_ID"));
+						String generatedObjId = workFlowRepo.generateObjId(formId);
 						obj.put(colName, generatedObjId);
 						
 						objIdMap.put(obj.get("MAIN OBJ ID"), generatedObjId);
@@ -111,7 +112,10 @@ public class WorkflowService {
 					else {
 						obj.put(colName, "");
 					}
-				}	
+				}
+				
+				// adding formId in every object
+				obj.put("formId", formId);
 				
 				System.out.println(obj);
 				
@@ -124,6 +128,8 @@ public class WorkflowService {
 		for(Map<String, String> obj : list) {
 			
 			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
+			
+			String formId = isMainAndFomrIdMap.get("FORM_ID");
 
 			if(isMainAndFomrIdMap.get("IS_MAIN").equals("false")) {
 				
@@ -139,6 +145,8 @@ public class WorkflowService {
 						obj.put(colName, formatedObjId);
 					}
 				}
+				
+				obj.put("formId", formId);
 				
 				System.out.println(obj);
 				returnList.add(obj);
