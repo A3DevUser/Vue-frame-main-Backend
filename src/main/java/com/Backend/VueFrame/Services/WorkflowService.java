@@ -54,9 +54,9 @@ public class WorkflowService {
 		for(Map<String, String> obj : list) {
 			
 			// this will give true/false if the current object's grid_id is "main grid" or not. 
-			String isMain = workFlowRepo.getIsMain(obj.get("GRID_ID"));
+			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
 			
-			if (isMain.equals("true")) {
+			if (isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 				System.out.println(obj.get("GRID_ID"));
 				
 				workFlowRepo.setGridData1(
@@ -95,13 +95,15 @@ public class WorkflowService {
 		
 		for(Map<String, String> obj : list) {
 			// {single object}
-			String isMain = workFlowRepo.getIsMain(obj.get("GRID_ID"));
+			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
 			
-			if(isMain.equals("true")) {
+			System.out.println(isMainAndFomrIdMap);
+			
+			if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 				
 				for(String colName : defCols) {
 					if(colName.equals("VF_MAIN_OBJ_ID")) {
-						String generatedObjId = workFlowRepo.generateObjId(obj.get("formId"));
+						String generatedObjId = workFlowRepo.generateObjId(isMainAndFomrIdMap.get("FORM_ID"));
 						obj.put(colName, generatedObjId);
 						
 						objIdMap.put(obj.get("MAIN OBJ ID"), generatedObjId);
@@ -121,9 +123,9 @@ public class WorkflowService {
 		
 		for(Map<String, String> obj : list) {
 			
-			String isMain = workFlowRepo.getIsMain(obj.get("GRID_ID"));
+			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
 
-			if(isMain.equals("false")) {
+			if(isMainAndFomrIdMap.get("IS_MAIN").equals("false")) {
 				
 				for(String colName : defCols) {
 					if(colName.equals("VF_MAIN_OBJ_ID")) {
