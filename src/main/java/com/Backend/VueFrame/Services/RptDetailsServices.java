@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.RptDetails;
 import com.Backend.VueFrame.Model.WorkflowData;
@@ -54,5 +55,12 @@ public class RptDetailsServices {
 		List<NavBarData> updatedNavDataList = confService.SetNavData(navBarDataList);
 		
 		return list;
+	}
+	
+	
+	public List<RptDetails> getRptData(@RequestParam String rptId) {
+		
+		return rptDetailsRepo.getByRptId(rptId);
+		
 	}
 }

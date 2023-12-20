@@ -6,11 +6,14 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.RptDetails;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.RptDetailsServices;
@@ -33,11 +36,18 @@ public class RptDetailsController {
 		 for (RptDetails i :  setData) {
 			 rptDetailsServs.setRptIdSeq(i);
              obj.put("rptId",i.getRptId());
-
+             obj.put("dsId",i.getDsId());
 		 }
 			 
 		 List<RptDetails> list = rptDetailsServs.setRptData(setData);
 		 
 		 return obj;
+	 }
+	
+	
+	 @GetMapping("getRptData")
+	 public List<RptDetails> getRptData(@RequestParam String rptId) {
+		
+		 return rptDetailsServs.getRptData(rptId);
 	 }
 }

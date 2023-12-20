@@ -40,3 +40,6 @@ public interface DropDownRepository extends JpaRepository<DropDownData, String> 
 		  String getDDDataRep(@Param("p_formId") String formId, @Param("p_colId") String colId,
 					@Param("p_gridId") String gridId,@Param("p_jsonData") String jsonDrop);
 }
+
+
+

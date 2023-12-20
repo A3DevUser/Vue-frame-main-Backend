@@ -20,7 +20,7 @@ public class RptDetails {
 	private String rptTitle;
 	
 	@Column(name = "RPT_DATA_SRC")
-	private String rptDataSrc;
+	private String dsId;
 	
 	@Column(name = "RPT_PKG")
 	private String rptPkg;
@@ -57,12 +57,13 @@ public class RptDetails {
 		this.rptTitle = rptTitle;
 	}
 
-	public String getRptDataSrc() {
-		return rptDataSrc;
+	
+	public String getDsId() {
+		return dsId;
 	}
 
-	public void setRptDataSrc(String rptDataSrc) {
-		this.rptDataSrc = rptDataSrc;
+	public void setDsId(String dsId) {
+		this.dsId = dsId;
 	}
 
 	public String getRptPkg() {
@@ -90,13 +91,13 @@ public class RptDetails {
 	}
 
 	
-	public RptDetails(String rptId, String rptName, String rptTitle, String rptDataSrc, String rptPkg,
-			String rptInfcDtls, String rptType) {
+	public RptDetails(String rptId, String rptName, String rptTitle, String dsId, String rptPkg, String rptInfcDtls,
+			String rptType) {
 		super();
 		this.rptId = rptId;
 		this.rptName = rptName;
 		this.rptTitle = rptTitle;
-		this.rptDataSrc = rptDataSrc;
+		this.dsId = dsId;
 		this.rptPkg = rptPkg;
 		this.rptInfcDtls = rptInfcDtls;
 		this.rptType = rptType;

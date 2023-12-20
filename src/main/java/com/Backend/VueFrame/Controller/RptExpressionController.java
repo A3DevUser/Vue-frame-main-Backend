@@ -1,14 +1,18 @@
 package com.Backend.VueFrame.Controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.RptExpression;
@@ -50,4 +54,24 @@ public class RptExpressionController {
 		 
 		 return v_result;
 	 }
+	
+	
+	@GetMapping("getRptQueryResult")
+	 public String getRptQueryResult(@RequestParam String rptId) {
+		
+		String v_result = rptExpressionRepo.getRptQueryResult(rptId);
+		
+		return v_result;
+	}
+	
+	
+	@GetMapping("getRptQueryWithFilter")
+	 public String getRptQueryWithFilter(@RequestParam String rptId, @RequestParam String pjson) throws UnsupportedEncodingException {
+		String str = URLDecoder.decode(pjson,"UTF-8");
+		System.out.println(str);
+		String v_result = rptExpressionRepo.getRptQueryWithFilter(rptId, pjson);
+		
+		return v_result;
+	}
+	
 }

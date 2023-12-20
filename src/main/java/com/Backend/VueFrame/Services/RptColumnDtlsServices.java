@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Repository.RptColumnDtlsRepository;
@@ -30,5 +31,12 @@ public class RptColumnDtlsServices {
 		List<RptColumnDtls> list = rptColumnDtlsRepo.saveAllAndFlush(setData);
 		
 		return list;
+	}
+	
+	
+	public List<RptColumnDtls> getRptColData(@RequestParam String rptId) {
+		
+		return rptColumnDtlsRepo.getByRptId(rptId);
+		
 	}
 }
