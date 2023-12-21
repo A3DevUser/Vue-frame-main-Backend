@@ -182,29 +182,36 @@ public class WorkflowService {
 	}
 
 
-public String getJsonData(String formId, String VF_CURRENT_USER) {
-	System.out.println("iNSIDE getJsonData formId = " + formId);
-	System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER));
-	return workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER);
+	public String getJsonData(String formId, String VF_CURRENT_USER) {
+		System.out.println("iNSIDE getJsonData formId = " + formId);
+		System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER));
+		return workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER);
+		
+	}
+
 	
-}
+	public String getMultRowData(String formId, String mainObjId) {
+		
+		return workFlowRepo.getMultRowData(formId, mainObjId);
+	}
 
 
-public String generateObjId(String formId) {
-	
-	String objId = workFlowRepo.generateObjId(formId);
-	
-	return objId;
-	
-}
 
-
-public String setConfigData(String formId) {
+	public String generateObjId(String formId) {
+		
+		String objId = workFlowRepo.generateObjId(formId);
+		
+		return objId;
+		
+	}
 	
-	String setData = workFlowRepo.setConfigData(formId);
 	
-	return setData;
-}
+	public String setConfigData(String formId) {
+		
+		String setData = workFlowRepo.setConfigData(formId);
+		
+		return setData;
+	}
 
 
 //public void setWFGridData1(
@@ -241,11 +248,5 @@ public String setConfigData(String formId) {
 //    );
 //}
 
-
-
-
-
-          
-          
-
+	
 }
