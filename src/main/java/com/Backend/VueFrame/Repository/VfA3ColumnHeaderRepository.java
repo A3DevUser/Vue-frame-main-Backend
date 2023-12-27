@@ -1,0 +1,12 @@
+package com.Backend.VueFrame.Repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Backend.VueFrame.Model.VfA3ColumnHeader;
+
+public interface VfA3ColumnHeaderRepository extends JpaRepository<VfA3ColumnHeader, Integer>{
+	
+	List<VfA3ColumnHeader> findAll();
+}
