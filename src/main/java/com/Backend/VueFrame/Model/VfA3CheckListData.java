@@ -57,6 +57,9 @@ public class VfA3CheckListData {
               
               @Column (name = "FORM_ID")
               private String formId;
+              
+              @Column(name = "RESPONSE_TYPE")
+              private String resType;
 
 			public String getId() {
 				return id;
@@ -185,10 +188,22 @@ public class VfA3CheckListData {
 			public void setFormId(String formId) {
 				this.formId = formId;
 			}
+			
+			
+
+			public String getResType() {
+				return resType;
+			}
+
+			public void setResType(String resType) {
+				this.resType = resType;
+			}
+
+			
 
 			public VfA3CheckListData(String id, String objective, String process, String subProcess, String testRef,
 					String testTitle, String schemeCode, String auditId, String risk, String control, String areaName,
-					String frequency, String dropDown, String mixVal, String maxVal, String formId) {
+					String frequency, String dropDown, String mixVal, String maxVal, String formId, String resType) {
 				super();
 				this.id = id;
 				this.objective = objective;
@@ -206,6 +221,7 @@ public class VfA3CheckListData {
 				this.mixVal = mixVal;
 				this.maxVal = maxVal;
 				this.formId = formId;
+				this.resType = resType;
 			}
 
 			public VfA3CheckListData() {
