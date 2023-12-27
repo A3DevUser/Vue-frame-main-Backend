@@ -805,3 +805,387 @@ Caused by: java.lang.IllegalStateException: Method public abstract java.util.Lis
 	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.validate(PartTreeJpaQuery.java:147)
 	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:90)
 	... 61 common frames omitted
+12:29:28.800 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:29:28.803 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:29:28.871 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in D:\Users\swapnalig\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/D:/Users/swapnalig/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+12:29:28.871 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+12:29:28.871 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+12:29:30.088 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:29:30.312 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 212 ms. Found 31 JPA repository interfaces.
+12:29:31.347 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:29:31.359 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:29:31.363 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:29:31.364 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:29:31.598 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:29:31.599 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2727 ms
+12:29:32.167 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:29:33.451 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:29:33.545 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:29:33.665 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+12:29:33.922 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+12:29:34.125 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:29:35.302 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:29:35.315 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:29:37.353 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:29:37.373 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e4008fc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62c53d29, org.springframework.security.web.context.SecurityContextPersistenceFilter@37e27fbe, org.springframework.security.web.header.HeaderWriterFilter@702d2ff6, org.springframework.web.filter.CorsFilter@60883a1f, org.springframework.security.web.authentication.logout.LogoutFilter@4bea22f, com.Backend.VueFrame.security.JwtAuthFilter@c433b39, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c15d5c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fb052cc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@304a0140, org.springframework.security.web.session.SessionManagementFilter@3d7ea719, org.springframework.security.web.access.ExceptionTranslationFilter@57ad5b10, org.springframework.security.web.access.intercept.AuthorizationFilter@56874dd0]
+12:29:37.640 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:29:37.666 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:29:37.700 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:29:37.721 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 9.303 seconds (JVM running for 9.884)
+12:30:51.962 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:30:51.962 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:30:51.967 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+12:30:52.478 [http-nio-8080-exec-1] ERROR errorLogger - Subject: JWT Token Generation, Details: Error DetailsAuthRequest [username=madhur1, password=1234]
+12:45:41.439 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+12:45:41.728 [Thread-8] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+12:45:41.731 [Thread-8] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:45:41.751 [Thread-8] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+12:45:41.810 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:259)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:241)
+ app//oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:346)
+12:45:41.811 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [InterruptTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/java.lang.Object.wait(Native Method)
+ java.base@17.0.1/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.1/java.util.TimerThread.run(Timer.java:516)
+12:45:41.812 [Thread-8] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:45:41.845 [Thread-8] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+12:45:41.886 [Thread-8] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+12:45:42.002 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:45:42.173 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:45:42.518 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:45:43.526 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:45:43.527 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:45:44.359 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:45:44.500 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 140 ms. Found 31 JPA repository interfaces.
+12:45:44.777 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:45:44.777 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:45:44.778 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:45:44.779 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:45:44.822 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:45:44.822 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1291 ms
+12:45:44.970 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+12:45:45.399 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+12:45:45.420 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:45:45.431 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:45:45.690 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:45:45.690 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:45:46.773 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:45:46.789 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8490e54, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@118b4ac5, org.springframework.security.web.context.SecurityContextPersistenceFilter@60d70077, org.springframework.security.web.header.HeaderWriterFilter@7e3a1b28, org.springframework.web.filter.CorsFilter@3ee05556, org.springframework.security.web.authentication.logout.LogoutFilter@55bad5c1, com.Backend.VueFrame.security.JwtAuthFilter@50e7829, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@545620c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a1b9231, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d64a4, org.springframework.security.web.session.SessionManagementFilter@4de757a5, org.springframework.security.web.access.ExceptionTranslationFilter@777869ac, org.springframework.security.web.access.intercept.AuthorizationFilter@57ad2ddb]
+12:45:46.868 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:45:46.883 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:45:46.893 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:45:46.903 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 3.452 seconds (JVM running for 979.067)
+12:45:46.909 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+12:48:01.387 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+12:48:01.407 [Thread-12] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+12:48:01.407 [Thread-12] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:48:01.410 [Thread-12] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:48:01.411 [Thread-12] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+12:48:01.412 [Thread-12] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+12:48:01.416 [Thread-12] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:48:01.417 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+12:48:01.834 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+12:48:01.953 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:48:01.953 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:48:02.385 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:48:02.480 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 31 JPA repository interfaces.
+12:48:02.606 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:48:02.606 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:48:02.607 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:48:02.607 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:48:02.641 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:48:02.641 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 684 ms
+12:48:02.730 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+12:48:03.229 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+12:48:03.248 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:48:03.255 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:48:03.455 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:48:03.455 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:48:04.144 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:48:04.153 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@470ce284, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1af205f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c018555, org.springframework.security.web.header.HeaderWriterFilter@220e8e04, org.springframework.web.filter.CorsFilter@37209088, org.springframework.security.web.authentication.logout.LogoutFilter@5395345f, com.Backend.VueFrame.security.JwtAuthFilter@156f35f3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@bfbacdd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dd36d08, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a0fd58c, org.springframework.security.web.session.SessionManagementFilter@89cd4f, org.springframework.security.web.access.ExceptionTranslationFilter@4a91a585, org.springframework.security.web.access.intercept.AuthorizationFilter@43dfd9b1]
+12:48:04.205 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:48:04.214 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:48:04.218 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:48:04.230 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.328 seconds (JVM running for 1116.393)
+12:48:04.231 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+12:48:23.523 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+12:48:23.542 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+12:48:23.543 [Thread-17] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:48:23.545 [Thread-17] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OJDBC-WORKER-THREAD-4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+ java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:48:23.546 [Thread-17] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-3 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:48:23.547 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+12:48:23.548 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+12:48:23.555 [Thread-17] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:48:23.555 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+12:48:24.193 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+12:48:24.294 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:48:24.295 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:48:24.639 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:48:24.740 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 31 JPA repository interfaces.
+12:48:24.863 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:48:24.863 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:48:24.864 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:48:24.864 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:48:24.892 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:48:24.893 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 596 ms
+12:48:24.979 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+12:48:25.507 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+12:48:25.523 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:48:25.532 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:48:25.741 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:48:25.741 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:48:26.372 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:48:26.384 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66c86d6f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fb2e84f, org.springframework.security.web.context.SecurityContextPersistenceFilter@24b0349f, org.springframework.security.web.header.HeaderWriterFilter@4156be82, org.springframework.web.filter.CorsFilter@47f31a06, org.springframework.security.web.authentication.logout.LogoutFilter@21a3b64a, com.Backend.VueFrame.security.JwtAuthFilter@3158e796, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17fd5f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7529d9fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bd0b642, org.springframework.security.web.session.SessionManagementFilter@6b935b37, org.springframework.security.web.access.ExceptionTranslationFilter@2a51e76f, org.springframework.security.web.access.intercept.AuthorizationFilter@1c3213a1]
+12:48:26.434 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:48:26.442 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:48:26.447 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:48:26.453 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.196 seconds (JVM running for 1138.616)
+12:48:26.455 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+12:49:00.398 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+12:49:00.426 [Thread-22] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+12:49:00.427 [Thread-22] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:49:00.432 [Thread-22] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-4 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:49:00.433 [Thread-22] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+12:49:00.434 [Thread-22] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+12:49:00.443 [Thread-22] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:49:00.445 [Thread-22] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+12:49:00.834 [Thread-22] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+12:49:00.932 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:49:00.933 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:49:01.305 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:49:01.408 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 31 JPA repository interfaces.
+12:49:01.572 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:49:01.572 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:49:01.572 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:49:01.573 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:49:01.607 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:49:01.607 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 672 ms
+12:49:01.695 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+12:49:02.396 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+12:49:02.415 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:49:02.422 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:49:02.620 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:49:02.621 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:49:03.314 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:49:03.323 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77916004, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b7eaf10, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d93af69, org.springframework.security.web.header.HeaderWriterFilter@e652548, org.springframework.web.filter.CorsFilter@2fb559f0, org.springframework.security.web.authentication.logout.LogoutFilter@a91d4d9, com.Backend.VueFrame.security.JwtAuthFilter@123c7728, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74a79626, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@534fb29f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c5d5387, org.springframework.security.web.session.SessionManagementFilter@29940f73, org.springframework.security.web.access.ExceptionTranslationFilter@e72d50, org.springframework.security.web.access.intercept.AuthorizationFilter@6ca9ec45]
+12:49:03.373 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:49:03.382 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:49:03.388 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:49:03.395 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.497 seconds (JVM running for 1175.558)
+12:49:03.396 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+12:50:12.969 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+12:50:12.990 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+12:50:12.991 [Thread-27] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:50:12.993 [Thread-27] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-5 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:50:12.993 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+12:50:12.994 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+12:50:12.998 [Thread-27] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:50:12.999 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+12:50:13.711 [Thread-27] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+12:50:13.820 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:50:13.821 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:50:14.115 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:50:14.213 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 32 JPA repository interfaces.
+12:50:14.316 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:50:14.317 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:50:14.317 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:50:14.317 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:50:14.343 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:50:14.343 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 521 ms
+12:50:14.407 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+12:50:15.013 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+12:50:15.030 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:50:15.039 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:50:15.244 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:50:15.245 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:50:15.896 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:50:15.906 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5055581b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fd4682, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b1ab177, org.springframework.security.web.header.HeaderWriterFilter@301d8945, org.springframework.web.filter.CorsFilter@37baf68f, org.springframework.security.web.authentication.logout.LogoutFilter@4562948f, com.Backend.VueFrame.security.JwtAuthFilter@14a329df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@62039618, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e886cbc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f223267, org.springframework.security.web.session.SessionManagementFilter@4524048d, org.springframework.security.web.access.ExceptionTranslationFilter@d449e82, org.springframework.security.web.access.intercept.AuthorizationFilter@29562add]
+12:50:15.972 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:50:15.979 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:50:15.987 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:50:15.992 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.209 seconds (JVM running for 1248.155)
+12:50:15.994 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+12:50:35.337 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+12:50:35.358 [Thread-32] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+12:50:35.358 [Thread-32] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:50:35.361 [Thread-32] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OJDBC-WORKER-THREAD-5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+ java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:50:35.362 [Thread-32] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-6 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+12:50:35.362 [Thread-32] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+12:50:35.364 [Thread-32] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+12:50:35.368 [Thread-32] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:50:35.369 [Thread-32] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+12:50:36.209 [Thread-32] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+12:50:36.325 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:50:36.325 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:50:36.683 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:50:36.817 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 32 JPA repository interfaces.
+12:50:36.941 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:50:36.942 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:50:36.942 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:50:36.942 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:50:36.981 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:50:36.981 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 653 ms
+12:50:37.080 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+12:50:37.674 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+12:50:37.691 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:50:37.697 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:50:37.917 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:50:37.918 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:50:38.695 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:50:38.704 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7b8d81d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1581a0da, org.springframework.security.web.context.SecurityContextPersistenceFilter@65436323, org.springframework.security.web.header.HeaderWriterFilter@76fa3d36, org.springframework.web.filter.CorsFilter@2ca0eea6, org.springframework.security.web.authentication.logout.LogoutFilter@46375028, com.Backend.VueFrame.security.JwtAuthFilter@50f22731, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d7023de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a44aecb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c2cb0df, org.springframework.security.web.session.SessionManagementFilter@10c242eb, org.springframework.security.web.access.ExceptionTranslationFilter@507517d2, org.springframework.security.web.access.intercept.AuthorizationFilter@43c6675a]
+12:50:38.764 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:50:38.772 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:50:38.777 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:50:38.785 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.497 seconds (JVM running for 1270.947)
+12:50:38.787 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+13:19:59.186 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+13:19:59.225 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+13:19:59.226 [Thread-37] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+13:19:59.236 [Thread-37] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-7 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+13:19:59.237 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+13:19:59.239 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+13:19:59.245 [Thread-37] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:19:59.254 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+13:19:59.574 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+13:19:59.821 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+13:19:59.822 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+13:20:00.241 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:20:00.341 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 32 JPA repository interfaces.
+13:20:00.457 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:20:00.457 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:20:00.457 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:20:00.457 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+13:20:00.485 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:20:00.485 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 661 ms
+13:20:00.559 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+13:20:00.928 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+13:20:00.950 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:20:00.959 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+13:20:01.206 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:20:01.207 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:20:01.931 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+13:20:01.938 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f091c1b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b6ad8ce, org.springframework.security.web.context.SecurityContextPersistenceFilter@bb542a4, org.springframework.security.web.header.HeaderWriterFilter@701c77b2, org.springframework.web.filter.CorsFilter@42c09080, org.springframework.security.web.authentication.logout.LogoutFilter@29480f65, com.Backend.VueFrame.security.JwtAuthFilter@1fe778f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70f466c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63463e8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a8de49e, org.springframework.security.web.session.SessionManagementFilter@7bb21ad2, org.springframework.security.web.access.ExceptionTranslationFilter@6c42ef1c, org.springframework.security.web.access.intercept.AuthorizationFilter@5aca41ff]
+13:20:01.976 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:20:01.983 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:20:01.987 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:20:01.992 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.218 seconds (JVM running for 3034.155)
+13:20:01.994 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+13:20:08.800 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+13:20:08.826 [Thread-42] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+13:20:08.826 [Thread-42] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+13:20:08.829 [Thread-42] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [OJDBC-WORKER-THREAD-8] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+ java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+13:20:08.831 [Thread-42] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-8 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+13:20:08.833 [Thread-42] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-8 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:460)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+13:20:08.833 [Thread-42] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+13:20:08.836 [Thread-42] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+13:20:08.846 [Thread-42] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:20:08.847 [Thread-42] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+13:20:09.210 [Thread-42] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
