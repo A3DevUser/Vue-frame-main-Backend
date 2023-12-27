@@ -212,6 +212,16 @@ public class WorkflowService {
 		
 		return setData;
 	}
+	
+	 // api creation from madhur sir
+	public List<Map<String, String>> getCoiResAndVenDtls() {
+		
+		List<Map<String, String>> list_of_obj = workFlowRepo.getCoiResAndVenDtls();
+		
+		System.out.println(list_of_obj);
+		
+		return list_of_obj;
+	}
 
 
 //public void setWFGridData1(

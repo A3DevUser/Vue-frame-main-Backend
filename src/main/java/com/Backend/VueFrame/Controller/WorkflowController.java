@@ -177,5 +177,14 @@ public class WorkflowController {
 		 String setData = workFlowServ.setConfigData(formId);
 		 return setData;
 	 }
+	 
+	 // api creation from madhur sir
+	 @GetMapping("getCoiResAndVenDtls")
+	 public List<Map<String, String>> getCoiResAndVenDtls() {
+			
+		List<Map<String, String>> list_of_obj = workFlowServ.getCoiResAndVenDtls();
+		
+		return list_of_obj;
+	}
 	
 }
