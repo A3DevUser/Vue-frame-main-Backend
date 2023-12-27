@@ -1,6 +1,7 @@
 package com.Backend.VueFrame.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -73,8 +74,8 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //	                       @Param("v_obj_id") String VF_OBJ_ID);
 //	 
 
-	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') FROM VF_GRID_DETAILS WHERE GRID_ID = :grid_id", nativeQuery = true)
-	 String getIsMain(@Param("grid_id") String grid_id);
+	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') as IS_MAIN, FORM_ID FROM VF_GRID_DETAILS WHERE GRID_ID = :grid_id", nativeQuery = true)
+	 Map<String,String> getIsMainAndFormId(@Param("grid_id") String grid_id);
 	 
 	 @Query(value = "SELECT COLUMN_NAME FROM VF_DEFAULT_COLS", nativeQuery = true)
 	 List<String> getDefaultCols();
