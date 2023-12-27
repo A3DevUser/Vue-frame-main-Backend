@@ -8,5 +8,8 @@ import com.Backend.VueFrame.Model.VfA3ColumnHeader;
 
 public interface VfA3ColumnHeaderRepository extends JpaRepository<VfA3ColumnHeader, Integer>{
 	
-	List<VfA3ColumnHeader> findAll();
+
+//	List<VfA3ColumnHeader> getByFormId(formId);//
+
+	List<VfA3ColumnHeader> getByFormId(String formId);
 }

@@ -109,21 +109,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 
 	 @Procedure(procedureName = "VF_CONFIG_DATA_OBJ", outputParameterName = "v_result")
 	 String setConfigData(@Param("p_form_id") String formId);
-	 
-	 // api creation from madhur sir
-	 @Query(value = "with dat1 as( SELECT *\r\n"
-	 		+ "FROM (\r\n"
-	 		+ "    SELECT  OPTION2,VENDOR_CODE, OPTION3\r\n"
-	 		+ "    FROM coi_response\r\n"
-	 		+ ")\r\n"
-	 		+ "PIVOT (\r\n"
-	 		+ "    MAX(OPTION2) FOR OPTION3 IN (1 , 2 , 3,4,5,6,7,8,9,10,11,12)\r\n"
-	 		+ ")) select * from vendor_details a, dat1 b \r\n"
-	 		+ "where a.VENDORID = b.vendor_code\r\n"
-	 		+ "order by a.username asc", nativeQuery = true)
-	 List<Map<String, String>> getCoiResAndVenDtls();
-	 
-	 
+	  
 	
 }
 
