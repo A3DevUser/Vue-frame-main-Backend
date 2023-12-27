@@ -136,6 +136,13 @@ public class WorkflowController {
 	 }
 	 
 	 
+	 @GetMapping("getMultRowData")
+	 public String getMultRowData(@RequestParam String formId, @RequestParam String mainObjId) {
+		 
+		 return workFlowServ.getMultRowData(formId, mainObjId);
+	 }
+	 
+	 
 //	//Get table data in JSON Format
 //		 @GetMapping("getTableData")
 //		 public String getJsonTableData(@RequestParam String formId) {
