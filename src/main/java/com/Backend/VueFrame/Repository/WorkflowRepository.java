@@ -52,7 +52,8 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //	
 //	 fetch grid data from table using formId
 	 @Procedure(procedureName = "VF_MULT_GRID_JSON_PROC", outputParameterName = "v_obj")
-	   String getJsonDataFromTable(@Param("P_FORM_ID") String formId, @Param("P_USER_ID") String VF_CURRENT_USER);
+	   String getJsonDataFromTable(@Param("P_FORM_ID") String formId, @Param("P_USER_ID") String VF_CURRENT_USER, 
+			   					   @Param("DAYS_FLAG") String daysFlag);
 	 
 	 // to get the multirow data on the basis of main_obj_id
 	 @Procedure(procedureName = "GET_MULTROW_DATA", outputParameterName = "V_RESULT")
