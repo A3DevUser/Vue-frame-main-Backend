@@ -18,4 +18,10 @@ public class TaskConfColumnHeaderServices {
 		
 		return taskConfColumnHeaderRepo.findAll();
 	}
+	
+	
+	public String getTasksByUser(String currUser) {
+		
+		return taskConfColumnHeaderRepo.getTasksByUser(currUser);
+	}
 }
