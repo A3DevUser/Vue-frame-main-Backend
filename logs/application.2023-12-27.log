@@ -1240,3 +1240,29 @@ Caused by: java.lang.IllegalStateException: Method public abstract java.util.Lis
 17:11:23.807 [Thread-47] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 17:11:23.925 [Thread-47] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
 17:11:24.255 [Thread-47] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+17:11:27.629 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 17684 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+17:11:27.629 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+17:11:28.660 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:11:28.810 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 32 JPA repository interfaces.
+17:11:29.077 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+17:11:29.077 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:11:29.078 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:11:29.078 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+17:11:29.136 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:11:29.136 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1492 ms
+17:11:29.263 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+17:11:29.805 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+17:11:29.827 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+17:11:29.852 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+17:11:30.133 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:11:30.135 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:11:31.217 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+17:11:31.228 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c5b8a42, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@605ff4e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@18156318, org.springframework.security.web.header.HeaderWriterFilter@258de216, org.springframework.web.filter.CorsFilter@1ff56ad2, org.springframework.security.web.authentication.logout.LogoutFilter@ade00af, com.Backend.VueFrame.security.JwtAuthFilter@40f4272c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d9e8d3b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7495bcc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18ac77c, org.springframework.security.web.session.SessionManagementFilter@642c7999, org.springframework.security.web.access.ExceptionTranslationFilter@44422392, org.springframework.security.web.access.intercept.AuthorizationFilter@57d9270f]
+17:11:31.304 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+17:11:31.315 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:11:31.324 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+17:11:31.334 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 3.876 seconds (JVM running for 16924.678)
+17:11:31.338 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+17:31:38.734 [HikariPool-10 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Thread starvation or clock leap detected (housekeeper delta=54s354ms392µs200ns).
+18:22:41.016 [HikariPool-10 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Thread starvation or clock leap detected (housekeeper delta=23m31s967ms129µs700ns).
+20:41:30.657 [HikariPool-10 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Thread starvation or clock leap detected (housekeeper delta=3m18s45ms506µs700ns).
