@@ -40,6 +40,7 @@ public class RptFilterDtlsController {
 		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(setData);
 		 
 		 return obj;
+		 
 	 }
 	
 	@GetMapping("getRptFilData")

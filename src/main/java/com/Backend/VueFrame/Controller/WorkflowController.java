@@ -122,6 +122,7 @@ public class WorkflowController {
 		 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
 		 
 		 return obj;
+		 
 	 }
 	 
 	 
@@ -178,12 +179,12 @@ public class WorkflowController {
 	 }
 	 
 	 // api creation from madhur sir
-	 @GetMapping("getCoiResAndVenDtls")
-	 public List<Map<String, String>> getCoiResAndVenDtls() {
-			
-		List<Map<String, String>> list_of_obj = workFlowServ.getCoiResAndVenDtls();
-		
-		return list_of_obj;
-	}
+//	 @GetMapping("getCoiResAndVenDtls")
+//	 public List<Map<String, String>> getCoiResAndVenDtls() {
+//			
+//		List<Map<String, String>> list_of_obj = workFlowServ.getCoiResAndVenDtls();
+//		
+//		return list_of_obj;
+//	}
 	
 }
