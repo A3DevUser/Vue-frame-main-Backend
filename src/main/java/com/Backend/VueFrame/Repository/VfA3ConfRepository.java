@@ -20,6 +20,5 @@ public interface VfA3ConfRepository extends JpaRepository<VFA3ConfModel, String>
 	
 	
 	
-	
 
 }
