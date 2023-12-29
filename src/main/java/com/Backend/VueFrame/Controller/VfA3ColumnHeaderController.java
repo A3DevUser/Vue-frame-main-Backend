@@ -29,5 +29,26 @@ public class VfA3ColumnHeaderController {
 	}
 	
 	
+	@GetMapping("columnHeader")
+	public List<VfA3ColumnHeader> getAllData(){
+		return this.VfA3ColumnHeaderRepo.findAll();
+	}
+	
+	
+	@GetMapping("getByFormIdAndArea")
+	public List<VfA3ColumnHeader> getSchemeCode (@RequestParam String formId,@RequestParam String areaName) {
+		return VfA3ColumnHeaderRepo.getByFormIdAndAreaName(formId, areaName);
 
+		
+		
+}
+	
+	
+	@GetMapping("getColumnHeader")
+	public List<VfA3ColumnHeader> getColumnHeader (@RequestParam String formId,  @RequestParam String areaName, @RequestParam String portfolio) {
+		return VfA3ColumnHeaderRepo.getByFormIdAndAreaNameAndPortfolio(formId, areaName, portfolio);
+
+
+}
+	
 }

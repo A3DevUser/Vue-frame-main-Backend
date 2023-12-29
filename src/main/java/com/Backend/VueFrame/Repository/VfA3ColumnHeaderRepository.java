@@ -12,4 +12,10 @@ public interface VfA3ColumnHeaderRepository extends JpaRepository<VfA3ColumnHead
 //	List<VfA3ColumnHeader> getByFormId(formId);//
 
 	List<VfA3ColumnHeader> getByFormId(String formId);
+
+	
+	List<VfA3ColumnHeader> getByFormIdAndAreaNameAndPortfolio(String formId, 
+			String areaName, String portfolio);
+
+	List<VfA3ColumnHeader> getByFormIdAndAreaName(String formId, String areaName);
 }
