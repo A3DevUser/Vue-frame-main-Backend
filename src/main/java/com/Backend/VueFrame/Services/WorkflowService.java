@@ -182,10 +182,10 @@ public class WorkflowService {
 	}
 
 
-	public String getJsonData(String formId, String VF_CURRENT_USER) {
+	public String getJsonData(String formId, String VF_CURRENT_USER, String daysFlag) {
 		System.out.println("iNSIDE getJsonData formId = " + formId);
-		System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER));
-		return workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER);
+		System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER, daysFlag));
+		return workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER, daysFlag);
 		
 	}
 
