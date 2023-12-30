@@ -52,4 +52,12 @@ public class VFA3ConfController {
 	        return vfA3AccountRepo.fetchAccount(schemeCode);
 	    }
 
+	    
+	    @GetMapping("fetchAccountById")
+	    public List<VFA3AccountData> fetchAccountById(@RequestParam String schemeCode, @RequestParam String accountId) {
+	    	
+	    	List<VFA3AccountData> list = new ArrayList<>();
+	    	System.out.println("columnname" +  list);
+	        return vfA3AccountRepo.fetchAccountById(schemeCode, accountId);
+	    }
 }

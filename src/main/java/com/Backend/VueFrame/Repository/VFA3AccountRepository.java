@@ -13,5 +13,10 @@ public interface VFA3AccountRepository extends JpaRepository<VFA3AccountData, St
 	@Query(value = "SELECT * FROM TABLE(vf_a3_get_account_data_fn(:p_scheme_code))", nativeQuery = true)
 	List<VFA3AccountData> fetchAccount(@Param("p_scheme_code") String scheme_code);
 	
+	
+
+	@Query(value = "SELECT * FROM TABLE(vf_a3_get_account_by_id_fn(:p_scheme_code, :p_ids))", nativeQuery = true)
+	List<VFA3AccountData> fetchAccountById(@Param("p_scheme_code") String scheme_code, @Param("p_ids") String accountId );
+	
 
 }

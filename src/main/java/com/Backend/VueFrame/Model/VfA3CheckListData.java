@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class VfA3CheckListData {              
               @Id
               @Column(name = "ID")
-              private String id;
+              private String testId;
               
               @Column(name = "OBJECTIVE")
               private String objective;
@@ -61,12 +61,14 @@ public class VfA3CheckListData {
               @Column(name = "RESPONSE_TYPE")
               private String resType;
 
-			public String getId() {
-				return id;
+			
+
+			public String getTestId() {
+				return testId;
 			}
 
-			public void setId(String id) {
-				this.id = id;
+			public void setTestId(String testId) {
+				this.testId = testId;
 			}
 
 			public String getObjective() {
@@ -201,11 +203,11 @@ public class VfA3CheckListData {
 
 			
 
-			public VfA3CheckListData(String id, String objective, String process, String subProcess, String testRef,
+			public VfA3CheckListData(String testId, String objective, String process, String subProcess, String testRef,
 					String testTitle, String schemeCode, String auditId, String risk, String control, String areaName,
 					String frequency, String dropDown, String mixVal, String maxVal, String formId, String resType) {
 				super();
-				this.id = id;
+				this.testId = testId;
 				this.objective = objective;
 				this.process = process;
 				this.subProcess = subProcess;

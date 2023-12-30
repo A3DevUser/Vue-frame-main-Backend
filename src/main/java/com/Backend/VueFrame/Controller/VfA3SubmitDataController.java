@@ -29,7 +29,7 @@ public class VfA3SubmitDataController {
 	    List<A3TestData> out = new ArrayList<>();
 
 	    for (A3TestData obj : testItems) {
-	         obj.setIdData(obj.getId().concat(obj.getVendor_name()));
+	         obj.setIdData(obj.getId().concat(obj.getTestId()));
 	            	out.add(obj);
 	            	}	
 			 
