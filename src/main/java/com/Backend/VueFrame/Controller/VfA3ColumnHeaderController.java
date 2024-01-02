@@ -22,8 +22,8 @@ public class VfA3ColumnHeaderController {
 	
 	
 	@GetMapping("getVfA3ConfColumnHeader")
-	public List<VfA3ColumnHeader> getVfA3ColumnHeader (@RequestParam String formId) {	
-		return VfA3ColumnHeaderRepo.getByFormId(formId);
+	public List<VfA3ColumnHeader> getVfA3ColumnHeader (@RequestParam String formId , @RequestParam String isPageType) {	
+		return VfA3ColumnHeaderRepo.getByFormId(formId, isPageType);
 		
 			
 	}

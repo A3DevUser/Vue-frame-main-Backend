@@ -54,6 +54,9 @@ public class VfA3ColumnHeader {
 	
 	@Column (name = "SNS")
 	private String sns;
+	
+	@Column (name = "IS_PAGE_TYPE")
+	private String isPageType;
 
 	public int getSrNo() {
 		return srNo;
@@ -175,10 +178,19 @@ public class VfA3ColumnHeader {
 		this.sns = sns;
 	}
 
+	public String getIsPageType() {
+		return isPageType;
+	}
+
+	public void setIsPageType(String isPageType) {
+		this.isPageType = isPageType;
+	}
+
+	
 	
 	public VfA3ColumnHeader(int srNo, String formName, String fieldName, String accessor, String columnFilter,
 			String sticky, String formId, String parentCell, String cellType, String auditType, String width,
-			String orderBy, String areaName, String portfolio, String sns) {
+			String orderBy, String areaName, String portfolio, String sns, String isPageType) {
 		super();
 		this.srNo = srNo;
 		this.formName = formName;
@@ -195,9 +207,9 @@ public class VfA3ColumnHeader {
 		this.areaName = areaName;
 		this.portfolio = portfolio;
 		this.sns = sns;
+		this.isPageType = isPageType;
 	}
 
-	
 	public VfA3ColumnHeader() {
 		super();
 		// TODO Auto-generated constructor stub
