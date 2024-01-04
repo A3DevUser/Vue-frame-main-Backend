@@ -67,14 +67,10 @@ public class ConfigurationFomrService {
 	 //Set GridId in Grid Table
     
     public GridData setGridId(@RequestBody GridData setData) {
-	    String seq = gridRepo.setGridSequence();
-
-	    String formattedGridId = "GID-" + seq;
-
-	    
-	    setData.setGridId(formattedGridId);
-
-	    return setData;
+    	String seq = gridRepo.setGridSequence();
+    	String formattedGridId = "GID-" + seq;
+    	setData.setGridId(formattedGridId);
+    	return setData;
 	}
     
     
@@ -94,11 +90,20 @@ public class ConfigurationFomrService {
 
         for (GridData gridData : setData) {
             // Set isView based on dbTableName (example logic, replace with your own logic)
-            String isView = gridData.getDbTableName() + "_VIEW";
+        	
+        	String isView;
+        	
+        	if(gridData.getDbTableName() != null) {
+        		isView = gridData.getDbTableName().trim() + "_view";
+        	}
+        	else {
+        		isView = gridData.getDbTableName() + "_view";
+        	}
+            
             gridData.setIsView(isView);
 
             // Save the updated GridData
-            GridData savedGridData = gridRepo.save(gridData);
+            GridData savedGridData = gridRepo.saveAndFlush(gridData);
             updatedGridDataList.add(savedGridData);
         }
 
@@ -107,10 +112,15 @@ public class ConfigurationFomrService {
      
       //Set SectionId in Section Table
 	    public SectionData setSectionId(@RequestBody SectionData setData) {
-		    String seq = sectionRepo.setSectionSequence();
-		    String formattedSecId = "S-" + seq;
-		    setData.setSecId(formattedSecId);
-		    return setData;
+	    	// if secId already not present (it's for form edit functionality)
+	    	if(setData.getSecId() == null) {
+	    		String seq = sectionRepo.setSectionSequence();
+			    String formattedSecId = "S-" + seq;
+			    setData.setSecId(formattedSecId);
+			    return setData;
+	    	}
+		    
+	    	return setData;
 		}
 	    
       
@@ -119,8 +129,7 @@ public class ConfigurationFomrService {
       //set SectionData in section Table
       public List<SectionData> setSectionData(@RequestParam List<SectionData> setData) {
   		
-  		
-  		List<SectionData> list = sectionRepo.saveAll(setData);
+  		List<SectionData> list = sectionRepo.saveAllAndFlush(setData);
   		
   		return list;
   	}
@@ -133,10 +142,10 @@ public class ConfigurationFomrService {
       
       
       public ColumnHeaderData setColumnId(@RequestBody ColumnHeaderData setData) {
-  	    String seq = columnRepo.setColumnSequence();
-  	    String formattedColumnId = "COL-" + seq;
-  	    setData.setColumnId(formattedColumnId);
-  	    return setData;
+    		String seq = columnRepo.setColumnSequence();
+      	    String formattedColumnId = "COL-" + seq;
+      	    setData.setColumnId(formattedColumnId);
+      	    return setData;
   	}
       
  
@@ -144,7 +153,7 @@ public class ConfigurationFomrService {
       //set ColumnData
       public List<ColumnHeaderData> SetColumnData(@RequestBody List<ColumnHeaderData> setData) {
   		
-  		List<ColumnHeaderData> list = columnRepo.saveAll(setData);
+  		List<ColumnHeaderData> list = columnRepo.saveAllAndFlush(setData);
   		
   		return list;
   	}
@@ -152,7 +161,7 @@ public class ConfigurationFomrService {
 	
       public String getmrowUpdate(String formId) {
 		return gridRepo.getMrowData(formId);
-	}
+      }
 
       
       
@@ -162,9 +171,29 @@ public class ConfigurationFomrService {
 //    	  
 //    	  return list;
 //      }
-//      
+      
+      
+   // form edit functionality (to update vf_navbar_details and vf_grid_details)
+      public void updateNavAndGrid(String pJsonData) {
+    	  
+    	  columnRepo.updateNavAndGrid(pJsonData);
+      }
+      
+      
+   // form edit functionality (to update vf_column_header)
+      public void updateColumnHeader(String pJsonData) {
+    	  
+    	  columnRepo.updateColumnHeader(pJsonData);
+      }
+      
+      
+   // form edit functionality (to update vf_grid_details for multirow tables)
+      public void updateMultGridDtls(String pJsonData) {
+    	  
+    	  columnRepo.updateMultGridDtls(pJsonData);
+      }
 	
-	}
+}
 	
 
 

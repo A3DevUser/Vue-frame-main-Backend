@@ -48,8 +48,20 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
 	
 	@Procedure(procedureName="VF_CREATE_GRIDS", outputParameterName = "p_result")
 	String getGridCreationDtls(@Param("p_form_id") String formId);	
-
-
 	
+	
+	// form edit functionality (to update vf_navbar_details and vf_grid_details for main table)
+	@Procedure(procedureName="VF_UPDATE_GENERAL_DATA")
+	void updateNavAndGrid(@Param("p_json_data") String pJsonData);	
+	
+	
+	// form edit functionality (to update vf_column_header for main table)
+	@Procedure(procedureName="VF_UPDATE_COL_DTLS")
+	void updateColumnHeader(@Param("p_json_data") String pJsonData);	
+	
+	
+	// form edit functionality (to update vf_grid_details for multirow tables)
+	@Procedure(procedureName="VF_UPDATE_MULTIROW_DATA")
+	void updateMultGridDtls(@Param("p_json_data") String pJsonData);	
 	
 }

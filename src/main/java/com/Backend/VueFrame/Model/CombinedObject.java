@@ -12,6 +12,8 @@ public class CombinedObject {
 	private String seqId;
 	private String cat;
 	private String targetId;
+	private String formId;
+	private String gridId;
 	
 	
 	public String getNavName() {
@@ -60,7 +62,6 @@ public class CombinedObject {
 	}
 	
 	
-	
 	public String getSeqId() {
 		return seqId;
 	}
@@ -85,8 +86,23 @@ public class CombinedObject {
 	}
 	
 	
+	public String getFormId() {
+		return formId;
+	}
+	
+	public void setFormId(String formId) {
+		this.formId = formId;
+	}
+	
+	public String getGridId() {
+		return gridId;
+	}
+	public void setGridId(String gridId) {
+		this.gridId = gridId;
+	}
+	
 	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
-			String isMain, String isMrow, String seqId, String cat, String targetId) {
+			String isMain, String isMrow, String seqId, String cat, String targetId, String formId, String gridId) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -98,7 +114,10 @@ public class CombinedObject {
 		this.seqId = seqId;
 		this.cat = cat;
 		this.targetId = targetId;
+		this.formId = formId;
+		this.gridId = gridId;
 	}
+	
 	
 	public CombinedObject() {
 		super();

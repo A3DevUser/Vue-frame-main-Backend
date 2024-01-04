@@ -23,6 +23,8 @@ import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.SectionData;
 import com.Backend.VueFrame.Services.ColumnHeaderService;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
 
@@ -40,57 +42,79 @@ public class ConfigurationFormController {
 	   
 
 	    @PostMapping("postConfigData")
-	    public Object configureAll(@RequestBody List<CombinedObject> combinedObjectList) {
+	    public Object configureAll(@RequestBody List<CombinedObject> combinedObjectList) throws JsonProcessingException {
 	    	for(CombinedObject i : combinedObjectList) {
-	    		System.out.println(i);
+	    		System.out.println(i.getFormId());
 	    	}
 	    	
-	        List<NavBarData> navBarDataList = new ArrayList<>();
-	        List<GridData> gridDataList = new ArrayList<>();
-	        Map<String,Object> obj = new HashMap<>();
+	    	Map<String,Object> obj = new HashMap<>();
+	    	
+	    	// if formId is null (it's for form edit functionality)
+	    	if(combinedObjectList.get(0).getFormId() == null) {
+	    		
+	    		List<NavBarData> navBarDataList = new ArrayList<>();
+		        List<GridData> gridDataList = new ArrayList<>();
+		        
+		        
+		        
+		        for (CombinedObject combinedObject : combinedObjectList) {
+		          
+		                // Create a new NavBarData instance
+		                NavBarData navBarData = new NavBarData();
+		                confService.setFormId(navBarData);	              
+		                obj.put("formId",navBarData.getFormId());
+		                navBarData.setNavName(combinedObject.getNavName());
+		                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
+		                navBarData.setNavigate("/GridForm");
+		                navBarData.setSeqId(combinedObject.getSeqId());
+		                navBarData.setCat(combinedObject.getCat());
+		                navBarData.setTargetId(combinedObject.getTargetId());
+
+		                navBarDataList.add(navBarData);
+
+		                GridData gridData = new GridData();
+		                confService.setGridId(gridData);
+		                obj.put("gridId",gridData.getGridId());
+		                gridData.setFormId(navBarData.getFormId());
+		                gridData.setGridName(combinedObject.getGridName());
+		                gridData.setDbTableName(combinedObject.getDbTableName());
+		                gridData.setIsMrow(combinedObject.getIsMrow());
+		                gridData.setIsMain("true");
+		                gridData.setTargetId(combinedObject.getTargetId());
+		                
+		                
+		                // Set other GridData fields as needed
+
+		                // Set the gridId for GridData
+
+		                // Add the GridData instance to the list
+		                gridDataList.add(gridData);
+		            }
+		        
+
+		        // Save the lists of NavBarData and GridData instances
+		        List<NavBarData> updatedNavDataList = confService.SetNavData(navBarDataList);
+		        List<GridData> savedGridDataList = confService.setGridData(gridDataList);
+
+		        // You may want to return a response if needed
+//		        List<String,String> Op = new List();
+		        return ResponseEntity.ok(obj);
+	    		
+	    	}
+	    	else {
+	    		
+	    		// using ObjectMapper dependancy to convert object into string.
+	    		ObjectMapper mapper = new ObjectMapper();
+	    		   
+	    		// converting object into string
+	    		String pJsonData = mapper.writeValueAsString(combinedObjectList);
+	    		
+	    		System.out.println(pJsonData);
+	    		confService.updateNavAndGrid(pJsonData);
+	    	}
+	    	
+	    	return obj;
 	        
-	        for (CombinedObject combinedObject : combinedObjectList) {
-	          
-	                // Create a new NavBarData instance
-	                NavBarData navBarData = new NavBarData();
-	                confService.setFormId(navBarData);	              
-	                obj.put("formId",navBarData.getFormId());
-	                navBarData.setNavName(combinedObject.getNavName());
-	                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
-	                navBarData.setNavigate("/GridForm");
-	                navBarData.setSeqId(combinedObject.getSeqId());
-	                navBarData.setCat(combinedObject.getCat());
-	                navBarData.setTargetId(combinedObject.getTargetId());
-
-	                navBarDataList.add(navBarData);
-
-	                GridData gridData = new GridData();
-	                confService.setGridId(gridData);
-	                obj.put("gridId",gridData.getGridId());
-	                gridData.setFormId(navBarData.getFormId());
-	                gridData.setGridName(combinedObject.getGridName());
-	                gridData.setDbTableName(combinedObject.getDbTableName());
-	                gridData.setIsMrow(combinedObject.getIsMrow());
-	                gridData.setIsMain("true");
-	                gridData.setTargetId(combinedObject.getTargetId());
-	                
-	                
-	                // Set other GridData fields as needed
-
-	                // Set the gridId for GridData
-
-	                // Add the GridData instance to the list
-	                gridDataList.add(gridData);
-	            }
-	        
-
-	        // Save the lists of NavBarData and GridData instances
-	        List<NavBarData> updatedNavDataList = confService.SetNavData(navBarDataList);
-	        List<GridData> savedGridDataList = confService.setGridData(gridDataList);
-
-	        // You may want to return a response if needed
-//	        List<String,String> Op = new List();
-	        return ResponseEntity.ok(obj);
 	    }
 
 	    
@@ -100,9 +124,7 @@ public class ConfigurationFormController {
 	    	
 	        Map<String,Object> obj = new HashMap<>();
 //    		HashMap<String, S> val = new HashMap<>();
-
-
-	    	
+	        
 	    	for (SectionData sec :  secData) {
 	    		confService.setSectionId(sec);
 //	            obj.put("secId",sec.getSecId());
@@ -114,35 +136,75 @@ public class ConfigurationFormController {
 	    }
 	    	    
 	    @PostMapping("postGridData")
-	    public Object getGridData(@RequestBody List<GridData> gridData) {
+	    public Object getGridData(@RequestBody List<GridData> gridData) throws JsonProcessingException {
 	        Map<String,Object> obj = new HashMap<>();
-	        String formId = null;
-	    	for (GridData grid :  gridData) {
-	    		confService.setGridId(grid);
-	            obj.put("formId",grid.getFormId());
-	            formId = grid.getFormId();	  
-	            
-	    	}
-	    	List<GridData> list = confService.setGridData(gridData);
-	    	String str = confService.getmrowUpdate(formId); 	    
-	    	obj.put("errMsg",str);
-	  		return obj;
+	        
+	        // (this if condition will only work on update multirow details. will not work on if added new multirow.)
+	        if(gridData.get(0).getGridId() == null) {
+	        	
+	        	String formId = null;
+		    	for (GridData grid :  gridData) {
+		    		confService.setGridId(grid);
+		            obj.put("formId",grid.getFormId());
+		            formId = grid.getFormId();	  
+		            
+		    	}
+		    	List<GridData> list = confService.setGridData(gridData);
+		    	String str = confService.getmrowUpdate(formId); 	    
+		    	obj.put("errMsg",str);
+		  		return obj;
+	        }
+	        else {
+	        	
+	        	// using ObjectMapper dependancy to convert object into string.
+	    		ObjectMapper mapper = new ObjectMapper();
+	    		   
+	    		// converting object into string
+	    		String pJsonData = mapper.writeValueAsString(gridData);
+	    		
+	    		System.out.println(pJsonData);
+	    		confService.updateMultGridDtls(pJsonData);
+	        }
+	        
+	        return obj;       
 	    }
 		    
 	    @PostMapping("postColumnData")
-	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) {
+	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) throws JsonProcessingException {
 	    	
-	        Map<String,Object> obj = new HashMap<>();
-	        String formId = null;
-	    	for (ColumnHeaderData column :  columnData) {
-	    		confService.setColumnId(column);	            
-	            obj.put("formId", column.getFormId());
-	            formId = column.getFormId();	            
+	    	for(Object i : columnData) {
+	    		System.out.println(i);
 	    	}
-	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);	
-	    	String str = confServ.getGridDataResp(formId); 	    
-	    	obj.put("errMsg",str);
-	  		return obj;
+	    	
+	    	Map<String,Object> obj = new HashMap<>();
+	    	
+	    	// if 1st objects columnId is null (it's for form edit functionality)
+	    	if(columnData.get(0).getColumnId() == null) {
+	    		String formId = null;
+		    	for (ColumnHeaderData column :  columnData) {
+		    		confService.setColumnId(column);	            
+		            obj.put("formId", column.getFormId());
+		            formId = column.getFormId();	            
+		    	}
+		    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);	
+		    	String str = confServ.getGridDataResp(formId); 	    
+		    	obj.put("errMsg",str);
+		  		return obj;
+	    	}
+	    	else {
+	    		
+	    		// using ObjectMapper dependancy to convert object into string.
+	    		ObjectMapper mapper = new ObjectMapper();
+	    		   
+	    		// converting object into string
+	    		String pJsonData = mapper.writeValueAsString(columnData);
+	    		
+	    		System.out.println(pJsonData);
+	    		confService.updateColumnHeader(pJsonData);
+	    	}
+	    	
+	    	return obj;
+	    	
 	    }
 	    
 

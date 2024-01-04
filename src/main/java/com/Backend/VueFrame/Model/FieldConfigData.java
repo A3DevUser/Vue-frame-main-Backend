@@ -24,6 +24,12 @@ public class FieldConfigData {
 	
 	@Column(name = "EDITABLE")
 	private String editable;
+	
+	@Column(name = "IS_VISIBLE")
+	private String isVisible;
+	
+	@Column(name = "CONF_NAME")
+	private String confName;
 
 	
 	public String getFieldId() {
@@ -65,18 +71,36 @@ public class FieldConfigData {
 	public void setEditable(String editable) {
 		this.editable = editable;
 	}
-
 	
-	public FieldConfigData(String fieldId, String wfId, String gridName, String columnName, String editable) {
+	public String getIsVisible() {
+		return isVisible;
+	}
+
+	public void setIsVisible(String isVisible) {
+		this.isVisible = isVisible;
+	}
+
+	public String getConfName() {
+		return confName;
+	}
+
+	public void setConfName(String confName) {
+		this.confName = confName;
+	}
+	
+
+	public FieldConfigData(String fieldId, String wfId, String gridName, String columnName, String editable,
+			String isVisible, String confName) {
 		super();
 		this.fieldId = fieldId;
 		this.wfId = wfId;
 		this.gridName = gridName;
 		this.columnName = columnName;
 		this.editable = editable;
+		this.isVisible = isVisible;
+		this.confName = confName;
 	}
 
-	
 	public FieldConfigData() {
 		super();
 		// TODO Auto-generated constructor stub
