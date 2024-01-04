@@ -35,7 +35,7 @@ public class VFA3ReviewOutputController {
             String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
             String vfMainObjId = obj.getVF_MAIN_OBJ_ID() != null ? obj.getVF_MAIN_OBJ_ID() : "";
 
-            obj.setId("OB-" + testId + associateVend + vfMainObjId);
+            obj.setId("Review-" + testId + associateVend + vfMainObjId);
             out.add(obj);
         }
 
