@@ -36,7 +36,7 @@ public class VfA3OBOutputController {
              String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
              String vfMainObjId = obj.getVF_MAIN_OBJ_ID() != null ? obj.getVF_MAIN_OBJ_ID() : "";
 
-             obj.setIdData("OB-" + testId + associateVend + vfMainObjId);
+             obj.setId("OB-" + testId + associateVend + vfMainObjId);
              out.add(obj);
          }
 
