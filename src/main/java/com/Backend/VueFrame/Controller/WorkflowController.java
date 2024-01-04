@@ -46,11 +46,11 @@ public class WorkflowController {
 //    }
 //	
 	@PostMapping("callWorkflowProcedure")
-	public String insertData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException {
+	public String insertData(@RequestBody(required = false) String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
 	    if (json != null) {
 //	        logServ.log("e", "Error", "Error Details" + json);
 //	        logServ.log("d", "Debug Subject", "Debug Details" + json);
-	        workFlowServ.callInsertDataFromDynamicJsonArray(json);
+	        workFlowServ.callInsertDataFromDynamicJsonArray(json, currLoggedInUser);
 	    }
 
 	    return json;
@@ -178,14 +178,6 @@ public class WorkflowController {
 		 String setData = workFlowServ.setConfigData(formId);
 		 return setData;
 	 }
-	 
-	 // api creation from madhur sir
-//	 @GetMapping("getCoiResAndVenDtls")
-//	 public List<Map<String, String>> getCoiResAndVenDtls() {
-//			
-//		List<Map<String, String>> list_of_obj = workFlowServ.getCoiResAndVenDtls();
-//		
-//		return list_of_obj;
-//	}
+	  
 	
 }

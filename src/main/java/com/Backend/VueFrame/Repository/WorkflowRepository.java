@@ -110,7 +110,6 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 
 	 @Procedure(procedureName = "VF_CONFIG_DATA_OBJ", outputParameterName = "v_result")
 	 String setConfigData(@Param("p_form_id") String formId);
-	  
 	
 }
 

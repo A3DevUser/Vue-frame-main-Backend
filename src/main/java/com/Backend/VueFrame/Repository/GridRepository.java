@@ -20,7 +20,7 @@ public interface GridRepository extends JpaRepository<GridData, String>{
 	String setGridSequence();
 	
 	@Procedure(procedureName="VF_MROW_DATA", outputParameterName = "p_result")
-			  String getMrowData(@Param("p_form_id") String formId);
+	String getMrowData(@Param("p_form_id") String formId);
 
 	
 	@Query(value = "SELECT VF_MROW_GRID_ID.NEXTVAL FROM DUAL", nativeQuery = true)

@@ -41,9 +41,10 @@ public class WorkflowService {
 //    }
 	
 	
-	public void callInsertDataFromDynamicJsonArray(String json) throws JsonMappingException, JsonProcessingException {
+	public void callInsertDataFromDynamicJsonArray(String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
 		
 		System.out.println("json = " + json);
+		// data inserting in table.
 		workFlowRepo.insertDataFromDynamicJsonArray(json);
 		
 		
@@ -56,11 +57,33 @@ public class WorkflowService {
 			// this will give true/false if the current object's grid_id is "main grid" or not. 
 			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
 			
-			if (isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
-				System.out.println(obj.get("GRID_ID"));
-				System.out.println("workflow running - "+obj);
+			if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 				
-				workFlowRepo.setGridData1(
+				System.out.println("workflow running - "+obj);
+				System.out.println(currLoggedInUser);
+				
+				
+				if(obj.get("VF_CREATED_BY").isBlank()) {
+					System.out.println("if working");
+					workFlowRepo.setGridData1(
+							obj.get("VF_STAGE"),
+							obj.get("VF_STATUS"),
+							obj.get("VF_ACTION"), 
+							obj.get("VF_ORGANISATION_ID"),
+							obj.get("VF_ROLE"),
+							obj.get("VF_PROCESS_INSTANCE_ID"),
+							obj.get("VF_INSTANCE_ID"),
+							currLoggedInUser,
+							obj.get("VF_CREATED_ON"),
+							obj.get("VF_MODIFIED_ON"),
+							obj.get("VF_MODIFIED_BY"),
+							obj.get("formId"),
+							obj.get("VF_CURRENT_USER"),
+							obj.get("VF_MAIN_OBJ_ID"));	
+				}
+				else {
+					System.out.println("else working");
+					workFlowRepo.setGridData1(
 							obj.get("VF_STAGE"),
 							obj.get("VF_STATUS"),
 							obj.get("VF_ACTION"), 
@@ -75,6 +98,8 @@ public class WorkflowService {
 							obj.get("formId"),
 							obj.get("VF_CURRENT_USER"),
 							obj.get("VF_MAIN_OBJ_ID"));	
+				}
+				
 			}	
 		}
 		
@@ -157,7 +182,7 @@ public class WorkflowService {
 		String StrReturnList = mapper.writeValueAsString(returnList);
 		
 		System.out.println(StrReturnList);
-		callInsertDataFromDynamicJsonArray(StrReturnList);
+		workFlowRepo.insertDataFromDynamicJsonArray(StrReturnList);
 		
 	}
 

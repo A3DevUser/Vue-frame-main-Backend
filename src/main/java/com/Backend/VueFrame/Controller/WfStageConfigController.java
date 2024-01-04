@@ -31,6 +31,7 @@ public class WfStageConfigController {
 		for(WfStageConfigData wf : setData) {
 			wfStageConfigServs.setConfigId(wf);
             obj.put("formId",wf.getFormId());
+            obj.put("wfId", wf.getWfId());
 			
 		}
 		
