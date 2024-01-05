@@ -140,7 +140,7 @@ public class ConfigurationFormController {
 	        Map<String,Object> obj = new HashMap<>();
 	        
 	        // (this if condition will only work on update multirow details. will not work on if added new multirow.)
-	        if(gridData.get(0).getGridId() == null) {
+//	        if(gridData.get(0).getGridId() == null) {
 	        	
 	        	String formId = null;
 		    	for (GridData grid :  gridData) {
@@ -153,20 +153,20 @@ public class ConfigurationFormController {
 		    	String str = confService.getmrowUpdate(formId); 	    
 		    	obj.put("errMsg",str);
 		  		return obj;
-	        }
-	        else {
-	        	
-	        	// using ObjectMapper dependancy to convert object into string.
-	    		ObjectMapper mapper = new ObjectMapper();
-	    		   
-	    		// converting object into string
-	    		String pJsonData = mapper.writeValueAsString(gridData);
-	    		
-	    		System.out.println(pJsonData);
-	    		confService.updateMultGridDtls(pJsonData);
-	        }
+//	        }
+//	        else {
+//	        	
+//	        	// using ObjectMapper dependancy to convert object into string.
+//	    		ObjectMapper mapper = new ObjectMapper();
+//	    		   
+//	    		// converting object into string
+//	    		String pJsonData = mapper.writeValueAsString(gridData);
+//	    		
+//	    		System.out.println(pJsonData);
+//	    		confService.updateMultGridDtls(pJsonData);
+//	        }
 	        
-	        return obj;       
+//	        return obj;       
 	    }
 		    
 	    @PostMapping("postColumnData")
