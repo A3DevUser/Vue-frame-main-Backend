@@ -49,14 +49,18 @@ public class DropDownServices {
 		return query_out;
 	}
 	
-	 public DropDownData setDropDownId(@RequestBody DropDownData ddData) {
+	public DropDownData setDropDownId(@RequestBody DropDownData ddData) {
+		if(ddData.getDropdownId() == null) {
 		    String seq = eDropRepo.setDdId();
 		    String formattedParamId = "DD-" + seq;
 		    ddData.setDropdownId(formattedParamId);
 		    return ddData;
 		}
+		
+		return ddData;
+	}
 	
-	public List<DropDownData> setDataDropDown(List <DropDownData> setData){
+	public List<DropDownData> setDataDropDown(List <DropDownData> setData) {
 		List<DropDownData> list = eDropRepo.saveAllAndFlush(setData);
 		return list;
 		
