@@ -1,11 +1,14 @@
 package com.Backend.VueFrame.Controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.codec.Utf8;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,20 +56,36 @@ public class VfA3OBOutputController {
  		
  		List<VFA3OnBoardingOutputData> op = new ArrayList<>();
  		
+ 		try {
+ 			
+ 			List<String> decodedIdS = new ArrayList<>();
+ 			for (String encodeId : id) {
+ 				String decodedId = URLDecoder.decode(encodeId, "UTF-8");
+ 				decodedIdS.add(decodedId);
+ 			}
+ 			
+
  			List<VFA3OnBoardingOutputData> opTemp= vfa3TestRepo.findAllById(id);
  			
  			op.addAll(opTemp);
           
-			 
+ 			
+ 		} catch (UnsupportedEncodingException e) {
+ 			
+            e.printStackTrace();
+
+ 			
+ 		}
+ 				 
 		
 	return op;
      }
 	
-//	@GetMapping("fetchDataId")
-//	public List<VFA3OnBoardingOutputData> getData() {
-//		
-//		return vfa3TestRepo.findAll();
-//	}
+	@GetMapping("fetchDataId")
+	public List<VFA3OnBoardingOutputData> getData() {
+		
+		return vfa3TestRepo.findAll();
+	}
 
 
 
