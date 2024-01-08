@@ -36,10 +36,10 @@ public class VfA3OBOutputController {
 
          for (VFA3OnBoardingOutputData obj : testItems) {
              String testId = obj.getTestId() != null ? obj.getTestId() : "";
-             String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
+//             String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
              String vfMainObjId = obj.getVF_MAIN_OBJ_ID() != null ? obj.getVF_MAIN_OBJ_ID() : "";
 
-             obj.setId("OB-" + testId + associateVend + vfMainObjId);
+             obj.setId("OB-" + testId + vfMainObjId);
              out.add(obj);
          }
 
@@ -56,29 +56,27 @@ public class VfA3OBOutputController {
  		
  		List<VFA3OnBoardingOutputData> op = new ArrayList<>();
  		
- 		try {
- 			
- 			List<String> decodedIdS = new ArrayList<>();
- 			for (String encodeId : id) {
- 				String decodedId = URLDecoder.decode(encodeId, "UTF-8");
- 				decodedIdS.add(decodedId);
- 			}
- 			
+// 		try {
+// 			
+// 			List<String> decodedIdS = new ArrayList<>();
+// 			for (String encodeId : id) {
+// 				String decodedId = URLDecoder.decode(encodeId, "UTF-8");
+// 				decodedIdS.add(decodedId);
+// 			}
+// 			
 
  			List<VFA3OnBoardingOutputData> opTemp= vfa3TestRepo.findAllById(id);
  			
  			op.addAll(opTemp);
           
  			
- 		} catch (UnsupportedEncodingException e) {
- 			
-            e.printStackTrace();
-
- 			
- 		}
- 				 
-		
+// 		} catch (UnsupportedEncodingException e) {
+// 			
+//            e.printStackTrace();
+//
+// 					
 	return op;
+	
      }
 	
 	@GetMapping("fetchDataId")
