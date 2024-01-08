@@ -17,11 +17,17 @@ public class DropDownParamService {
 	private DropDownParamRepo eDropRepo;
 	
 	 public DropDownParamModel setParamData(DropDownParamModel setData) {
-		    String seq = eDropRepo.setParamSequence();
-		    String formattedParamId = "P-" + seq;
-		    setData.setparamId(formattedParamId);
-		    return setData;
-		}
+		 
+		 if(setData.getparamId() == null) {
+			 String seq = eDropRepo.setParamSequence();
+			 String formattedParamId = "P-" + seq;
+			 setData.setparamId(formattedParamId);
+			 return setData;
+		 }
+		 
+		 return setData;
+		    
+	 }
 	
 	public List<DropDownParamModel> setDataDropDownParam(List <DropDownParamModel> setData){
 		List<DropDownParamModel> list = eDropRepo.saveAllAndFlush(setData);

@@ -45,6 +45,9 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
 	List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);	
 
 	
+	@Procedure(procedureName="VF_WF_FIELD_CONF_PROC", outputParameterName = "p_result")
+	String getlistofColumns2(@Param("P_FORM_ID") String formId, @Param("P_USER_NAME") String pUserName);
+	
 	
 	@Procedure(procedureName="VF_CREATE_GRIDS", outputParameterName = "p_result")
 	String getGridCreationDtls(@Param("p_form_id") String formId);	

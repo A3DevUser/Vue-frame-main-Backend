@@ -17,7 +17,7 @@ public class FieldConfigData {
 	private String wfId;
 	
 	@Column(name = "GRID_NAME")
-	private String gridName;
+	private String gridId;
 	
 	@Column(name = "COLUMN_NAME")
 	private String columnName;
@@ -26,11 +26,12 @@ public class FieldConfigData {
 	private String editable;
 	
 	@Column(name = "IS_VISIBLE")
-	private String isVisible;
+	private String hideShow;
 	
 	@Column(name = "CONF_NAME")
 	private String confName;
 
+	
 	
 	public String getFieldId() {
 		return fieldId;
@@ -48,12 +49,21 @@ public class FieldConfigData {
 		this.wfId = wfId;
 	}
 
-	public String getGridName() {
-		return gridName;
+	
+	public String getGridId() {
+		return gridId;
 	}
 
-	public void setGridName(String gridName) {
-		this.gridName = gridName;
+	public void setGridId(String gridId) {
+		this.gridId = gridId;
+	}
+
+	public String getHideShow() {
+		return hideShow;
+	}
+
+	public void setHideShow(String hideShow) {
+		this.hideShow = hideShow;
 	}
 
 	public String getColumnName() {
@@ -72,13 +82,6 @@ public class FieldConfigData {
 		this.editable = editable;
 	}
 	
-	public String getIsVisible() {
-		return isVisible;
-	}
-
-	public void setIsVisible(String isVisible) {
-		this.isVisible = isVisible;
-	}
 
 	public String getConfName() {
 		return confName;
@@ -89,15 +92,15 @@ public class FieldConfigData {
 	}
 	
 
-	public FieldConfigData(String fieldId, String wfId, String gridName, String columnName, String editable,
-			String isVisible, String confName) {
+	public FieldConfigData(String fieldId, String wfId, String gridId, String columnName, String editable,
+			String hideShow, String confName) {
 		super();
 		this.fieldId = fieldId;
 		this.wfId = wfId;
-		this.gridName = gridName;
+		this.gridId = gridId;
 		this.columnName = columnName;
 		this.editable = editable;
-		this.isVisible = isVisible;
+		this.hideShow = hideShow;
 		this.confName = confName;
 	}
 
@@ -105,10 +108,6 @@ public class FieldConfigData {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-
-	
 	
 	
 }

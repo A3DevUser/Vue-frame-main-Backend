@@ -25,6 +25,10 @@ public class DropDownData {
 	@Column(name = "dropdown_name")
 	private String dropName;
 	
+	@Column(name = "TARGET_ID")
+	private String targetId;
+	
+	
 	public String getGridId() {
 		return gridId;
 	}
@@ -56,19 +60,27 @@ public class DropDownData {
 		this.formId = formId;
 	}
 	
-	
-	
 	public String getDropName() {
 		return dropName;
 	}
 	public void setDropName(String dropName) {
 		this.dropName = dropName;
 	}
+	
+	public String getTargetId() {
+		return targetId;
+	}
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+	
 	public DropDownData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public DropDownData(String dropdownId, String gridId, String colId, String query, String formId, String dropName) {
+	
+	public DropDownData(String dropdownId, String gridId, String colId, String query, String formId, String dropName,
+			String targetId) {
 		super();
 		this.dropdownId = dropdownId;
 		this.gridId = gridId;
@@ -76,6 +88,9 @@ public class DropDownData {
 		this.query = query;
 		this.formId = formId;
 		this.dropName = dropName;
+		this.targetId = targetId;
 	}
+	
+	
 	
 }

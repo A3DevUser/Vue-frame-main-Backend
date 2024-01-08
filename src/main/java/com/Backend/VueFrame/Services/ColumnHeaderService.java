@@ -36,11 +36,17 @@ public class ColumnHeaderService {
 		
 		return list;
 	}
+	
     public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId,@RequestParam  String emd) {
         
         return columnHeadRepo.getlistofColumns(formId,emd);
         //return null;
-}    
+    }    
+    
+    public String getlistofColumns2(String formId, String pUserName) {
+        
+        return columnHeadRepo.getlistofColumns2(formId, pUserName);
+    } 
 
     
     public String getGridDataResp(String formId) {

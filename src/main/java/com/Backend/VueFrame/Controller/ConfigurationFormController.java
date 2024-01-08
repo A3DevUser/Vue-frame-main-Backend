@@ -21,6 +21,7 @@ import com.Backend.VueFrame.Model.CombinedResultDTO;
 import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.SectionData;
+import com.Backend.VueFrame.Repository.WorkflowRepository;
 import com.Backend.VueFrame.Services.ColumnHeaderService;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,6 +40,9 @@ public class ConfigurationFormController {
 	    
 	    @Autowired
 	    private ColumnHeaderService confServ;
+	    
+	    @Autowired
+	    private WorkflowRepository workflowRepo;
 	   
 
 	    @PostMapping("postConfigData")
@@ -139,9 +143,14 @@ public class ConfigurationFormController {
 	    public Object getGridData(@RequestBody List<GridData> gridData) throws JsonProcessingException {
 	        Map<String,Object> obj = new HashMap<>();
 	        
-	        // (this if condition will only work on update multirow details. will not work on if added new multirow.)
-	        if(gridData.get(0).getGridId() == null) {
-	        	
+	        // taking 1st object's gridId
+	        String gridId = gridData.get(0).getGridId();
+	       
+	        // using predefined method from workflowRepository to get is_main table or not.
+	        Map<String, String> map1 = workflowRepo.getIsMainAndFormId(gridId);
+	        
+	        if(map1.get("IS_MAIN").equals("true")) {
+	        
 	        	String formId = null;
 		    	for (GridData grid :  gridData) {
 		    		confService.setGridId(grid);

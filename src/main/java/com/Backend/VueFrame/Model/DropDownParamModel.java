@@ -26,6 +26,10 @@ public class DropDownParamModel {
 	
 	@Column(name = "FORM_ID")
 	private String formId;
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
+	
 
 	public String getparamId() {
 		return paramId;
@@ -59,8 +63,6 @@ public class DropDownParamModel {
 		this.columnAccessor = columnAccessor;
 	}
 	
-
-
 	public String getFormId() {
 		return formId;
 	}
@@ -69,15 +71,24 @@ public class DropDownParamModel {
 		this.formId = formId;
 	}
 
+	public String getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
 	
 
-	public DropDownParamModel(String paramId, String dropId, String paramName, String columnAccessor, String formId) {
+	public DropDownParamModel(String paramId, String dropId, String paramName, String columnAccessor, String formId,
+			String targetId) {
 		super();
 		this.paramId = paramId;
 		this.dropId = dropId;
 		this.paramName = paramName;
 		this.columnAccessor = columnAccessor;
 		this.formId = formId;
+		this.targetId = targetId;
 	}
 
 	public DropDownParamModel() {

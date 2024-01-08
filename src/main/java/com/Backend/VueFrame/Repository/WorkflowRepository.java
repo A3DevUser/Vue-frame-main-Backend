@@ -76,7 +76,8 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //	                       @Param("v_curr_user") String VF_CURRENT_USER,
 //	                       @Param("v_obj_id") String VF_OBJ_ID);
 //	 
-
+	 
+	 // it will return is_main and formId on the basis of gridId
 	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') as IS_MAIN, FORM_ID FROM VF_GRID_DETAILS WHERE GRID_ID = :grid_id", nativeQuery = true)
 	 Map<String,String> getIsMainAndFormId(@Param("grid_id") String grid_id);
 	 
