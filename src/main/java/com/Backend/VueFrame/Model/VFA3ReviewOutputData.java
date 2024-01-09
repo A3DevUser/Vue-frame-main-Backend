@@ -28,14 +28,19 @@ public class VFA3ReviewOutputData {
 	@Column(name = "TEST_TITLE")
 	private String testTitle;
 	
-	@Column(name = "RESPONSE")
-	private String response;
+	@Column(name = "RESULT")
+	private String result;
+	
+	@Column(name = "ATTACHMENT")
+	private String attachment;
+	
+	@Column(name = "REMARK")
+	private String remark;
 	
 	@Column(name = "VF_MAIN_OBJ_ID")
 	@JsonProperty("VF_MAIN_OBJ_ID")
 	private String VF_MAIN_OBJ_ID;
 
-	
 	public String getId() {
 		return id;
 	}
@@ -49,7 +54,7 @@ public class VFA3ReviewOutputData {
 	}
 
 	public void setAssociate_Vend(String associate_Vend) {
-		Associate_Vend = associate_Vend;
+		this.Associate_Vend = associate_Vend;
 	}
 
 	public String getTestId() {
@@ -68,12 +73,28 @@ public class VFA3ReviewOutputData {
 		this.testTitle = testTitle;
 	}
 
-	public String getResponse() {
-		return response;
+	public String getResult() {
+		return result;
 	}
 
-	public void setResponse(String response) {
-		this.response = response;
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public String getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(String attachment) {
+		this.attachment = attachment;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
 	public String getVF_MAIN_OBJ_ID() {
@@ -81,18 +102,20 @@ public class VFA3ReviewOutputData {
 	}
 
 	public void setVF_MAIN_OBJ_ID(String vF_MAIN_OBJ_ID) {
-		VF_MAIN_OBJ_ID = vF_MAIN_OBJ_ID;
+		this.VF_MAIN_OBJ_ID = vF_MAIN_OBJ_ID;
 	}
 
-	public VFA3ReviewOutputData(String id, String associate_Vend, String testId, String testTitle,
-			String response, String vF_MAIN_OBJ_ID) {
+	public VFA3ReviewOutputData(String id, String associate_Vend, String testId, String testTitle, String result,
+			String attachment, String remark, String vF_MAIN_OBJ_ID) {
 		super();
 		this.id = id;
-		Associate_Vend = associate_Vend;
+		this.Associate_Vend = associate_Vend;
 		this.testId = testId;
 		this.testTitle = testTitle;
-		this.response = response;
-		VF_MAIN_OBJ_ID = vF_MAIN_OBJ_ID;
+		this.result = result;
+		this.attachment = attachment;
+		this.remark = remark;
+		this.VF_MAIN_OBJ_ID = vF_MAIN_OBJ_ID;
 	}
 
 	public VFA3ReviewOutputData() {
@@ -100,6 +123,7 @@ public class VFA3ReviewOutputData {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	
 	
 
