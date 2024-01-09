@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Entity
@@ -15,7 +16,8 @@ public class VFA3AccountData {
 		
 		@Id
 		@Column(name = "ACCOUNT_NUMBER")
-		private String id;
+	    @JsonProperty("Associate_Vend")
+		private String Associate_Vend;
 		
 		@Column(name = "NAME")	
 		private String customerName;
@@ -75,33 +77,15 @@ public class VFA3AccountData {
 		@Column (name="AUDIT_ID")
 		private String dummy;
 		
-
-		
 		@Column(name="Internal_rating")
 		private String internalTraining;
-		
-//		@Column(name="Business_segment")
-//		private String buisnessSegment;
-	//	
-//		@Column(name="Group_exposure")
-//		private String groupExposure;
-	//	
-//		@Column(name="Security_perfection_status")
-//		private String securityPerfectionStatus;
-		
-//		@Column(name = "CUN_BRANCH_NAME")
-//	    private String cunBranchName;
-	//	
-//		@Column(name = "CUN_AREA_NAME")
-//		private String cunAreaNam
-		
 
-		public String getId() {
-			return id;
+		public String getAssociate_Vend() {
+			return Associate_Vend;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setAssociate_Vend(String associate_Vend) {
+			Associate_Vend = associate_Vend;
 		}
 
 		public String getCustomerName() {
@@ -264,14 +248,13 @@ public class VFA3AccountData {
 			this.internalTraining = internalTraining;
 		}
 
-		
-
-		public VFA3AccountData(String id, String customerName, String outstandingAmt, String overdue,
+		public VFA3AccountData(String associate_Vend, String customerName, String outstandingAmt, String overdue,
 				String customerId, String schemeCode, String solId, String sanctionDate, String limit,
 				String overduesSince, String roi, String assetClass, String descOfActivity, String zone, String region,
-				String branchName, String schemeDesc, String status, String userId, String dummy, String internalTraining) {
+				String branchName, String schemeDesc, String status, String userId, String dummy,
+				String internalTraining) {
 			super();
-			this.id = id;
+			Associate_Vend = associate_Vend;
 			this.customerName = customerName;
 			this.outstandingAmt = outstandingAmt;
 			this.overdue = overdue;
@@ -292,12 +275,17 @@ public class VFA3AccountData {
 			this.userId = userId;
 			this.dummy = dummy;
 			this.internalTraining = internalTraining;
-			
 		}
 
 		public VFA3AccountData() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
+
+
+
+		
+		
+		
 
 }
