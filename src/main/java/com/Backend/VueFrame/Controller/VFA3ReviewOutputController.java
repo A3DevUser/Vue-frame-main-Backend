@@ -32,10 +32,10 @@ public class VFA3ReviewOutputController {
 
         for (VFA3ReviewOutputData obj : testItems) {
             String testId = obj.getTestId() != null ? obj.getTestId() : "";
-            String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
+//            String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
             String vfMainObjId = obj.getVF_MAIN_OBJ_ID() != null ? obj.getVF_MAIN_OBJ_ID() : "";
 
-            obj.setId("Review-" + testId + associateVend + vfMainObjId);
+            obj.setId("Review-" + testId + vfMainObjId);
             out.add(obj);
         }
 
@@ -44,6 +44,7 @@ public class VFA3ReviewOutputController {
         return list;
     }
 
+	
     @GetMapping("getReviewOutpuByIds")
 	
 	public List<VFA3ReviewOutputData> getAccountById(@RequestParam List<String> id) {
