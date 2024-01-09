@@ -32,5 +32,13 @@ public class RptDataSourceServices {
 		
 		return list;
 	}
+	
+	
+	public String getDsEditData(String wfId) {
+		
+		String getData = rptDataSourceRepo.getDsEditData(wfId);
+		
+		return getData;
+	}
 
 }

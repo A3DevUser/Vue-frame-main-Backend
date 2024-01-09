@@ -25,6 +25,10 @@ public class WfEmailConfigData {
 	
 	@Column(name = "BODY")
 	private String body;
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
+	
 
 	public String getEcId() {
 		return ecId;
@@ -73,8 +77,18 @@ public class WfEmailConfigData {
 	public void setBody(String body) {
 		this.body = body;
 	}
+	
+	public String getTargetId() {
+		return targetId;
+	}
 
-	public WfEmailConfigData(String ecId, String wfId, String emailName, String confName, String subject, String body) {
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
+	public WfEmailConfigData(String ecId, String wfId, String emailName, String confName, String subject, String body,
+			String targetId) {
 		super();
 		this.ecId = ecId;
 		this.wfId = wfId;
@@ -82,6 +96,7 @@ public class WfEmailConfigData {
 		this.confName = confName;
 		this.subject = subject;
 		this.body = body;
+		this.targetId = targetId;
 	}
 
 	public WfEmailConfigData() {

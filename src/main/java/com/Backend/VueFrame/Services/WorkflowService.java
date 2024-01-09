@@ -201,7 +201,7 @@ public class WorkflowService {
 	
 	public List<WorkflowData> setWorkflowData(@RequestParam List<WorkflowData> setData) {
 		
-		List<WorkflowData> list = workFlowRepo.saveAll(setData);
+		List<WorkflowData> list = workFlowRepo.saveAllAndFlush(setData);
 		
 		return list;
 	}
@@ -236,6 +236,14 @@ public class WorkflowService {
 		String setData = workFlowRepo.setConfigData(formId);
 		
 		return setData;
+	}
+	
+	
+	public String getWfEditData(String wfId) {
+		
+		String getData = workFlowRepo.getWfEditData(wfId);
+		
+		return getData;
 	}
 	
 	 // api creation from madhur sir

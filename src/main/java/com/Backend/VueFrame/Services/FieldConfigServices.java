@@ -17,7 +17,7 @@ public class FieldConfigServices {
 	
 	public List<FieldConfigData> setFieldConfig(List<FieldConfigData> setData) {
 		
-		List<FieldConfigData> list = fieldConfigRepository.saveAll(setData);
+		List<FieldConfigData> list = fieldConfigRepository.saveAllAndFlush(setData);
 		
 		return list;
 	}

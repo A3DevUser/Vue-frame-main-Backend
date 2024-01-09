@@ -24,7 +24,7 @@ public class WfStageConfigServices {
 	
 	public List<WfStageConfigData> setWfStageConfig(List<WfStageConfigData> setData) {
 		
-		List<WfStageConfigData> list = wfStageConfigRepo.saveAll(setData);
+		List<WfStageConfigData> list = wfStageConfigRepo.saveAllAndFlush(setData);
 		
 		return list;
 	}

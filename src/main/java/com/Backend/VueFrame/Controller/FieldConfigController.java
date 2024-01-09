@@ -1,6 +1,8 @@
 package com.Backend.VueFrame.Controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,14 +23,17 @@ public class FieldConfigController {
 	private FieldConfigServices fieldConfigServices;
 	
 	@PostMapping("setFieldConfig")
-	public List<FieldConfigData> setFieldConfig(@RequestBody List<FieldConfigData> setData) {
+	public Object setFieldConfig(@RequestBody List<FieldConfigData> setData) {
 		
-		for (FieldConfigData i :  setData) {
-			fieldConfigServices.setFieldId(i);
-		 }
+		Map<String,Object> obj = new HashMap<>();
+		
+		for (FieldConfigData wf :  setData) {
+			fieldConfigServices.setFieldId(wf);
+			obj.put("wfId", wf.getWfId());
+		}
 		
 		List<FieldConfigData> list = fieldConfigServices.setFieldConfig(setData);
 		
-		return list;
+		return obj;
 	}
 }

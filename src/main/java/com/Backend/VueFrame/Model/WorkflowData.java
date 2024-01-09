@@ -19,7 +19,10 @@ public class WorkflowData {
 	
 	@Column(name = "HOOK_PROCEDURE")
 	private String hookProcedure;
-
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
+	
 	
 	
 	public String getWfId() {
@@ -53,15 +56,23 @@ public class WorkflowData {
 	public void setHookProcedure(String hookProcedure) {
 		this.hookProcedure = hookProcedure;
 	}
-
 	
+	public String getTargetId() {
+		return targetId;
+	}
 
-	public WorkflowData(String wfId, String workflowName, String formId, String hookProcedure) {
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+	
+	
+	public WorkflowData(String wfId, String workflowName, String formId, String hookProcedure, String targetId) {
 		super();
 		this.wfId = wfId;
 		this.workflowName = workflowName;
 		this.formId = formId;
 		this.hookProcedure = hookProcedure;
+		this.targetId = targetId;
 	}
 
 	public WorkflowData() {

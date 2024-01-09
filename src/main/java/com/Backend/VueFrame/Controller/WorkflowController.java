@@ -172,11 +172,22 @@ public class WorkflowController {
 	 }
 	 
 	 
+	 // to get all form config data for form edit functionality
 	 @GetMapping("getConfigData")
 	 public String getConfigData(@RequestParam String formId) {
 		 
 		 String setData = workFlowServ.setConfigData(formId);
 		 return setData;
+	 }
+	 
+	 
+	 // to get all workflow data for workflow edit functionality
+	 @GetMapping("getWfEditData")
+	 public String getWfEditData(@RequestParam String wfId) {
+		 
+		 String getData = workFlowServ.getWfEditData(wfId);
+		 
+		 return getData;
 	 }
 	  
 	

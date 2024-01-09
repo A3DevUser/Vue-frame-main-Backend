@@ -63,4 +63,13 @@ public class RptDetailsServices {
 		return rptDetailsRepo.getByRptId(rptId);
 		
 	}
+	
+	
+	public String getRptEditData(String rptId) {
+		
+		String getData = rptDetailsRepo.getRptEditData(rptId);
+		
+		return getData;
+	}
+	
 }
