@@ -26,10 +26,14 @@ public class RptDetailsServices {
 	
 	
 	public RptDetails setRptIdSeq(@RequestBody RptDetails setData) {
-		String seq = rptDetailsRepo.setRptIdSeq();
-	    String formattedSeq = "RPT-" + seq;
-	    setData.setRptId(formattedSeq);
-	    return setData;
+		if(setData.getRptId() == null) {
+			String seq = rptDetailsRepo.setRptIdSeq();
+		    String formattedSeq = "RPT-" + seq;
+		    setData.setRptId(formattedSeq);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 	public List<RptDetails> setRptData(@RequestParam List<RptDetails> setData) {

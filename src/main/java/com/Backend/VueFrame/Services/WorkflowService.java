@@ -193,10 +193,14 @@ public class WorkflowService {
 	
 	
 	public WorkflowData setWfId(@RequestBody WorkflowData setData) {
-		String seq = workFlowRepo.setWfSequence();
-	    String formattedWfId = "WF-" + seq;
-	    setData.setWfId(formattedWfId);
-	    return setData;
+		if(setData.getWfId() == null) { // it's for workflow edit functionality
+			String seq = workFlowRepo.setWfSequence();
+		    String formattedWfId = "WF-" + seq;
+		    setData.setWfId(formattedWfId);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 	public List<WorkflowData> setWorkflowData(@RequestParam List<WorkflowData> setData) {

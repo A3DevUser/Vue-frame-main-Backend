@@ -144,13 +144,13 @@ public class ConfigurationFormController {
 	    public Object getGridData(@RequestBody List<GridData> gridData) throws JsonProcessingException {
 	        Map<String,Object> obj = new HashMap<>();
 	        
-	        // taking 1st object's gridId
+	        // taking 1st object's gridId (adding this conditions bcoz in multirow details bydefault main table's gridId is comming.)
 	        String gridId = gridData.get(0).getGridId();
 	       
 	        // using predefined method from workflowRepository to get is_main table or not.
 	        Map<String, String> map1 = workflowRepo.getIsMainAndFormId(gridId);
 	        
-	        if(map1.get("IS_MAIN").equals("true")) {
+	        if(map1.get("IS_MAIN").equals("true")) { // if it is 'true' then it means new multirow creation is happening.
 	        
 	        	String formId = null;
 		    	for (GridData grid :  gridData) {
@@ -181,11 +181,7 @@ public class ConfigurationFormController {
 		    
 	    @PostMapping("postColumnData")
 	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) throws JsonProcessingException {
-	    	
-	    	for(Object i : columnData) {
-	    		System.out.println(i);
-	    	}
-	    	
+	    		
 	    	Map<String,Object> obj = new HashMap<>();
 	    	
 	    	// if 1st objects columnId is null (it's for form edit functionality)

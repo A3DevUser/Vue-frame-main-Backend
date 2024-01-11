@@ -28,6 +28,8 @@ public class RptDsColumnDetails {
 	@Column(name = "COLUMN_TYPE")
 	private String columnType;
 	
+	@Column(name = "TARGET_ID")
+	private String targetId;
 	
 
 	public String getColumnId() {
@@ -79,8 +81,17 @@ public class RptDsColumnDetails {
 	}
 	
 	
+	public String getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
 	public RptDsColumnDetails(String columnId, String expId, String dsId, String columnName, String columnLabel,
-			String columnType) {
+			String columnType, String targetId) {
 		super();
 		this.columnId = columnId;
 		this.expId = expId;
@@ -88,9 +99,9 @@ public class RptDsColumnDetails {
 		this.columnName = columnName;
 		this.columnLabel = columnLabel;
 		this.columnType = columnType;
+		this.targetId = targetId;
 	}
 
-	
 	public RptDsColumnDetails() {
 		super();
 		// TODO Auto-generated constructor stub

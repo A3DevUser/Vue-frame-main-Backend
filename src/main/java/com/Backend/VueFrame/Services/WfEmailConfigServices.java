@@ -23,10 +23,14 @@ public class WfEmailConfigServices {
 	}
 	
 	public WfEmailConfigData setEcId(@RequestBody WfEmailConfigData setData) {
-		String seq = wfEmailConfigRepo.setEcSequence();
-	    String formatedstr = "EC-" + seq;
-	    setData.setEcId(formatedstr);
-	    return setData;
+		if(setData.getEcId() == null) {
+			String seq = wfEmailConfigRepo.setEcSequence();
+		    String formatedstr = "EC-" + seq;
+		    setData.setEcId(formatedstr);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 }

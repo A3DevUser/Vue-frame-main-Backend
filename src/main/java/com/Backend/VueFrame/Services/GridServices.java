@@ -18,7 +18,7 @@ public class GridServices {
 	
 	public List<GridData> getGridData(@RequestParam String formId) {
 		
-		return gridRepo.getByFormId(formId);
+		return gridRepo.getGridData(formId);
 		
 		
 	}

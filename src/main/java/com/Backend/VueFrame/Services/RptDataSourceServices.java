@@ -19,10 +19,14 @@ public class RptDataSourceServices {
 	
 	
 	public RptDataSource setDSIdGen(@RequestBody RptDataSource setData) {
-		String seq = rptDataSourceRepo.setDSIdGen();
-	    String formattedSeq = "DS-" + seq;
-	    setData.setDsId(formattedSeq);
-	    return setData;
+		if(setData.getDsId() == null) {
+			String seq = rptDataSourceRepo.setDSIdGen();
+		    String formattedSeq = "DS-" + seq;
+		    setData.setDsId(formattedSeq);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 	

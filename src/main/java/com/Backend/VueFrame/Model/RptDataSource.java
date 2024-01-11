@@ -27,6 +27,9 @@ public class RptDataSource {
 	
 	@Column(name = "DS_TYPE")
 	private String dsType;
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
 
 	
 	
@@ -77,10 +80,19 @@ public class RptDataSource {
 	public void setDsType(String dsType) {
 		this.dsType = dsType;
 	}
-
 	
-	public RptDataSource(String dsId, String dsName, String dsPkg, String dsStartDate, String dsEndDate,
-			String dsType) {
+	
+	public String getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+	
+
+	public RptDataSource(String dsId, String dsName, String dsPkg, String dsStartDate, String dsEndDate, String dsType,
+			String targetId) {
 		super();
 		this.dsId = dsId;
 		this.dsName = dsName;
@@ -88,9 +100,10 @@ public class RptDataSource {
 		this.dsStartDate = dsStartDate;
 		this.dsEndDate = dsEndDate;
 		this.dsType = dsType;
+		this.targetId = targetId;
 	}
-
 	
+
 	public RptDataSource() {
 		super();
 		// TODO Auto-generated constructor stub

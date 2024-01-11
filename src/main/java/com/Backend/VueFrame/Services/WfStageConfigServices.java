@@ -16,9 +16,13 @@ public class WfStageConfigServices {
 	
 	
 	public WfStageConfigData setConfigId(WfStageConfigData setData) {
-		String seq = wfStageConfigRepo.setStageSequence();
-		String formatedstr = "SC-"+seq;
-		setData.setConfigId(formatedstr);
+		if(setData.getConfigId() == null) { // it's for workflow edit functionality
+			String seq = wfStageConfigRepo.setStageSequence();
+			String formatedstr = "SC-"+seq;
+			setData.setConfigId(formatedstr);
+			return setData;
+		}
+		
 		return setData;
 	}
 	

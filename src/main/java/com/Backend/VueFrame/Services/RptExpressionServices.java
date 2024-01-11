@@ -19,10 +19,14 @@ public class RptExpressionServices {
 	
 	
 	public RptExpression setExpId(@RequestBody RptExpression setData) {
-		String seq = rptExpressionRepo.setExpId();
-	    String formattedSeq = "EXP-" + seq;
-	    setData.setExpId(formattedSeq);
-	    return setData;
+		if(setData.getExpId() == null) {
+			String seq = rptExpressionRepo.setExpId();
+		    String formattedSeq = "EXP-" + seq;
+		    setData.setExpId(formattedSeq);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 	public List<RptExpression> setRptExpData(@RequestParam List<RptExpression> setData) {

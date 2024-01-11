@@ -23,10 +23,14 @@ public class FieldConfigServices {
 	}
 	
 	public FieldConfigData setFieldId(@RequestBody FieldConfigData setData) {
-		String seq = fieldConfigRepository.setFieldSequence();
-	    String formatedstr = "FC-" + seq;
-	    setData.setFieldId(formatedstr);
-	    return setData;
+		if(setData.getFieldId() == null) {
+			String seq = fieldConfigRepository.setFieldSequence();
+		    String formatedstr = "FC-" + seq;
+		    setData.setFieldId(formatedstr);
+		    return setData;
+		}
+		
+		return setData;
 	}
 }
 

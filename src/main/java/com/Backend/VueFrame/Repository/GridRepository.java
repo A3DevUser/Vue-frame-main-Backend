@@ -15,6 +15,9 @@ public interface GridRepository extends JpaRepository<GridData, String>{
 
 	List<GridData> getByFormId(String formId);
 	
+	@Query(value = "SELECT * FROM VF_GRID_DETAILS WHERE FORM_ID = :form_id AND END_DATE IS NULL", nativeQuery = true)
+	List<GridData> getGridData(@Param("form_id") String formId);
+	
 	
 	@Query(value = "SELECT GRID_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
 	String setGridSequence();
