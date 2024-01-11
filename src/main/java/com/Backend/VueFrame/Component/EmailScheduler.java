@@ -23,7 +23,7 @@ public class EmailScheduler {
     private static final Logger logger = LoggerFactory.getLogger(EmailScheduler.class);
 
 	
-	@Scheduled(fixedRate = 5000) // Run every 60 seconds (adjust as needed)
+	@Scheduled(fixedRate = 60000) // Run every 60 seconds (adjust as needed)
 	public void sendScheduledMail() {
 	    try {
 	        logger.info("Scheduled Task started");
