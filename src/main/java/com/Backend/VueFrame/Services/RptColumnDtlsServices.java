@@ -20,7 +20,7 @@ public class RptColumnDtlsServices {
 	
 	
 	public RptColumnDtls setRptColId(@RequestBody RptColumnDtls setData) {
-		if(setData.getRptColId() == null) {
+		if(setData.getRptColId().isBlank()) {
 			String seq = rptColumnDtlsRepo.setRptColIdSeq();
 		    String formattedSeq = "RPTC-" + seq;
 		    setData.setRptColId(formattedSeq);

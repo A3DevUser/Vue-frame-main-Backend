@@ -26,7 +26,7 @@ public class RptDetailsServices {
 	
 	
 	public RptDetails setRptIdSeq(@RequestBody RptDetails setData) {
-		if(setData.getRptId() == null) {
+		if(setData.getRptId().isBlank()) {
 			String seq = rptDetailsRepo.setRptIdSeq();
 		    String formattedSeq = "RPT-" + seq;
 		    setData.setRptId(formattedSeq);

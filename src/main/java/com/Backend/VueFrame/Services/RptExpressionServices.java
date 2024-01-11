@@ -19,7 +19,7 @@ public class RptExpressionServices {
 	
 	
 	public RptExpression setExpId(@RequestBody RptExpression setData) {
-		if(setData.getExpId() == null) {
+		if(setData.getExpId().isBlank()) {
 			String seq = rptExpressionRepo.setExpId();
 		    String formattedSeq = "EXP-" + seq;
 		    setData.setExpId(formattedSeq);

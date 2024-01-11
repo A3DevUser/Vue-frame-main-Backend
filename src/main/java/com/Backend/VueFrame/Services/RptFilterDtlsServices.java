@@ -20,7 +20,7 @@ public class RptFilterDtlsServices {
 	
 	
 	public RptFilterDtls setRptFilIdSeq(@RequestBody RptFilterDtls setData) {
-		if(setData.getFilId() == null) {
+		if(setData.getFilId().isBlank()) {
 			String seq = rptFilterDtlsRepo.setRptFilIdSeq();
 		    String formattedSeq = "FIL-" + seq;
 		    setData.setFilId(formattedSeq);
