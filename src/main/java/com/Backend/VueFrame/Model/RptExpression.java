@@ -18,6 +18,9 @@ public class RptExpression {
 	
 	@Column(name = "EXPRESSION")
 	private String expression;
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
 
 	
 	public String getExpId() {
@@ -43,15 +46,26 @@ public class RptExpression {
 	public void setExpression(String expression) {
 		this.expression = expression;
 	}
+	
+	
+	public String getTargetId() {
+		return targetId;
+	}
 
-	public RptExpression(String expId, String dsId, String expression) {
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
+	
+	public RptExpression(String expId, String dsId, String expression, String targetId) {
 		super();
 		this.expId = expId;
 		this.dsId = dsId;
 		this.expression = expression;
+		this.targetId = targetId;
 	}
 
-	
 	public RptExpression() {
 		super();
 		// TODO Auto-generated constructor stub

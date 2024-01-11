@@ -31,6 +31,8 @@ public class RptDetails {
 	@Column(name = "RPT_TYPE")
 	private String rptType;
 
+	@Column(name = "TARGET_ID")
+	private String targetId;
 	
 	
 	public String getRptId() {
@@ -89,10 +91,19 @@ public class RptDetails {
 	public void setRptType(String rptType) {
 		this.rptType = rptType;
 	}
-
 	
+	
+	public String getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+	
+
 	public RptDetails(String rptId, String rptName, String rptTitle, String dsId, String rptPkg, String rptInfcDtls,
-			String rptType) {
+			String rptType, String targetId) {
 		super();
 		this.rptId = rptId;
 		this.rptName = rptName;
@@ -101,8 +112,8 @@ public class RptDetails {
 		this.rptPkg = rptPkg;
 		this.rptInfcDtls = rptInfcDtls;
 		this.rptType = rptType;
+		this.targetId = targetId;
 	}
-	
 
 	public RptDetails() {
 		super();

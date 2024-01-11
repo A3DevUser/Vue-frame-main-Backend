@@ -36,6 +36,9 @@ public class RptColumnDtls {
 	
 	@Column(name = "DS_ID")
 	private String dsId;
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
 
 	
 	public String getRptColId() {
@@ -111,9 +114,18 @@ public class RptColumnDtls {
 		this.dsId = dsId;
 	}
 	
+	
+	public String getTargetId() {
+		return targetId;
+	}
 
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
 	public RptColumnDtls(String rptColId, String rptId, String rptColName, String rptColLabel, String rptColTyp,
-			String rptColTooltip, String rptColWidth, String rptColSort, String dsId) {
+			String rptColTooltip, String rptColWidth, String rptColSort, String dsId, String targetId) {
 		super();
 		this.rptColId = rptColId;
 		this.rptId = rptId;
@@ -124,8 +136,8 @@ public class RptColumnDtls {
 		this.rptColWidth = rptColWidth;
 		this.rptColSort = rptColSort;
 		this.dsId = dsId;
+		this.targetId = targetId;
 	}
-	
 
 	public RptColumnDtls() {
 		super();

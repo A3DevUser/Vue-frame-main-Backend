@@ -20,10 +20,14 @@ public class RptFilterDtlsServices {
 	
 	
 	public RptFilterDtls setRptFilIdSeq(@RequestBody RptFilterDtls setData) {
-		String seq = rptFilterDtlsRepo.setRptFilIdSeq();
-	    String formattedSeq = "FIL-" + seq;
-	    setData.setFilId(formattedSeq);
-	    return setData;
+		if(setData.getFilId() == null) {
+			String seq = rptFilterDtlsRepo.setRptFilIdSeq();
+		    String formattedSeq = "FIL-" + seq;
+		    setData.setFilId(formattedSeq);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 	public List<RptFilterDtls> setRptFilterDtls(@RequestParam List<RptFilterDtls> setData) {

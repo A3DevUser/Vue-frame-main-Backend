@@ -20,10 +20,14 @@ public class RptColumnDtlsServices {
 	
 	
 	public RptColumnDtls setRptColId(@RequestBody RptColumnDtls setData) {
-		String seq = rptColumnDtlsRepo.setRptColIdSeq();
-	    String formattedSeq = "RPTC-" + seq;
-	    setData.setRptColId(formattedSeq);
-	    return setData;
+		if(setData.getRptColId() == null) {
+			String seq = rptColumnDtlsRepo.setRptColIdSeq();
+		    String formattedSeq = "RPTC-" + seq;
+		    setData.setRptColId(formattedSeq);
+		    return setData;
+		}
+		
+		return setData;
 	}
 	
 	public List<RptColumnDtls> setRptColDtls(@RequestParam List<RptColumnDtls> setData) {

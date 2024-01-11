@@ -37,6 +37,8 @@ public class RptFilterDtls {
 	@Column(name = "FIL_ORDER")
 	private String filOrder;
 
+	@Column(name = "TARGET_ID")
+	private String targetId;
 	
 	
 	public String getFilId() {
@@ -110,10 +112,17 @@ public class RptFilterDtls {
 	public void setFilOrder(String filOrder) {
 		this.filOrder = filOrder;
 	}
-
 	
+	public String getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
 	public RptFilterDtls(String filId, String rptId, String columnId, String columnName, String colFilName,
-			String colFilLabel, String colFilTyp, String dsName, String filOrder) {
+			String colFilLabel, String colFilTyp, String dsName, String filOrder, String targetId) {
 		super();
 		this.filId = filId;
 		this.rptId = rptId;
@@ -124,9 +133,9 @@ public class RptFilterDtls {
 		this.colFilTyp = colFilTyp;
 		this.dsName = dsName;
 		this.filOrder = filOrder;
+		this.targetId = targetId;
 	}
 
-	
 	public RptFilterDtls() {
 		super();
 		// TODO Auto-generated constructor stub
