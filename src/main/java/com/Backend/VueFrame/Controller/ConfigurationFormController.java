@@ -85,6 +85,7 @@ public class ConfigurationFormController {
 		                gridData.setIsMrow(combinedObject.getIsMrow());
 		                gridData.setIsMain("true");
 		                gridData.setTargetId(combinedObject.getTargetId());
+		                gridData.setIsMultiSelect(combinedObject.getIsMultiSelect());
 		                
 		                
 		                // Set other GridData fields as needed

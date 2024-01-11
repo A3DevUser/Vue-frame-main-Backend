@@ -10,7 +10,9 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
+import org.springframework.mail.SimpleMailMessage;
 
+import com.Backend.VueFrame.Model.EmailDetails;
 import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.WorkflowData;
 
@@ -113,10 +115,23 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 String setConfigData(@Param("p_form_id") String formId);
 	 
 	 
+//	 @Procedure(procedureName = "VF_EMAIL_LOGGER_PROC")
+//	 String sendMail(@Param("P_JSON_DATA") String details);
+//	 
+//	 
+//	 @Procedure(name = "VF_EMAIL_LOGGER_PROC")
+//	    void logEmail(@Param("P_JSON_DATA") String jsonData);
+//	
+	 @Modifying
+	    @Query(value = "BEGIN VF_EMAIL_LOGGER_PROC(:P_JSON_DATA); END;", nativeQuery = true)
+	    void logEmail(@Param("P_JSON_DATA") String jsonData);
+	 
 	 @Procedure(procedureName = "VF_WORKFLOW_CONFIG_DATA_OBJ", outputParameterName = "v_result")
 	 String getWfEditData(@Param("p_workflow_id") String wfId);
+
 	
 }
+
 
 
 

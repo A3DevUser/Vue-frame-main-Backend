@@ -31,4 +31,9 @@ public class LoggerService {
                 break;
         }
     }
+
+	public void info(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 }
