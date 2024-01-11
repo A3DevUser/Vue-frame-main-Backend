@@ -17,7 +17,7 @@ public class WfEmailConfigServices {
 	
 	public List<WfEmailConfigData> setWfEmailConfig(List<WfEmailConfigData> setData) {
 		
-		List<WfEmailConfigData> list = wfEmailConfigRepo.saveAll(setData);
+		List<WfEmailConfigData> list = wfEmailConfigRepo.saveAllAndFlush(setData);
 		
 		return list;
 	}

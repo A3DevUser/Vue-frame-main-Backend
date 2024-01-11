@@ -50,4 +50,15 @@ public class RptDetailsController {
 		
 		 return rptDetailsServs.getRptData(rptId);
 	 }
+	 
+	 
+	// to get all report data for report edit functionality
+	 @GetMapping("getRptEditData")
+	 public String getRptEditData(@RequestParam String rptId) {
+				 
+		 String getData = rptDetailsServs.getRptEditData(rptId);
+				 
+		 return getData;
+	 }
+	 
 }

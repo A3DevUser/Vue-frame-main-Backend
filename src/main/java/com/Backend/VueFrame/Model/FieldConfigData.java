@@ -30,7 +30,9 @@ public class FieldConfigData {
 	
 	@Column(name = "CONF_NAME")
 	private String confName;
-
+	
+	@Column(name = "TARGET_ID")
+	private String targetId;
 	
 	
 	public String getFieldId() {
@@ -91,9 +93,17 @@ public class FieldConfigData {
 		this.confName = confName;
 	}
 	
+	public String getTargetId() {
+		return targetId;
+	}
 
+	public void setTargetId(String targetId) {
+		this.targetId = targetId;
+	}
+
+	
 	public FieldConfigData(String fieldId, String wfId, String gridId, String columnName, String editable,
-			String hideShow, String confName) {
+			String hideShow, String confName, String targetId) {
 		super();
 		this.fieldId = fieldId;
 		this.wfId = wfId;
@@ -102,7 +112,9 @@ public class FieldConfigData {
 		this.editable = editable;
 		this.hideShow = hideShow;
 		this.confName = confName;
+		this.targetId = targetId;
 	}
+	
 
 	public FieldConfigData() {
 		super();

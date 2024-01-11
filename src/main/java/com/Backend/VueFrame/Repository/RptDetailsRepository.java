@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.data.repository.query.Param;
 
 import com.Backend.VueFrame.Model.RptDetails;
 
@@ -13,5 +15,9 @@ public interface RptDetailsRepository extends JpaRepository<RptDetails, String>{
 	String setRptIdSeq();
 	
 	List<RptDetails> getByRptId(String rptId);
+	
+	
+	@Procedure(procedureName = "VF_REPORT_CONFIG_DATA_OBJ", outputParameterName = "v_result")
+	 String getRptEditData(@Param("p_report_id") String rptId);
 
 }

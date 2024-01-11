@@ -115,6 +115,7 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 String setConfigData(@Param("p_form_id") String formId);
 	 
 	 
+<<<<<<< HEAD
 //	 @Procedure(procedureName = "VF_EMAIL_LOGGER_PROC")
 //	 String sendMail(@Param("P_JSON_DATA") String details);
 //	 
@@ -125,6 +126,10 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 @Modifying
 	    @Query(value = "BEGIN VF_EMAIL_LOGGER_PROC(:P_JSON_DATA); END;", nativeQuery = true)
 	    void logEmail(@Param("P_JSON_DATA") String jsonData);
+=======
+	 @Procedure(procedureName = "VF_WORKFLOW_CONFIG_DATA_OBJ", outputParameterName = "v_result")
+	 String getWfEditData(@Param("p_workflow_id") String wfId);
+>>>>>>> 15c2aa4b270347c7c8d9d8b0b6472cd7de384003
 	
 }
 
