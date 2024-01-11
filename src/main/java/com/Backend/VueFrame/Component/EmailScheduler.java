@@ -23,24 +23,24 @@ public class EmailScheduler {
     private static final Logger logger = LoggerFactory.getLogger(EmailScheduler.class);
 
 	
-	@Scheduled(fixedRate = 60000) // Run every 60 seconds (adjust as needed)
-	public void sendScheduledMail() {
-	    try {
-	        logger.info("Scheduled Task started");
-
-	        EmailDetails emailDetails = new EmailDetails();
-	        emailDetails.setRecipient("swapnalig@claptek.com");
-	        emailDetails.setMsgBody("This is the email body");
-	        emailDetails.setSubject("Subject of the email");
-
-	        String status = emailService.sendSimpleMail(emailDetails);
-
-	        logger.info("Scheduled Task completed with status: " + status);
-	    } catch (Exception e) {
-	    	logger.error("Scheduled Task failed", e);
-	    }
-	}
-    
+//	@Scheduled(fixedRate = 60000) // Run every 60 seconds (adjust as needed)
+//	public void sendScheduledMail() {
+//	    try {
+//	        logger.info("Scheduled Task started");
+//
+//	        EmailDetails emailDetails = new EmailDetails();
+//	        emailDetails.setRecipient("swapnalig@claptek.com");
+//	        emailDetails.setMsgBody("This is the email body");
+//	        emailDetails.setSubject("Subject of the email");
+//
+//	        String status = emailService.sendSimpleMail(emailDetails);
+//
+//	        logger.info("Scheduled Task completed with status: " + status);
+//	    } catch (Exception e) {
+//	    	logger.error("Scheduled Task failed", e);
+//	    }
+//	}
+//    
     
     
 }

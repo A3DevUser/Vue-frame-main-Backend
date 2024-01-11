@@ -14,6 +14,8 @@ public class CombinedObject {
 	private String targetId;
 	private String formId;
 	private String gridId;
+	private String isMultiSelect;
+	private String dsId;
 	
 	
 	public String getNavName() {
@@ -101,8 +103,31 @@ public class CombinedObject {
 		this.gridId = gridId;
 	}
 	
+	
+	
+	public String getIsMultiSelect() {
+		return isMultiSelect;
+	}
+	public void setIsMultiSelect(String isMultiSelect) {
+		this.isMultiSelect = isMultiSelect;
+	}
+	
+	
+	
+	
+	
+	public String getDsId() {
+		return dsId;
+	}
+	public void setDsId(String dsId) {
+		this.dsId = dsId;
+	}
+	
+	
+	
 	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
-			String isMain, String isMrow, String seqId, String cat, String targetId, String formId, String gridId) {
+			String isMain, String isMrow, String seqId, String cat, String targetId, String formId, String gridId,
+			String isMultiSelect, String dsId) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -116,9 +141,9 @@ public class CombinedObject {
 		this.targetId = targetId;
 		this.formId = formId;
 		this.gridId = gridId;
+		this.isMultiSelect = isMultiSelect;
+		this.dsId = dsId;
 	}
-	
-	
 	public CombinedObject() {
 		super();
 		// TODO Auto-generated constructor stub

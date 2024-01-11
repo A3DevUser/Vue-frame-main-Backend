@@ -55,6 +55,12 @@ public class GridData {
 	@Column(name = "TARGET_ID")
 	private String targetId;
 	
+	@Column (name = "IS_MULTI_SELECT")
+	private String isMultiSelect;
+	
+	@Column(name = "Data_source")
+	private String dsId;
+	
 	
 	public String getWidth() {
 		return width;
@@ -177,10 +183,31 @@ public class GridData {
 	}
 
 	
+	
 
+	public String getIsMultiSelect() {
+		return isMultiSelect;
+	}
+
+	public void setIsMultiSelect(String isMultiSelect) {
+		this.isMultiSelect = isMultiSelect;
+	}
+
+	
+	
+	public String getDsId() {
+		return dsId;
+	}
+
+	public void setDsId(String dsId) {
+		this.dsId = dsId;
+	}
+
+	
+	
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
 			String isMrow, String isMain, String orderId, String mrGridId, String width, String height, String isView,
-			String targetId) {
+			String targetId, String isMultiSelect, String dsId) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -196,6 +223,8 @@ public class GridData {
 		this.height = height;
 		this.isView = isView;
 		this.targetId = targetId;
+		this.isMultiSelect = isMultiSelect;
+		this.dsId = dsId;
 	}
 
 	public GridData() {
