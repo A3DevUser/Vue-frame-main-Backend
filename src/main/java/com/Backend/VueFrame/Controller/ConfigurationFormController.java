@@ -195,6 +195,8 @@ public class ConfigurationFormController {
 		    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);	
 		    	String str = confServ.getGridDataResp(formId); 	    
 		    	obj.put("errMsg",str);
+		    	
+		    	System.out.println(obj);
 		  		return obj;
 	    	}
 	    	else {

@@ -17,6 +17,8 @@ import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.RptColumnDtlsServices;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -28,7 +30,7 @@ public class RptColumnDtlsController {
 	
 	
 	@PostMapping("setRptColDtls")
-	 public Object setRptColDtls(@RequestBody List<RptColumnDtls> setData) {
+	 public Object setRptColDtls(@RequestBody List<RptColumnDtls> setData) throws JsonProcessingException {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -37,6 +39,14 @@ public class RptColumnDtlsController {
              obj.put("rptId",i.getRptId());
              obj.put("dsId", i.getDsId());
 		 }
+		 
+		// using ObjectMapper dependancy to convert object into string.
+ 		ObjectMapper mapper = new ObjectMapper();
+ 		   
+ 		// converting object into string
+ 		String pJsonData = mapper.writeValueAsString(setData);
+ 		
+ 		System.out.println(pJsonData);
 			 
 		 List<RptColumnDtls> list = rptColumnDtlsServs.setRptColDtls(setData);
 		 

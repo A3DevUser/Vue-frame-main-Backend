@@ -39,7 +39,7 @@ public class RptDetailsController {
              obj.put("dsId",i.getDsId());
 		 }
 			 
-		 List<RptDetails> list = rptDetailsServs.setRptData(setData);
+//		 List<RptDetails> list = rptDetailsServs.setRptData(setData);
 		 
 		 return obj;
 	 }
