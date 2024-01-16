@@ -13,9 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.RptDataSource;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.RptDataSourceServices;
+import com.Backend.VueFrame.Services.RptDetailsServices;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -27,7 +32,7 @@ public class RptDataSourceController {
 	
 	
 	@PostMapping("setRptDsGenData")
-	 public Object setRptDsGenData(@RequestBody List<RptDataSource> setData) {
+	 public Object setRptDsGenData(@RequestBody List<RptDataSource> setData) throws JsonProcessingException {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -35,7 +40,7 @@ public class RptDataSourceController {
 			 rptDataSourceServs.setDSIdGen(i);
              obj.put("dsId",i.getDsId());
 		 }
-			 
+		 		 
 		 List<RptDataSource> list = rptDataSourceServs.setRptDsGenData(setData);
 		 
 		 return obj;

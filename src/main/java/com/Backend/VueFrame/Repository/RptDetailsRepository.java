@@ -19,5 +19,9 @@ public interface RptDetailsRepository extends JpaRepository<RptDetails, String>{
 	
 	@Procedure(procedureName = "VF_REPORT_CONFIG_DATA_OBJ", outputParameterName = "v_result")
 	 String getRptEditData(@Param("p_report_id") String rptId);
+	
+	
+	@Procedure(procedureName = "VF_FILTER_JSON_FOR_STORED_VALUE", outputParameterName = "v_result")
+	 String getJsonFilterforStoredVal(@Param("p_json_array") String pJsonArray);
 
 }

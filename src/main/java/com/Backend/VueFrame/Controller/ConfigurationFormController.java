@@ -24,6 +24,7 @@ import com.Backend.VueFrame.Model.SectionData;
 import com.Backend.VueFrame.Repository.WorkflowRepository;
 import com.Backend.VueFrame.Services.ColumnHeaderService;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
+import com.Backend.VueFrame.Services.RptDetailsServices;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
@@ -43,6 +44,9 @@ public class ConfigurationFormController {
 	    
 	    @Autowired
 	    private WorkflowRepository workflowRepo;
+	    
+	    @Autowired
+		private RptDetailsServices rptDetailsServs;
 	   
 
 	    @PostMapping("postConfigData")
@@ -115,7 +119,11 @@ public class ConfigurationFormController {
 	    		String pJsonData = mapper.writeValueAsString(combinedObjectList);
 	    		
 	    		System.out.println(pJsonData);
-	    		confService.updateNavAndGrid(pJsonData);
+	    		
+	    		// Filtering json data for stored value
+	    		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	    		
+	    		confService.updateNavAndGrid(filteredJsonData);
 	    	}
 	    	
 	    	return obj;
@@ -150,7 +158,7 @@ public class ConfigurationFormController {
 	        // using predefined method from workflowRepository to get is_main table or not.
 	        Map<String, String> map1 = workflowRepo.getIsMainAndFormId(gridId);
 	        
-	        if(map1.get("IS_MAIN").equals("true")) { // if it is 'true' then it means new multirow creation is happening.
+	        if(gridId == null || map1.get("IS_MAIN").equals("true")) { // if it is 'true' then it means new multirow creation is happening.
 	        
 	        	String formId = null;
 		    	for (GridData grid :  gridData) {
@@ -173,7 +181,11 @@ public class ConfigurationFormController {
 	    		String pJsonData = mapper.writeValueAsString(gridData);
 	    		
 	    		System.out.println(pJsonData);
-	    		confService.updateMultGridDtls(pJsonData);
+	    		
+	    		// Filtering json data for stored value
+	    		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	    		
+	    		confService.updateMultGridDtls(filteredJsonData);
 	        }
 	        
 	        return obj;       
@@ -208,7 +220,11 @@ public class ConfigurationFormController {
 	    		String pJsonData = mapper.writeValueAsString(columnData);
 	    		
 	    		System.out.println(pJsonData);
-	    		confService.updateColumnHeader(pJsonData);
+	    		
+	    		// Filtering json data for stored value
+	    		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	    		
+	    		confService.updateColumnHeader(filteredJsonData);
 	    	}
 	    	
 	    	return obj;

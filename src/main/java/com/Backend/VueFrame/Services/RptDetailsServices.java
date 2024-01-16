@@ -76,4 +76,12 @@ public class RptDetailsServices {
 		return getData;
 	}
 	
+	
+	public String getJsonFilterforStoredVal(String pJsonArray) {
+		
+		String getData = rptDetailsRepo.getJsonFilterforStoredVal(pJsonArray);
+		
+		return getData;
+	}
+	
 }

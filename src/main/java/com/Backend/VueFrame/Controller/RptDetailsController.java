@@ -14,9 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.GridData;
+import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.RptDetails;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.RptDetailsServices;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -28,7 +32,7 @@ public class RptDetailsController {
 	
 	
 	@PostMapping("setRptData")
-	 public Object setRptData(@RequestBody List<RptDetails> setData) {
+	 public Object setRptData(@RequestBody List<RptDetails> setData) throws JsonProcessingException {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -38,8 +42,22 @@ public class RptDetailsController {
              obj.put("rptId",i.getRptId());
              obj.put("dsId",i.getDsId());
 		 }
+		 
+		 // using ObjectMapper dependancy to convert object into string.
+	 	 ObjectMapper mapper = new ObjectMapper();
+	 		   
+	 	 // converting object into string
+	 	 String pJsonData = mapper.writeValueAsString(setData);
+	 		
+	 	 System.out.println(pJsonData);
+	 		
+	 	 // Filtering json data for stored value
+	 	 String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	 		
+	 	 List<RptDetails> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<RptDetails>>() {});
+
 			 
-		 List<RptDetails> list = rptDetailsServs.setRptData(setData);
+		 List<RptDetails> list = rptDetailsServs.setRptData(convertedObject);
 		 
 		 return obj;
 	 }
@@ -60,5 +78,8 @@ public class RptDetailsController {
 				 
 		 return getData;
 	 }
+	 
+	 
+	 
 	 
 }

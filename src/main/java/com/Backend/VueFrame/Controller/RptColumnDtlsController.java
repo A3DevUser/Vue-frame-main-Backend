@@ -17,7 +17,9 @@ import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.RptColumnDtlsServices;
+import com.Backend.VueFrame.Services.RptDetailsServices;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
@@ -27,6 +29,9 @@ public class RptColumnDtlsController {
 	
 	@Autowired
 	private RptColumnDtlsServices rptColumnDtlsServs;
+	
+	@Autowired
+	private RptDetailsServices rptDetailsServs;
 	
 	
 	@PostMapping("setRptColDtls")
@@ -47,10 +52,15 @@ public class RptColumnDtlsController {
  		String pJsonData = mapper.writeValueAsString(setData);
  		
  		System.out.println(pJsonData);
-			 
-		 List<RptColumnDtls> list = rptColumnDtlsServs.setRptColDtls(setData);
+ 		
+ 		// Filtering json data for stored value
+ 		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+ 		
+ 		List<RptColumnDtls> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<RptColumnDtls>>() {});
+ 		
+		List<RptColumnDtls> list = rptColumnDtlsServs.setRptColDtls(convertedObject);
 		 
-		 return obj;
+		return obj;
 	 }
 	
 	
