@@ -159,11 +159,8 @@ public class ConfigurationFormController {
 	        // using predefined method from workflowRepository to get is_main table or not.
 	        Map<String, String> map1 = workflowRepo.getIsMainAndFormId(gridId);
 	        
-<<<<<<< HEAD
-	        if(map1.get("IS_MAIN").equals("true")) {
-=======
+
 	        if(gridId == null || map1.get("IS_MAIN").equals("true")) { // if it is 'true' then it means new multirow creation is happening.
->>>>>>> 3166b297ba40cde3f5278386eab90985e012a527
 	        
 	        	String formId = null;
 		    	for (GridData grid :  gridData) {

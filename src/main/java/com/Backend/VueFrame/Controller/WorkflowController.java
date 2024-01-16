@@ -214,7 +214,7 @@ public class WorkflowController {
 	 
 	 
 	 @GetMapping("getMultiColumnData")
-	    public List<String> getColumnData(@RequestParam String gridId) {
+	    public String getColumnData(@RequestParam String gridId) {
 	        return workFlowServ.getColumnData(gridId);
 	    }
 	  

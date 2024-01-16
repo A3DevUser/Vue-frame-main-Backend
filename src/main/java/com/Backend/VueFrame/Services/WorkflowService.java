@@ -251,7 +251,7 @@ public class WorkflowService {
 	}
 	
 	
-	 public List<String> getColumnData(String gridId) {
+	 public String getColumnData(String gridId) {
 	        return workFlowRepo.getColumnData(gridId);
 	    }
 	
