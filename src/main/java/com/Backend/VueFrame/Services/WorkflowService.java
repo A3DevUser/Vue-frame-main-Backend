@@ -106,7 +106,9 @@ public class WorkflowService {
     }
 	
 	
-	public void callImportExportAddData(String json) throws JsonMappingException, JsonProcessingException {
+	public void callImportExportAddData(String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
+		
+		System.out.println("ImportExportAddData = "+json);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -117,7 +119,8 @@ public class WorkflowService {
 		Map<String, String> objIdMap = new HashMap<>();
 		
 		List<String> defCols = workFlowRepo.getDefaultCols();
-	
+		
+		System.out.println("converted json = "+list);
 		
 		for(Map<String, String> obj : list) {
 			// {single object}
@@ -143,6 +146,16 @@ public class WorkflowService {
 				obj.put("formId", formId);
 				
 				System.out.println(obj);
+				
+				// adding $$ in VF_ORGANISATION_ID for drop down
+				String orgValue = obj.get("VF_ORGANISATION_ID");
+				
+				if(orgValue.isBlank()) {
+					System.out.println(orgValue);
+				}
+				else {
+					obj.put("VF_ORGANISATION_ID",orgValue+"$$"+orgValue);
+				}
 				
 				returnList.add(obj);
 			}
@@ -178,11 +191,12 @@ public class WorkflowService {
 			}
 		}
 		
-		System.out.println(returnList);
+//		System.out.println(returnList);
 		String StrReturnList = mapper.writeValueAsString(returnList);
 		
-		System.out.println(StrReturnList);
-		workFlowRepo.insertDataFromDynamicJsonArray(StrReturnList);
+		System.out.println("final result string list = "+StrReturnList);
+//		workFlowRepo.insertDataFromDynamicJsonArray(StrReturnList);
+		callInsertDataFromDynamicJsonArray(StrReturnList, currLoggedInUser);
 		
 	}
 
