@@ -15,12 +15,12 @@ public class WfEmailConfigServices {
 	@Autowired
 	private WfEmailConfigRepository wfEmailConfigRepo;
 	
-	public List<WfEmailConfigData> setWfEmailConfig(List<WfEmailConfigData> setData) {
-		
-		List<WfEmailConfigData> list = wfEmailConfigRepo.saveAllAndFlush(setData);
-		
-		return list;
-	}
+//	public List<WfEmailConfigData> setWfEmailConfig(List<WfEmailConfigData> setData) {
+//		
+//		List<WfEmailConfigData> list = wfEmailConfigRepo.saveAllAndFlush(setData);
+//		
+//		return list;
+//	}
 	
 	public WfEmailConfigData setEcId(@RequestBody WfEmailConfigData setData) {
 		if(setData.getEcId() == null) {

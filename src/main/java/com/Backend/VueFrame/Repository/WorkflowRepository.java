@@ -128,8 +128,18 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 
 	 @Procedure(procedureName = "VF_WORKFLOW_CONFIG_DATA_OBJ", outputParameterName = "v_result")
 	 String getWfEditData(@Param("p_workflow_id") String wfId);
-
+	 
+	 //function of fetch multiselect column data
+	 @Procedure(procedureName = "vf_ms_column_data_proc", outputParameterName = "v_result_data")
+	    String getColumnData(
+	        @Param("v_grid_id") String gridId
+	    );
 	
+	 @Procedure(procedureName = "vf_get_multiselect_data_obj", outputParameterName = "v_result")
+	    String getMultiColumnData(
+	        @Param("p_grid_id") String gridId
+	    ); 
+	 
 }
 
 

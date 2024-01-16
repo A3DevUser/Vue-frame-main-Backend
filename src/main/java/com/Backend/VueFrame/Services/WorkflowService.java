@@ -264,6 +264,15 @@ public class WorkflowService {
 		return getData;
 	}
 	
+	
+	 public String getColumnData(String gridId) {
+	        return workFlowRepo.getColumnData(gridId);
+	    }
+	 
+	
+	 public String getMultiColumnData(String gridId) {
+	        return workFlowRepo.getMultiColumnData(gridId);
+	    }
 	 // api creation from madhur sir
 //	public List<Map<String, String>> getCoiResAndVenDtls() {
 //		

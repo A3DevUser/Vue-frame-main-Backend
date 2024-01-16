@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.EmailDetails;
+import com.Backend.VueFrame.Model.Emailsample;
 import com.Backend.VueFrame.Services.EmailService;
 import com.Backend.VueFrame.Services.LoggerService;
 
@@ -21,7 +22,7 @@ public class EmailController {
 	// Sending a simple Email
 	@PostMapping("/sendMail")
 	public String
-	sendMail(@RequestBody EmailDetails details)
+	sendMail(@RequestBody Emailsample details)
 	{
 		String status = 
 		 emailService.sendSimpleMail(details);

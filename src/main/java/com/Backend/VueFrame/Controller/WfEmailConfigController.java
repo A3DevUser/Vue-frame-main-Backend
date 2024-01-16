@@ -20,17 +20,17 @@ public class WfEmailConfigController {
 	@Autowired
 	private WfEmailConfigServices wfEmailConfigServs;
 	
-	@PostMapping("setWfEmailConfig")
-	public List<WfEmailConfigData> setWfEmailConfig(@RequestBody List<WfEmailConfigData> setData) {
-		
-		for(WfEmailConfigData i : setData) {
-			wfEmailConfigServs.setEcId(i);
-		}
-		
-		List<WfEmailConfigData> list = wfEmailConfigServs.setWfEmailConfig(setData);
-		
-		return list;
-	}
+//	@PostMapping("setWfEmailConfig")
+//	public List<WfEmailConfigData> setWfEmailConfig(@RequestBody List<WfEmailConfigData> setData) {
+//		
+//		for(WfEmailConfigData i : setData) {
+//			wfEmailConfigServs.setEcId(i);
+//		}
+//		
+//		List<WfEmailConfigData> list = wfEmailConfigServs.setWfEmailConfig(setData);
+//		
+//		return list;
+//	}
 }
 
 

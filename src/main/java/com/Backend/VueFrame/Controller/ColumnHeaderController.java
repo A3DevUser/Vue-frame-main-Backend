@@ -48,7 +48,7 @@ public class ColumnHeaderController {
 //	public List<ColumnHeaderData> getColumnByOrder(){
 //		return columnServ.getOrderData();
 //	} 
-	
+	//setColumnHead
 	@PostMapping("setColumnHead") 
 	public List<ColumnHeaderData> setColumnData(@RequestBody List<ColumnHeaderData> setData) {
 		
