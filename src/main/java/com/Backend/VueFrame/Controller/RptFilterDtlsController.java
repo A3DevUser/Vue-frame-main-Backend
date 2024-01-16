@@ -13,9 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.RptFilterDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
+import com.Backend.VueFrame.Services.RptDetailsServices;
 import com.Backend.VueFrame.Services.RptFilterDtlsServices;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -25,9 +30,12 @@ public class RptFilterDtlsController {
 	@Autowired
 	private RptFilterDtlsServices rptFilterDtlsServs;
 	
+	@Autowired
+	private RptDetailsServices rptDetailsServs;
+	
 	
 	@PostMapping("setRptFilterDtls")
-	 public Object setRptFilterDtls(@RequestBody List<RptFilterDtls> setData) {
+	 public Object setRptFilterDtls(@RequestBody List<RptFilterDtls> setData) throws JsonProcessingException {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -36,8 +44,22 @@ public class RptFilterDtlsController {
              obj.put("filId",i.getFilId());
              obj.put("rptId",i.getRptId());
 		 }
+		 
+		 // using ObjectMapper dependancy to convert object into string.
+	 	 ObjectMapper mapper = new ObjectMapper();
+	 		   
+	 	 // converting object into string
+	 	 String pJsonData = mapper.writeValueAsString(setData);
+	 		
+	 	 System.out.println(pJsonData);
+	 		
+	 	 // Filtering json data for stored value
+	 	 String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	 		
+	 	 List<RptFilterDtls> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<RptFilterDtls>>() {});
+
 			 
-		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(setData);
+		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(convertedObject);
 		 
 		 return obj;
 		 

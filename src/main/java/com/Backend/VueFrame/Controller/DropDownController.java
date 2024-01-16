@@ -19,7 +19,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.Backend.VueFrame.Model.DropDownData;
+import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Services.DropDownServices;
+import com.Backend.VueFrame.Services.RptDetailsServices;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @RequestMapping("VF/")
@@ -29,6 +34,9 @@ public class DropDownController {
 
 	@Autowired
 	private DropDownServices eDropServ;
+	
+	@Autowired
+	private RptDetailsServices rptDetailsServs;
 	
 	//For getting list of the parameter as a json object for execution of Dropdown
 	@GetMapping("DropData1")
@@ -74,7 +82,7 @@ public class DropDownController {
 	}
 	
 	@PostMapping("setddData")
-	public Map<String, Object> setDDData(@RequestBody List<DropDownData> ddData) {
+	public Map<String, Object> setDDData(@RequestBody List<DropDownData> ddData) throws JsonProcessingException {
         List<DropDownData> updatedDropDownData = new ArrayList<>();
         Map<String,Object> obj = new HashMap<>();
 
@@ -85,9 +93,21 @@ public class DropDownController {
             DropDownData updatedData = eDropServ.setDropDownId(data);
             updatedDropDownData.add(updatedData);
         }
+        
+        // using ObjectMapper dependancy to convert object into string.
+      	ObjectMapper mapper = new ObjectMapper();
+      		   
+      	// converting object into string
+      	String pJsonData = mapper.writeValueAsString(ddData);
+      		
+      	System.out.println(pJsonData);
+      		
+      	String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+      	
+      	List<DropDownData> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<DropDownData>>() {});
 
         // Save the updated data using setDataDropDown method
-        List<DropDownData> savedData = eDropServ.setDataDropDown(updatedDropDownData);
+        List<DropDownData> savedData = eDropServ.setDataDropDown(convertedObject);
 
         return obj;
     }

@@ -19,7 +19,7 @@ public class RptDsColumnDetailsServices {
 	
 	
 	public RptDsColumnDetails setDsColId(@RequestBody RptDsColumnDetails setData) {
-		if(setData.getColumnId() == null) {
+		if(setData.getColumnId().isBlank()) {
 			String seq = rptDsColumnDetailsRepo.setDsColId();
 		    String formattedSeq = "DSC-" + seq;
 		    setData.setColumnId(formattedSeq);

@@ -26,7 +26,7 @@ public class RptDetailsServices {
 	
 	
 	public RptDetails setRptIdSeq(@RequestBody RptDetails setData) {
-		if(setData.getRptId() == null) {
+		if(setData.getRptId().isBlank()) {
 			String seq = rptDetailsRepo.setRptIdSeq();
 		    String formattedSeq = "RPT-" + seq;
 		    setData.setRptId(formattedSeq);
@@ -72,6 +72,14 @@ public class RptDetailsServices {
 	public String getRptEditData(String rptId) {
 		
 		String getData = rptDetailsRepo.getRptEditData(rptId);
+		
+		return getData;
+	}
+	
+	
+	public String getJsonFilterforStoredVal(String pJsonArray) {
+		
+		String getData = rptDetailsRepo.getJsonFilterforStoredVal(pJsonArray);
 		
 		return getData;
 	}

@@ -15,10 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.RptExpression;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Repository.RptExpressionRepository;
+import com.Backend.VueFrame.Services.RptDetailsServices;
 import com.Backend.VueFrame.Services.RptExpressionServices;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -31,9 +36,12 @@ public class RptExpressionController {
 	@Autowired
 	private RptExpressionRepository rptExpressionRepo;
 	
+	@Autowired
+	private RptDetailsServices rptDetailsServs;
+	
 	
 	@PostMapping("setRptExpData")
-	 public String setRptExpData(@RequestBody List<RptExpression> setData) {
+	 public String setRptExpData(@RequestBody List<RptExpression> setData) throws JsonProcessingException {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -42,7 +50,7 @@ public class RptExpressionController {
 //			 obj.put("expId",i.getExpId());
 //			 obj.put("dsId", i.getDsId());
 		 }
-		  
+		 
 		 List<RptExpression> list = rptExpressionServs.setRptExpData(setData);
 		 
 		 String v_result = null;

@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.FormData;
+import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.LoggerService;
+import com.Backend.VueFrame.Services.RptDetailsServices;
 import com.Backend.VueFrame.Services.WorkflowService;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -31,6 +35,9 @@ public class WorkflowController {
 	
 	@Autowired
 	private LoggerService logServ;
+	
+	@Autowired
+	private RptDetailsServices rptDetailsServs;
 	
 	@GetMapping("getWFName")
 	public List<WorkflowData> getWorkFlowData(@RequestParam String formId) {
@@ -110,7 +117,7 @@ public class WorkflowController {
 //	 
 	 
 	 @PostMapping("setWorkflowData")
-	 public Object setWorkflowData(@RequestBody List<WorkflowData> setData) {
+	 public Object setWorkflowData(@RequestBody List<WorkflowData> setData) throws JsonProcessingException {
 		 
 	     Map<String,Object> obj = new HashMap<>();
 
@@ -119,8 +126,22 @@ public class WorkflowController {
              obj.put("wfId",wf.getWfId());
              obj.put("formId",wf.getFormId());
 		 }
+		 
+		// using ObjectMapper dependancy to convert object into string.
+	 	ObjectMapper mapper = new ObjectMapper();
+	 		   
+	 	// converting object into string
+	 	String pJsonData = mapper.writeValueAsString(setData);
+	 		
+	 	System.out.println(pJsonData);
+	 		
+	 	// Filtering json data for stored value
+	 	String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	 		
+	 	List<WorkflowData> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<WorkflowData>>() {});
+	 		
 			 
-		 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
+		List<WorkflowData> list = workFlowServ.setWorkflowData(convertedObject);
 		 
 		 return obj;
 		 
