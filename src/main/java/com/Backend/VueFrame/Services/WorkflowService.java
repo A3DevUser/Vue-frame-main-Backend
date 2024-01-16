@@ -250,6 +250,11 @@ public class WorkflowService {
 		return getData;
 	}
 	
+	
+	 public List<String> getColumnData(String gridId) {
+	        return workFlowRepo.getColumnData(gridId);
+	    }
+	
 	 // api creation from madhur sir
 //	public List<Map<String, String>> getCoiResAndVenDtls() {
 //		

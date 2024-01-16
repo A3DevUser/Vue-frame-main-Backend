@@ -1,6 +1,7 @@
 package com.Backend.VueFrame.Services;
 
 import java.io.File;
+import java.util.List;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -14,6 +15,8 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.Backend.VueFrame.Model.EmailDetails;
+import com.Backend.VueFrame.Model.Emailsample;
+import com.Backend.VueFrame.Repository.WfEmailConfigRepository;
 import com.Backend.VueFrame.Repository.WorkflowRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -30,57 +33,99 @@ public class EmailServiceImpl implements EmailService {
 	private WorkflowRepository wfRepo;
 	
 	@Autowired
+	private WfEmailConfigRepository emailRepo;
+	
+	@Autowired
 	private LoggerService log;
 
 	@Value("${spring.mail.username}") private String sender;
 
 	// Method 1
 	// To send a simple email
-	public String sendSimpleMail(EmailDetails details)
-	{
-
-		
-		// Try block to check for exceptions
-		try {
-
-			// Creating a simple mail message
-			SimpleMailMessage mailMessage
-				= new SimpleMailMessage();
-
-			// Setting up necessary details
-			mailMessage.setFrom(sender);
-			mailMessage.setTo(details.getRecipient());
-			mailMessage.setText(details.getMsgBody());
-			mailMessage.setSubject(details.getSubject());
-
-			// Sending the mail
-			javaMailSender.send(mailMessage);
-
-//			String jsonData = convertMailMessageToJson(mailMessage);
+//	public String sendSimpleMail(EmailDetails details)
+//	{
 //
-//	        log.log("e", "Error", "jsonData" + jsonData);
+//		
+//		// Try block to check for exceptions
+//		try {
 //
-//            // Call the stored procedure
-//            wfRepo.logEmail(jsonData);
+//			// Creating a simple mail message
+//			SimpleMailMessage mailMessage
+//				= new SimpleMailMessage();
+//
+//			// Setting up necessary details
+//			mailMessage.setFrom(sender);
+//			mailMessage.setTo(details.getRecipient());
+//			mailMessage.setText(details.getMsgBody());
+//			mailMessage.setSubject(details.getSubject());
+//
+//			// Sending the mail
+//			javaMailSender.send(mailMessage);
+//
+////			String jsonData = convertMailMessageToJson(mailMessage);
+////
+////	        log.log("e", "Error", "jsonData" + jsonData);
+////
+////            // Call the stored procedure
+////            wfRepo.logEmail(jsonData);
+//            
+//			return "Mail Sent Successfully...";
+//		}
+//
+//		// Catch block to handle the exceptions
+//		catch (Exception e) {
+//			return "Error while Sending Mail";
+//		}
+//	}
+	
+	
+	
+	public String sendSimpleMail(Emailsample emailSample) {
+        try {
+            SimpleMailMessage mailMessage = new SimpleMailMessage();
+
+            // Assuming that your Emailsample class has appropriate getter methods
+            mailMessage.setFrom(sender);
+            mailMessage.setTo(emailSample.getEmailTo());
+            mailMessage.setText(emailSample.getEmailBody());
+            mailMessage.setSubject(emailSample.getSubject());
+
+            javaMailSender.send(mailMessage);
+
+            // Assuming you have a method to convert Emailsample to JSON
+            String jsonData = convertEmailsampleToJson(emailSample);
+
+            // Assuming you have a LoggerService to log the JSON data
+            log.log("e", "Error", "jsonData" + jsonData);
+
+            // Assuming you have a repository to store the JSON data
+            wfRepo.logEmail(jsonData);
             
-			return "Mail Sent Successfully...";
-		}
+           
 
-		// Catch block to handle the exceptions
-		catch (Exception e) {
-			return "Error while Sending Mail";
-		}
-	}
+            return "Mail Sent Successfully...";
+        } catch (Exception e) {
+            return "Error while Sending Mail";
+        }
+    }
 
-	private String convertMailMessageToJson(SimpleMailMessage mailMessage) {
-	    try {
-	        ObjectMapper objectMapper = new ObjectMapper();
-	        return objectMapper.writeValueAsString(mailMessage);
-	    } catch (Exception e) {
-	        log.log("e", "Error", "Error Details" + mailMessage);
-	        return null; // Handle the error accordingly
-	    }
-	}
+    // Assuming you have a method to convert Emailsample to JSON
+    private String convertEmailsampleToJson(Emailsample emailSample) {
+        // Implement your logic to convert Emailsample to JSON
+        // This is a placeholder and should be replaced with your actual implementation
+        return "{ \"emailTo\": \"" + emailSample.getEmailTo() + "\", \"emailBody\": \"" + emailSample.getEmailBody() + "\" }";
+    }
+
+
+//	private String convertMailMessageToJson(SimpleMailMessage mailMessage) {
+//	    try {
+//	        ObjectMapper objectMapper = new ObjectMapper();
+//	        return objectMapper.writeValueAsString(mailMessage);
+//	    } catch (Exception e) {
+//	        log.log("e", "Error", "Error Details" + mailMessage);
+//	        return null; // Handle the error accordingly
+//	    }
+//	}
 
 	// Method 2
 	// To send an email with attachment
@@ -125,4 +170,7 @@ public class EmailServiceImpl implements EmailService {
 			return "Error while sending mail!!!";
 		}
 	}
+	
+	
+	
 }

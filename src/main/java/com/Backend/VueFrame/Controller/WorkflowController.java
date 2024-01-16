@@ -65,6 +65,7 @@ public class WorkflowController {
 	
 	
 	
+	
 //	
 //	 @PostMapping("callWorkflowProcedure")
 //	    public String callWorkflowProcedure(@RequestBody String json, @RequestParam(required = false) String GRID_ID) {
@@ -189,6 +190,12 @@ public class WorkflowController {
 		 
 		 return getData;
 	 }
+	 
+	 
+	 @GetMapping("getMultiColumnData")
+	    public List<String> getColumnData(@RequestParam String gridId) {
+	        return workFlowServ.getColumnData(gridId);
+	    }
 	  
 	
 }
