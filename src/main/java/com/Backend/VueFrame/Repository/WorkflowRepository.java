@@ -135,6 +135,11 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	        @Param("v_grid_id") String gridId
 	    );
 	
+	 @Procedure(procedureName = "vf_get_multiselect_data_obj", outputParameterName = "v_result")
+	    String getMultiColumnData(
+	        @Param("p_grid_id") String gridId
+	    ); 
+	 
 }
 
 

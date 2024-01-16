@@ -217,6 +217,13 @@ public class WorkflowController {
 	    public String getColumnData(@RequestParam String gridId) {
 	        return workFlowServ.getColumnData(gridId);
 	    }
-	  
+	 
+
+	 
+	 @GetMapping("getMultiData")
+	    public String getMultiColumnData(@RequestParam String gridId) {
+	        return workFlowServ.getMultiColumnData(gridId);
+	    }
+	 
 	
 }
