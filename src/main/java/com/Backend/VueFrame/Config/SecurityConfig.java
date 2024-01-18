@@ -55,7 +55,7 @@ public class SecurityConfig {
                                                                 .authorizeHttpRequests(
                                                               (authorizeHttpRequests) ->
                                                                   authorizeHttpRequests
-                                                                      .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken", "/sendMail")
+                                                                      .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken", "/sendMail","/insertAuditId")
                                                                       .permitAll()
                                                                       .anyRequest()
                                                                       .authenticated())
