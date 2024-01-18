@@ -140,6 +140,9 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	        @Param("p_grid_id") String gridId
 	    ); 
 	 
+	 
+	 @Procedure(procedureName = "InsertAuditId")
+        void setAuditId(@Param("audit_json_param") String auditId);
 }
 
 

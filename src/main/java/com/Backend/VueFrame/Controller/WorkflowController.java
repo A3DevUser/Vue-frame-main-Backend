@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.RptColumnDtls;
 import com.Backend.VueFrame.Model.WorkflowData;
+import com.Backend.VueFrame.Repository.WorkflowRepository;
 import com.Backend.VueFrame.Services.LoggerService;
 import com.Backend.VueFrame.Services.RptDetailsServices;
 import com.Backend.VueFrame.Services.WorkflowService;
@@ -38,6 +39,10 @@ public class WorkflowController {
 	
 	@Autowired
 	private RptDetailsServices rptDetailsServs;
+	
+	@Autowired
+	private WorkflowRepository workFlowRepo;
+	
 	
 	@GetMapping("getWFName")
 	public List<WorkflowData> getWorkFlowData(@RequestParam String formId) {
@@ -223,6 +228,11 @@ public class WorkflowController {
 	 @GetMapping("getMultiData")
 	    public String getMultiColumnData(@RequestParam String gridId) {
 	        return workFlowServ.getMultiColumnData(gridId);
+	    }
+	 
+	 @PostMapping("insertAuditId")
+	    public void insertAuditId(@RequestBody String auditId) {
+		 workFlowRepo.setAuditId(auditId);
 	    }
 	 
 	
