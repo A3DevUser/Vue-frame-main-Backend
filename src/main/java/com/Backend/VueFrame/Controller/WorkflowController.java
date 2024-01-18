@@ -70,9 +70,9 @@ public class WorkflowController {
 	
 	
 	@PostMapping("importExportAddData")
-	public void importExportAddData(@RequestBody(required = false) String json) throws JsonMappingException, JsonProcessingException {
+	public void importExportAddData(@RequestBody(required = false) String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
 		
-		workFlowServ.callImportExportAddData(json);
+		workFlowServ.callImportExportAddData(json, currLoggedInUser);
 	}
 	
 	
