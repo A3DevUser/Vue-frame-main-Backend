@@ -10,277 +10,159 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Entity
-@Table(name = "vf_a3_account_data")
+@Table(name = "VRM_VENDOR_REVIEW")
 
 public class VFA3AccountData {	
 		
 		@Id
-		@Column(name = "ACCOUNT_NUMBER")
+		@Column(name = "VF_MAIN_OBJ_ID")
 	    @JsonProperty("Associate_Vend")
-		private String Associate_Vend;
+		private String vfMainObjId;
 		
-		@Column(name = "NAME")	
-		private String customerName;
+		@Column(name = "REVIEW_TYPE")	
+		private String reviewType;
 			
-		@Column(name = "OUTSTANDING_BALANCE")
-		private String outstandingAmt;
+		@Column(name = "ASSESSMENT_TYPE")
+		private String assessmentType;
 		
-		@Column(name = "OVERDUES")
-		private String overdue;
+		@Column(name = "REVIEW_FREQ")
+		private String reviewFreq;
 		
-		@Column(name = "CUSTOMER_ID")
-		private String customerId;
+		@Column(name = "SUB_FREQUENCY")
+		private String subFrequency;
 		
-		@Column(name = "SCHEME_CODE")
-		private String schemeCode;
+		@Column(name = "ASSOCIATE_ACT")
+		private String associateAct;
 		
-		@Column(name = "SOL_ID")
-		private String solId;
+		@Column(name = "ASSOCIATE_VEN")
+		private String associateVen;
 	
 		
-		@Column(name = "SANCTION_DATE")
-		private String sanctionDate;
+		@Column(name = "BUSINESS_UNIT")
+		private String BusinessUnit;
 		
-		@Column(name = "LIMIT")
-		private String limit;
+		@Column(name = "VENDOR_NAME")
+		private String vendorName;
 		
-		@Column(name = "OVERDUES_SINCE")
-		private String overduesSince;
+		@Column(name = "VENDOR_STATUS")
+		private String vendorStatus;
 		
-		@Column(name = "ROI")
-		private String roi;
-		
-		@Column(name = "ASSET_CLASS")
-		private String assetClass;
-		
-		@Column(name = "DESCRIPTION_OF_ACTIVITY")
-		private String descOfActivity;
-		
-		@Column(name = "ZONE")
-		private String zone;
-		
-		@Column(name = "REGION")
-		private String region;
-		
-		@Column(name = "BRANCH_NAME")
-		private String branchName;
-		
-		@Column(name = "SCHEME_DESCRIPTION")
-		private String schemeDesc;
-		
-		@Column(name = "STATUS")
-		private String status;
-		
-		@Column(name = "USERID")
-		private String userId;
-		
-		@Column (name="AUDIT_ID")
-		private String dummy;
-		
-		@Column(name="Internal_rating")
-		private String internalTraining;
+		@Column(name = "VENDOR_ONB_DATE")
+		private String vendorOnbDate;
 
-		public String getAssociate_Vend() {
-			return Associate_Vend;
+		public String getVfMainObjId() {
+			return vfMainObjId;
 		}
 
-		public void setAssociate_Vend(String associate_Vend) {
-			Associate_Vend = associate_Vend;
+		public void setVfMainObjId(String vfMainObjId) {
+			this.vfMainObjId = vfMainObjId;
 		}
 
-		public String getCustomerName() {
-			return customerName;
+		public String getReviewType() {
+			return reviewType;
 		}
 
-		public void setCustomerName(String customerName) {
-			this.customerName = customerName;
+		public void setReviewType(String reviewType) {
+			this.reviewType = reviewType;
 		}
 
-		public String getOutstandingAmt() {
-			return outstandingAmt;
+		public String getAssessmentType() {
+			return assessmentType;
 		}
 
-		public void setOutstandingAmt(String outstandingAmt) {
-			this.outstandingAmt = outstandingAmt;
+		public void setAssessmentType(String assessmentType) {
+			this.assessmentType = assessmentType;
 		}
 
-		public String getOverdue() {
-			return overdue;
+		public String getReviewFreq() {
+			return reviewFreq;
 		}
 
-		public void setOverdue(String overdue) {
-			this.overdue = overdue;
+		public void setReviewFreq(String reviewFreq) {
+			this.reviewFreq = reviewFreq;
 		}
 
-		public String getCustomerId() {
-			return customerId;
+		public String getSubFrequency() {
+			return subFrequency;
 		}
 
-		public void setCustomerId(String customerId) {
-			this.customerId = customerId;
+		public void setSubFrequency(String subFrequency) {
+			this.subFrequency = subFrequency;
 		}
 
-		public String getSchemeCode() {
-			return schemeCode;
+		public String getAssociateAct() {
+			return associateAct;
 		}
 
-		public void setSchemeCode(String schemeCode) {
-			this.schemeCode = schemeCode;
+		public void setAssociateAct(String associateAct) {
+			this.associateAct = associateAct;
 		}
 
-		public String getSolId() {
-			return solId;
+		public String getAssociateVen() {
+			return associateVen;
 		}
 
-		public void setSolId(String solId) {
-			this.solId = solId;
+		public void setAssociateVen(String associateVen) {
+			this.associateVen = associateVen;
 		}
 
-		public String getSanctionDate() {
-			return sanctionDate;
+		public String getBusinessUnit() {
+			return BusinessUnit;
 		}
 
-		public void setSanctionDate(String sanctionDate) {
-			this.sanctionDate = sanctionDate;
+		public void setBusinessUnit(String businessUnit) {
+			BusinessUnit = businessUnit;
 		}
 
-		public String getLimit() {
-			return limit;
+		public String getVendorName() {
+			return vendorName;
 		}
 
-		public void setLimit(String limit) {
-			this.limit = limit;
+		public void setVendorName(String vendorName) {
+			this.vendorName = vendorName;
 		}
 
-		public String getOverduesSince() {
-			return overduesSince;
+		public String getVendorStatus() {
+			return vendorStatus;
 		}
 
-		public void setOverduesSince(String overduesSince) {
-			this.overduesSince = overduesSince;
+		public void setVendorStatus(String vendorStatus) {
+			this.vendorStatus = vendorStatus;
 		}
 
-		public String getRoi() {
-			return roi;
+		public String getVendorOnbDate() {
+			return vendorOnbDate;
 		}
 
-		public void setRoi(String roi) {
-			this.roi = roi;
+		public void setVendorOnbDate(String vendorOnbDate) {
+			this.vendorOnbDate = vendorOnbDate;
 		}
 
-		public String getAssetClass() {
-			return assetClass;
-		}
-
-		public void setAssetClass(String assetClass) {
-			this.assetClass = assetClass;
-		}
-
-		public String getDescOfActivity() {
-			return descOfActivity;
-		}
-
-		public void setDescOfActivity(String descOfActivity) {
-			this.descOfActivity = descOfActivity;
-		}
-
-		public String getZone() {
-			return zone;
-		}
-
-		public void setZone(String zone) {
-			this.zone = zone;
-		}
-
-		public String getRegion() {
-			return region;
-		}
-
-		public void setRegion(String region) {
-			this.region = region;
-		}
-
-		public String getBranchName() {
-			return branchName;
-		}
-
-		public void setBranchName(String branchName) {
-			this.branchName = branchName;
-		}
-
-		public String getSchemeDesc() {
-			return schemeDesc;
-		}
-
-		public void setSchemeDesc(String schemeDesc) {
-			this.schemeDesc = schemeDesc;
-		}
-
-		public String getStatus() {
-			return status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getUserId() {
-			return userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getDummy() {
-			return dummy;
-		}
-
-		public void setDummy(String dummy) {
-			this.dummy = dummy;
-		}
-
-		public String getInternalTraining() {
-			return internalTraining;
-		}
-
-		public void setInternalTraining(String internalTraining) {
-			this.internalTraining = internalTraining;
-		}
-
-		public VFA3AccountData(String associate_Vend, String customerName, String outstandingAmt, String overdue,
-				String customerId, String schemeCode, String solId, String sanctionDate, String limit,
-				String overduesSince, String roi, String assetClass, String descOfActivity, String zone, String region,
-				String branchName, String schemeDesc, String status, String userId, String dummy,
-				String internalTraining) {
+		public VFA3AccountData(String vfMainObjId, String reviewType, String assessmentType, String reviewFreq,
+				String subFrequency, String associateAct, String associateVen, String businessUnit, String vendorName,
+				String vendorStatus, String vendorOnbDate) {
 			super();
-			Associate_Vend = associate_Vend;
-			this.customerName = customerName;
-			this.outstandingAmt = outstandingAmt;
-			this.overdue = overdue;
-			this.customerId = customerId;
-			this.schemeCode = schemeCode;
-			this.solId = solId;
-			this.sanctionDate = sanctionDate;
-			this.limit = limit;
-			this.overduesSince = overduesSince;
-			this.roi = roi;
-			this.assetClass = assetClass;
-			this.descOfActivity = descOfActivity;
-			this.zone = zone;
-			this.region = region;
-			this.branchName = branchName;
-			this.schemeDesc = schemeDesc;
-			this.status = status;
-			this.userId = userId;
-			this.dummy = dummy;
-			this.internalTraining = internalTraining;
+			this.vfMainObjId = vfMainObjId;
+			this.reviewType = reviewType;
+			this.assessmentType = assessmentType;
+			this.reviewFreq = reviewFreq;
+			this.subFrequency = subFrequency;
+			this.associateAct = associateAct;
+			this.associateVen = associateVen;
+			BusinessUnit = businessUnit;
+			this.vendorName = vendorName;
+			this.vendorStatus = vendorStatus;
+			this.vendorOnbDate = vendorOnbDate;
 		}
 
 		public VFA3AccountData() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
+		
+		
+		
+		
 
 
 
