@@ -11,32 +11,38 @@ public class VfA3ReviewDD {
 	
 	@Id
 	@Column(name = "ID")
-	private String id;
+	private String stroredValue;
 	
 	@Column(name = "REVIEW_TYPE")
-	private String reviewType;
+	private String displayValue;
 
-	public String getId() {
-		return id;
+	
+	public String getStroredValue() {
+		return stroredValue;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+
+	public void setStroredValue(String stroredValue) {
+		this.stroredValue = stroredValue;
 	}
 
-	public String getReviewType() {
-		return reviewType;
+
+	public String getDisplayValue() {
+		return displayValue;
 	}
 
-	public void setReviewType(String reviewType) {
-		this.reviewType = reviewType;
+
+	public void setDisplayValue(String displayValue) {
+		this.displayValue = displayValue;
 	}
 
-	public VfA3ReviewDD(String id, String reviewType) {
+
+	public VfA3ReviewDD(String stroredValue, String displayValue) {
 		super();
-		this.id = id;
-		this.reviewType = reviewType;
+		this.stroredValue = stroredValue;
+		this.displayValue = displayValue;
 	}
+
 
 	public VfA3ReviewDD() {
 		super();
