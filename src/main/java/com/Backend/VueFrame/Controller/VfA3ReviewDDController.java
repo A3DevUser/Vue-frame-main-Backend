@@ -41,4 +41,11 @@ public class VfA3ReviewDDController {
 	
 	return vfA3ReviewRepo.getReviewSubFreqDropdown(reviewFreq);
 	}
+	
+	
+	@GetMapping("getA3ReviewOBData")
+	public String getReviewOBData(@RequestParam String reviewFreq, @RequestParam String reviewSubFreq) {
+		
+		return vfA3ReviewRepo.getReviewA3Data(reviewFreq, reviewSubFreq);
+	}
 }
