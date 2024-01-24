@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,39 +37,57 @@ public class A3ReviewPlanController {
 	
 	
 	@PostMapping("setReviewPlanData")
-	public List<ReviewData> postReviews(@RequestBody List<ReviewData> reviewDataList) {
-	    List<VfA3ReviewPlan> reviewPlans = new ArrayList<>();
-	    List<VfA3ReviewPlanStatus> reviewPlanStatusList = new ArrayList<>();
+    public ResponseEntity<List<ReviewData>> postReviews(@RequestBody List<ReviewData> reviewDataList) {
+        try {
+            String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
 
-	    
-        String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
+          
+//            	System.out.println("reviewData = " + reviewDataList.toString() + " reviewId = " + reviewId);
+//            	@SuppressWarnings("unused")
+//				String result = a3ReviewPlanRepo.setData(
+//						reviewId,
+//						((ReviewData) reviewDataList).getReview_Type(),
+//						((ReviewData) reviewDataList).getReviewName(),
+//						((ReviewData) reviewDataList).getReview_Freq(),
+//						((ReviewData) reviewDataList).getSub_Frequency(),
+//						((ReviewData) reviewDataList).getReviewStatus(),
+//						((ReviewData) reviewDataList).getVF_MAIN_OBJ_ID()
+//                        );
 
-	    for (ReviewData reviewData : reviewDataList) {
-	    	String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
-     
-	        VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId,reviewId, reviewData.getReviewName(),
-	                reviewData.getASSOCIATE_VEND(), reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVENDOR_TYPE());
-	        reviewPlans.add(reviewPlan);
+            
+            for (ReviewData reviewData : reviewDataList) {
+                String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
 
-	        VfA3ReviewPlanStatus reviewPlanStatus = new VfA3ReviewPlanStatus(reviewId,
-	                reviewData.getReviewName(), reviewData.getReviewStatus(), reviewData.getReviewComment());
-	        reviewPlanStatusList.add(reviewPlanStatus);
-	    }
+//                String reviewId = reviewData.getReviewId();
+                
+//                System.out.println("reviewData = " + reviewData.get);
+//                String result = a3ReviewPlanRepo.setData(reviewData.getReviewId(),
+//                                                               reviewData.getReview_Type(),
+//                                                               reviewData.getReviewName(),
+//                                                               reviewData.getReview_Freq(),
+//                                                               reviewData.getSub_Frequency(),
+//                                                               reviewData.getReviewStatus(),
+//                                                               reviewData.getVF_MAIN_OBJ_ID());
 
-	    a3ReviewPlanRepo.saveAll(reviewPlans);
-	    a3ReviewPlanStatusRepo.saveAll(reviewPlanStatusList);
+                VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId, reviewId, reviewData.getReviewName(),
+                                                               reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID(),
+                                                               reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVENDOR_TYPE());
 
-	    a3ReviewPlanRepo.saveAndFlush(reviewPlans.get(0)); 
-	    a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatusList.get(0)); 
-	    
-        List<ReviewData> result = a3ReviewPlanRepo.setReviewData(reviewDataList);
+                VfA3ReviewPlanStatus reviewPlanStatus = new VfA3ReviewPlanStatus(reviewId,
+                                                                                 reviewData.getReviewName(),
+                                                                                 reviewData.getReviewStatus(),
+                                                                                 reviewData.getReviewComment());
 
+                a3ReviewPlanRepo.saveAndFlush(reviewPlan);
+                a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatus);
+            }
 
-	    return result;
+            return ResponseEntity.ok(reviewDataList);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+	
 	}
-	
-	
-	
 //	@PostMapping("updateStatusToAccept")
 //	public void setStatus(@RequestBody List<ReviewData> reviewDataList) {
 //		
@@ -91,8 +111,8 @@ public class A3ReviewPlanController {
 	
 
 	@PostMapping("updateStatusToAccept")
-	public void setStatus(@RequestBody List<ReviewData> reviewDataList) {
-	    for (ReviewData reviewData : reviewDataList) {
+	public void setStatus(@RequestBody List<VfA3ReviewPlanStatus> reviewDataList) {
+	    for (VfA3ReviewPlanStatus reviewData : reviewDataList) {
 	        if ("approve".equalsIgnoreCase(reviewData.getReviewStatus())) {
 	            try {
 	                ObjectMapper objectMapper = new ObjectMapper();
@@ -100,13 +120,12 @@ public class A3ReviewPlanController {
 
 	                a3ReviewPlanStatusRepo.setReviewPlan(jsonData);
 	            } catch (Exception e) {
-	                // Handle the exception or log an error
 	                e.printStackTrace();
 	            }
 	        }
-	        }
-	        
 	    }
+	}
+
 	
 	
 	@GetMapping("getOutputReviewPlan")
