@@ -105,8 +105,8 @@ public class A3ReviewPlanController {
 	        
 	    }
 	@GetMapping("getOutputReviewPlan")
-	public List<VfA3ReviewPlan> getOutputReviewPlan(String reviewId) {
-		return a3ReviewPlanRepo.getByReviewId(reviewId);
+	public String getOnBoardingData(String reviewId) {
+		return a3ReviewPlanRepo.getOnBoardingData(reviewId);
 	}
 
 }
