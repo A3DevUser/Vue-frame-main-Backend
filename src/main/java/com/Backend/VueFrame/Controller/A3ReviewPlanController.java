@@ -46,7 +46,7 @@ public class A3ReviewPlanController {
 	    	String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
      
 	        VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId,reviewId, reviewData.getReviewName(),
-	                reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID());
+	                reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID(), reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVENDOR_TYPE());
 	        reviewPlans.add(reviewPlan);
 
 	        VfA3ReviewPlanStatus reviewPlanStatus = new VfA3ReviewPlanStatus(reviewId,
@@ -63,7 +63,6 @@ public class A3ReviewPlanController {
 	    return "Reviews saved successfully!";
 	}
 	
-<<<<<<< HEAD
 	
 	
 //	@PostMapping("updateStatusToAccept")
@@ -102,12 +101,12 @@ public class A3ReviewPlanController {
 	                e.printStackTrace();
 	            }
 	        }
+	        }
+	        
 	    }
-=======
 	@GetMapping("getOutputReviewPlan")
 	public List<VfA3ReviewPlan> getOutputReviewPlan(String reviewId) {
 		return a3ReviewPlanRepo.getByReviewId(reviewId);
->>>>>>> 45da286e3bd6c04d93f03ac131839a3865c48a48
 	}
 
 }

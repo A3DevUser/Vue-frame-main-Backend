@@ -15,6 +15,12 @@ public class ReviewData {
     private String Review_Type;
     private String Review_Freq;
     private String Sub_Frequency;
+	@JsonProperty(value = "VF_MAIN_OBJ_ID")
+    private String VF_MAIN_OBJ_ID;
+	@JsonProperty(value = "VENDOR_TYPE")
+	private String VENDOR_TYPE;
+
+    
     
     
     
@@ -81,8 +87,20 @@ public class ReviewData {
 	
 	
 	
+	public String getVF_MAIN_OBJ_ID() {
+		return VF_MAIN_OBJ_ID;
+	}
+	public void setVF_MAIN_OBJ_ID(String VF_MAIN_OBJ_ID) {
+		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
+	}
+	public String getVENDOR_TYPE() {
+		return VENDOR_TYPE;
+	}
+	public void setVENDOR_TYPE(String VENDOR_TYPE) {
+		this.VENDOR_TYPE = VENDOR_TYPE;
+	}
 	public ReviewData(String reviewId, String reviewName, String ASSOCIATE_VEND, String VENDOR_ID, String reviewStatus,
-			String reviewComment, String Review_Type, String Review_Freq, String Sub_Frequency) {
+			String reviewComment, String Review_Type, String Review_Freq, String Sub_Frequency, String VF_MAIN_OBJ_ID, String VENDOR_TYPE) {
 		super();
 		this.reviewId = reviewId;
 		this.reviewName = reviewName;
@@ -93,6 +111,8 @@ public class ReviewData {
 		this.Review_Type = Review_Type;
 		this.Review_Freq = Review_Freq;
 		this.Sub_Frequency = Sub_Frequency;
+		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
+		this.VENDOR_TYPE = VENDOR_TYPE;
 	}
 	public ReviewData() {
 		super();
