@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 
+import com.Backend.VueFrame.Model.ReviewData;
 import com.Backend.VueFrame.Model.VfA3ReviewPlan;
 
 public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> {
@@ -19,6 +20,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	String reviewPlanId();
 
 	
+<<<<<<< HEAD
 //	List<VfA3ReviewPlan> getByReviewId(String reviewId);
 	
 	
@@ -35,5 +37,15 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 				 + "VENDOR_TYPE FROM VF_VRM_QUESTION_DATA WHERE QUESTION_TYPE = :p_question_type and VENDOR_TYPE = :p_vendor_type", nativeQuery = true)
 	List<Map<String, String>> getQuestionData(@Param("p_question_type") String pQueType, @Param("p_vendor_type") String pVenType);
 	
+=======
+	List<VfA3ReviewPlan> getByReviewId(String reviewId);
+>>>>>>> d4a0518f575668fdcef1a169acf1faf2ee552f2c
 
+	
+	@Procedure(procedureName = "VF_INSRT_INTO_REVIEW_PLAN")
+	List<ReviewData> setReviewData(@Param("p_json_data") List<ReviewData> reviewDataList);
+
+	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
+	String getOnBoardingData(@Param("v_reviewId") String reviewDataList);
+	
 }

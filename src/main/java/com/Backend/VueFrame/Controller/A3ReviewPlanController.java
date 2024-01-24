@@ -36,9 +36,13 @@ public class A3ReviewPlanController {
 	
 	
 	@PostMapping("setReviewPlanData")
+<<<<<<< HEAD
 	public String postReviews(@RequestBody List<ReviewData> reviewDataList) {
 		System.out.println(reviewDataList.toString());
 		
+=======
+	public List<ReviewData> postReviews(@RequestBody List<ReviewData> reviewDataList) {
+>>>>>>> d4a0518f575668fdcef1a169acf1faf2ee552f2c
 	    List<VfA3ReviewPlan> reviewPlans = new ArrayList<>();
 	    List<VfA3ReviewPlanStatus> reviewPlanStatusList = new ArrayList<>();
 
@@ -49,7 +53,7 @@ public class A3ReviewPlanController {
 	    	String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
      
 	        VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId,reviewId, reviewData.getReviewName(),
-	                reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID(), reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVENDOR_TYPE());
+	                reviewData.getASSOCIATE_VEND(), reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVF_MAIN_OBJ_ID(), reviewData.getVENDOR_TYPE());
 	        reviewPlans.add(reviewPlan);
 
 	        VfA3ReviewPlanStatus reviewPlanStatus = new VfA3ReviewPlanStatus(reviewId,
@@ -62,8 +66,11 @@ public class A3ReviewPlanController {
 
 	    a3ReviewPlanRepo.saveAndFlush(reviewPlans.get(0)); 
 	    a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatusList.get(0)); 
+	    
+        List<ReviewData> result = a3ReviewPlanRepo.setReviewData(reviewDataList);
 
-	    return "Reviews saved successfully!";
+
+	    return result;
 	}
 	
 	

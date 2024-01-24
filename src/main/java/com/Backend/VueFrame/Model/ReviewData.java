@@ -8,25 +8,21 @@ public class ReviewData {
 	private String reviewName;
 	@JsonProperty(value = "ASSOCIATE_VEND")
     private String ASSOCIATE_VEND;
-	@JsonProperty(value = "VENDOR_ID")
-    private String VENDOR_ID;
+//	@JsonProperty(value = "VENDOR_ID")
+//    private String VENDOR_ID;
     private String reviewStatus;
     private String reviewComment;
     private String Review_Type;
     private String Review_Freq;
     private String Sub_Frequency;
-	@JsonProperty(value = "VF_MAIN_OBJ_ID")
+	@JsonProperty(value = "VENDOR_ID")
     private String VF_MAIN_OBJ_ID;
 	@JsonProperty(value = "VENDOR_TYPE")
 	private String VENDOR_TYPE;
+	
+	
 
-    
-    
-    
-    
-    
-    
-	public String getReviewId() {
+ 	public String getReviewId() {
 		return reviewId;
 	}
 	public void setReviewId(String reviewId) {
@@ -45,12 +41,14 @@ public class ReviewData {
 		this.ASSOCIATE_VEND = ASSOCIATE_VEND;
 	}
 	
-	public String getVENDOR_ID() {
-		return VENDOR_ID;
-	}
-	public void setVENDOR_ID(String VENDOR_ID) {
-		this.VENDOR_ID = VENDOR_ID;
-	}
+//	public String getVENDOR_ID() {
+//		return VENDOR_ID;
+//	}
+//	public void setVENDOR_ID(String VENDOR_ID) {
+//		this.VENDOR_ID = VENDOR_ID;
+//	}
+	
+	
 	public String getReviewStatus() {
 		return reviewStatus;
 	}
@@ -99,13 +97,13 @@ public class ReviewData {
 	public void setVENDOR_TYPE(String VENDOR_TYPE) {
 		this.VENDOR_TYPE = VENDOR_TYPE;
 	}
-	public ReviewData(String reviewId, String reviewName, String ASSOCIATE_VEND, String VENDOR_ID, String reviewStatus,
+	public ReviewData(String reviewId, String reviewName, String ASSOCIATE_VEND, String reviewStatus,
 			String reviewComment, String Review_Type, String Review_Freq, String Sub_Frequency, String VF_MAIN_OBJ_ID, String VENDOR_TYPE) {
 		super();
 		this.reviewId = reviewId;
 		this.reviewName = reviewName;
 		this.ASSOCIATE_VEND = ASSOCIATE_VEND;
-		this.VENDOR_ID = VENDOR_ID;
+//		this.VENDOR_ID = VENDOR_ID;
 		this.reviewStatus = reviewStatus;
 		this.reviewComment = reviewComment;
 		this.Review_Type = Review_Type;
