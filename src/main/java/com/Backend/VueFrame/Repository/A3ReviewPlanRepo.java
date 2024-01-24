@@ -11,6 +11,9 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	
 	@Query(value = "SELECT VF_A3_REVIEW_PLAN.NEXTVAL FROM DUAL", nativeQuery = true)
 	String reviewPlan();
+	
+	@Query(value = "select vf_review_plan_id.NEXTVAL FROM DUAL", nativeQuery = true)
+	String reviewPlanId();
 
 	
 	List<VfA3ReviewPlan> getByReviewId(String reviewId);

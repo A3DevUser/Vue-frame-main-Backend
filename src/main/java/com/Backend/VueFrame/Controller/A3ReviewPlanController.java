@@ -36,10 +36,13 @@ public class A3ReviewPlanController {
 	    List<VfA3ReviewPlan> reviewPlans = new ArrayList<>();
 	    List<VfA3ReviewPlanStatus> reviewPlanStatusList = new ArrayList<>();
 
-	    for (ReviewData reviewData : reviewDataList) {
-	        String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
+	    
+        String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
 
-	        VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewId, reviewData.getReviewName(),
+	    for (ReviewData reviewData : reviewDataList) {
+	    	String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
+     
+	        VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId,reviewId, reviewData.getReviewName(),
 	                reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID());
 	        reviewPlans.add(reviewPlan);
 
@@ -51,9 +54,8 @@ public class A3ReviewPlanController {
 	    a3ReviewPlanRepo.saveAll(reviewPlans);
 	    a3ReviewPlanStatusRepo.saveAll(reviewPlanStatusList);
 
-	    // Use saveAndFlush to immediately persist and flush changes to the database
-	    a3ReviewPlanRepo.saveAndFlush(reviewPlans.get(0)); // assuming there is at least one element in the list
-	    a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatusList.get(0)); // assuming there is at least one element in the list
+	    a3ReviewPlanRepo.saveAndFlush(reviewPlans.get(0)); 
+	    a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatusList.get(0)); 
 
 	    return "Reviews saved successfully!";
 	}

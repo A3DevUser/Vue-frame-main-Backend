@@ -13,6 +13,9 @@ public class VfA3ReviewPlan {
 
 	
 	@Id
+	@Column(name = "REVIEW_PLAN_ID")
+	private String reviewPlanId;
+	
 	@Column(name = "REVIEW_ID")
 	private String reviewId;
 	
@@ -26,6 +29,18 @@ public class VfA3ReviewPlan {
 	@Column(name ="VENDOR_ID")
 	@JsonProperty(value = "VENDOR_ID")
 	private String VENDOR_ID;
+	
+	
+	
+	
+
+	public String getReviewPlanId() {
+		return reviewPlanId;
+	}
+
+	public void setReviewPlanId(String reviewPlanId) {
+		this.reviewPlanId = reviewPlanId;
+	}
 
 	public String getReviewId() {
 		return reviewId;
@@ -59,8 +74,9 @@ public class VfA3ReviewPlan {
 		this.VENDOR_ID = VENDOR_ID;
 	}
 
-	public VfA3ReviewPlan(String reviewId, String reviewName, String ASSOCIATE_VEND, String VENDOR_ID) {
+	public VfA3ReviewPlan(String reviewPlanId,String reviewId, String reviewName, String ASSOCIATE_VEND, String VENDOR_ID) {
 		super();
+		this.reviewPlanId= reviewPlanId;
 		this.reviewId = reviewId;
 		this.reviewName = reviewName;
 		this.ASSOCIATE_VEND = ASSOCIATE_VEND;

@@ -13,6 +13,8 @@ import com.Backend.VueFrame.Model.VfA3ReviewDD;
 public interface VfA3ReviewDDRepository extends JpaRepository<VfA3ReviewDD, String> {
 	
 	
+	
+	
 	@Query(value = "SELECT REVIEW_FREQ_DROPDWN(:p_review_type) FROM DUAL", nativeQuery = true)
     String getReviewFreqDropdown(@Param("p_review_type") String reviewType);
 
