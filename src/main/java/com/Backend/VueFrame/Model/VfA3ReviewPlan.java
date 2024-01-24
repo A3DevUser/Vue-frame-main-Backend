@@ -30,10 +30,14 @@ public class VfA3ReviewPlan {
 	@JsonProperty(value = "VENDOR_ID")
 	private String VENDOR_ID;
 	
+	@Column(name = "VF_MAIN_OBJ_ID")
+	@JsonProperty(value = "VF_MAIN_OBJ_ID")
+	private String VF_MAIN_OBJ_ID;
 	
+	@Column(name = "VENDOR_TYPE")
+	@JsonProperty(value = "VENDOR_TYPE")
+	private String VENDOR_TYPE;
 	
-	
-
 	public String getReviewPlanId() {
 		return reviewPlanId;
 	}
@@ -73,14 +77,38 @@ public class VfA3ReviewPlan {
 	public void setVENDOR_ID(String VENDOR_ID) {
 		this.VENDOR_ID = VENDOR_ID;
 	}
+	
+	
+	
 
-	public VfA3ReviewPlan(String reviewPlanId,String reviewId, String reviewName, String ASSOCIATE_VEND, String VENDOR_ID) {
+	public String getVF_MAIN_OBJ_ID() {
+		return VF_MAIN_OBJ_ID;
+	}
+
+	public void setVF_MAIN_OBJ_ID(String VF_MAIN_OBJ_ID) {
+		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
+	}
+
+	public String getVENDOR_TYPE() {
+		return VENDOR_TYPE;
+	}
+
+	public void setVENDOR_TYPE(String VENDOR_TYPE) {
+		this.VENDOR_TYPE = VENDOR_TYPE;
+	}
+
+	
+
+	public VfA3ReviewPlan(String reviewPlanId, String reviewId, String reviewName, String ASSOCIATE_VEND,
+			String VENDOR_ID, String VF_MAIN_OBJ_ID, String VENDOR_TYPE) {
 		super();
-		this.reviewPlanId= reviewPlanId;
+		this.reviewPlanId = reviewPlanId;
 		this.reviewId = reviewId;
 		this.reviewName = reviewName;
 		this.ASSOCIATE_VEND = ASSOCIATE_VEND;
 		this.VENDOR_ID = VENDOR_ID;
+		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
+		this.VENDOR_TYPE = VENDOR_TYPE;
 	}
 
 	public VfA3ReviewPlan() {
