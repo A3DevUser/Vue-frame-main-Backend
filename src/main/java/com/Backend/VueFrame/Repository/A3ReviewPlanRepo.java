@@ -18,10 +18,12 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	String reviewPlanId();
 
 	
-//	List<VfA3ReviewPlan> getByReviewId(String reviewId);
-	
-	
-	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
-	String getOnBoardingData(@Param("v_reviewId") String reviewId);
+	List<VfA3ReviewPlan> getByReviewId(String reviewId);
 
+	
+	@Procedure(procedureName = "VF_INSRT_INTO_REVIEW_PLAN")
+	String setReviewData(@Param("p_json_data") String pJsonData);
+
+	String getOnBoardingData(String reviewId);
+	
 }
