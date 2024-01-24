@@ -90,7 +90,7 @@ public class A3ReviewPlanController {
 	@PostMapping("updateStatusToAccept")
 	public void setStatus(@RequestBody List<ReviewData> reviewDataList) {
 	    for (ReviewData reviewData : reviewDataList) {
-	        if ("accepted".equalsIgnoreCase(reviewData.getReviewStatus())) {
+	        if ("approve".equalsIgnoreCase(reviewData.getReviewStatus())) {
 	            try {
 	                ObjectMapper objectMapper = new ObjectMapper();
 	                String jsonData = objectMapper.writeValueAsString(reviewData);
