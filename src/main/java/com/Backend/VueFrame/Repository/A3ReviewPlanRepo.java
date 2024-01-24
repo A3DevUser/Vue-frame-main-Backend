@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 
+import com.Backend.VueFrame.Model.ReviewData;
 import com.Backend.VueFrame.Model.VfA3ReviewPlan;
 
 public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> {
@@ -22,8 +23,9 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 
 	
 	@Procedure(procedureName = "VF_INSRT_INTO_REVIEW_PLAN")
-	String setReviewData(@Param("p_json_data") String pJsonData);
+	List<ReviewData> setReviewData(@Param("p_json_data") List<ReviewData> reviewDataList);
 
-	String getOnBoardingData(String reviewId);
+	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
+	String getOnBoardingData(@Param("v_reviewId") String reviewDataList);
 	
 }
