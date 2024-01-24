@@ -2,6 +2,7 @@ package com.Backend.VueFrame.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,6 +37,8 @@ public class A3ReviewPlanController {
 	
 	@PostMapping("setReviewPlanData")
 	public String postReviews(@RequestBody List<ReviewData> reviewDataList) {
+		System.out.println(reviewDataList.toString());
+		
 	    List<VfA3ReviewPlan> reviewPlans = new ArrayList<>();
 	    List<VfA3ReviewPlanStatus> reviewPlanStatusList = new ArrayList<>();
 
@@ -110,5 +113,20 @@ public class A3ReviewPlanController {
 	public String getOnBoardingData(String reviewId) {
 		return a3ReviewPlanRepo.getOnBoardingData(reviewId);
 	}
+	
+	
+	@GetMapping("getOutputReviewPlan2")
+	public String getOnBoardingData2(String reviewId, String vendorType) {
+		return a3ReviewPlanRepo.getOnBoardingData2(reviewId, vendorType);
+	}
+	
+	
+	@GetMapping("getQuestionData")
+	public List<Map<String, String>> getQuestionData(String pQueType, String pVenType) {
+		
+		return a3ReviewPlanRepo.getQuestionData(pQueType, pVenType);
+	}
+	
+	
 
 }
