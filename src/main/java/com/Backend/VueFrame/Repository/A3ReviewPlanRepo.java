@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.data.repository.query.Param;
 
 import com.Backend.VueFrame.Model.VfA3ReviewPlan;
 
@@ -16,6 +18,10 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	String reviewPlanId();
 
 	
-	List<VfA3ReviewPlan> getByReviewId(String reviewId);
+//	List<VfA3ReviewPlan> getByReviewId(String reviewId);
+	
+	
+	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
+	String getOnBoardingData(@Param("v_reviewId") String reviewId);
 
 }
