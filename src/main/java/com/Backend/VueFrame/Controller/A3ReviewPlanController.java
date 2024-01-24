@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,6 +63,7 @@ public class A3ReviewPlanController {
 	    return "Reviews saved successfully!";
 	}
 	
+<<<<<<< HEAD
 	
 	
 //	@PostMapping("updateStatusToAccept")
@@ -101,6 +103,11 @@ public class A3ReviewPlanController {
 	            }
 	        }
 	    }
+=======
+	@GetMapping("getOutputReviewPlan")
+	public List<VfA3ReviewPlan> getOutputReviewPlan(String reviewId) {
+		return a3ReviewPlanRepo.getByReviewId(reviewId);
+>>>>>>> 45da286e3bd6c04d93f03ac131839a3865c48a48
 	}
 
 }
