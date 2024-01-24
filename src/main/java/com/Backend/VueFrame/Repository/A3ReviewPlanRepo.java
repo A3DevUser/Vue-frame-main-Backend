@@ -84,7 +84,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 			+ "REVIEW_FREQ,SUB_FREQUENCY,REVIEW_STATUS)\r\n"
 			+ "VALUES (:v_VF_MAIN_OBJ_ID,'PLAN_CHECKER',:v_review_id,:v_review_type,:v_review_freq,\r\n"
 			+ ":v_review_sub_freq,'PENDING ASSESSMENT')" , nativeQuery = true)
-	String setTableTPREData(@Param("v_review_id") String reviewId,
+	void setTableTPREData(@Param("v_review_id") String reviewId,
 		       @Param("v_review_type") String Review_Type,
 		       @Param("v_review_freq") String Review_Freq,
 		       @Param("v_review_sub_freq") String Sub_Frequency,
@@ -96,5 +96,5 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL (FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER)\r\n"
 			+ "                VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER')", nativeQuery = true)
 	
-	String setTPRETaskData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
+	void setTPRETaskData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 }

@@ -42,6 +42,11 @@ public class A3ReviewPlanController {
 	@PostMapping("setReviewPlanData")
     public ResponseEntity<List<ReviewData>> postReviews(@RequestBody List<ReviewData> reviewDataList) {
    
+		
+		ReviewData firstReviewData = reviewDataList.get(0);
+
+	    // Save data using the saveData method
+		saveData(firstReviewData);
             String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
 
             for (ReviewData reviewData : reviewDataList) {
@@ -59,6 +64,7 @@ public class A3ReviewPlanController {
                 a3ReviewPlanRepo.saveAndFlush(reviewPlan);
                 a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatus);
             }
+            
 
             return ResponseEntity.ok(reviewDataList);
       
@@ -110,14 +116,10 @@ public class A3ReviewPlanController {
 	}
 	
 	
-	@PostMapping("saveTPREdata")
-    public ResponseEntity<String> saveData(@RequestBody ReviewData yourDataDto) {
-        // Extract necessary data from yourDataDto
-
-		a3PlanServ.saveData(yourDataDto.getReviewId(), yourDataDto.getReview_Type(),
-                             yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), yourDataDto.getVF_MAIN_OBJ_ID());
-
-        return ResponseEntity.ok("Data saved successfully.");
-    }
+	private void saveData(ReviewData yourDataDto) {
+	    // Extract necessary data from yourDataDto
+	    a3PlanServ.saveData(yourDataDto.getReviewId(), yourDataDto.getReview_Type(),
+	            yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), yourDataDto.getVF_MAIN_OBJ_ID());
+	}
 
 }
