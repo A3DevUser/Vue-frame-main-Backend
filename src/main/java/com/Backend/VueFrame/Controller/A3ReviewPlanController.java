@@ -36,13 +36,7 @@ public class A3ReviewPlanController {
 	
 	
 	@PostMapping("setReviewPlanData")
-<<<<<<< HEAD
-	public String postReviews(@RequestBody List<ReviewData> reviewDataList) {
-		System.out.println(reviewDataList.toString());
-		
-=======
 	public List<ReviewData> postReviews(@RequestBody List<ReviewData> reviewDataList) {
->>>>>>> d4a0518f575668fdcef1a169acf1faf2ee552f2c
 	    List<VfA3ReviewPlan> reviewPlans = new ArrayList<>();
 	    List<VfA3ReviewPlanStatus> reviewPlanStatusList = new ArrayList<>();
 
