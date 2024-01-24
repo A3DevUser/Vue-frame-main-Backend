@@ -13,5 +13,6 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	String reviewPlan();
 
 	
+	List<VfA3ReviewPlan> getByReviewId(String reviewId);
 
 }

@@ -159,6 +159,11 @@ public class ConfigurationFormController {
 	        // using predefined method from workflowRepository to get is_main table or not.
 	        Map<String, String> map1 = workflowRepo.getIsMainAndFormId(gridId);
 	        
+//	        String is_main;
+//	        
+//	        if(map1.containsKey("IS_MAIN") && map1.get("IS_MAIN") != null) {
+//	        	is_main = 
+//	        }
 
 	        if(gridId == null || map1.get("IS_MAIN").equals("true")) { // if it is 'true' then it means new multirow creation is happening.
 	        
@@ -169,6 +174,7 @@ public class ConfigurationFormController {
 		            formId = grid.getFormId();	  
 		            
 		    	}
+		    	
 		    	List<GridData> list = confService.setGridData(gridData);
 		    	String str = confService.getmrowUpdate(formId); 	    
 		    	obj.put("errMsg",str);
@@ -230,6 +236,7 @@ public class ConfigurationFormController {
 	    		// Filtering json data for stored value
 	    		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
 	    		
+	    		System.out.println(filteredJsonData);
 	    		confService.updateColumnHeader(filteredJsonData);
 	    	}
 	    	
