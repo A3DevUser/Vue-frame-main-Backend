@@ -39,7 +39,6 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	
 	
 	@Procedure(procedureName = "VF_INSRT_INTO_REVIEW_PLAN")
-<<<<<<< HEAD
 	String setReviewData(@Param("v_review_id") String reviewId, 
 	                     @Param("v_review_type") String Review_Type,
 	                     @Param("v_review_name") String reviewName, 
@@ -50,11 +49,11 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	                     );
 
 
-	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
-	String getOnBoardingData(@Param("v_reviewId") String reviewDataList);
-=======
-	List<ReviewData> setReviewData(@Param("p_json_data") List<ReviewData> reviewDataList);
->>>>>>> 25c02fc34a9c848c36d35fda2e2f886165f76cf5
+//	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
+//	String getOnBoardingData1(@Param("v_reviewId") String reviewDataList);
+//	
+	
+//	List<ReviewData> setReviewData(@Param("p_json_data") List<ReviewData> reviewDataList);
 	
 	
 	@Transactional
@@ -71,6 +70,31 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 			       @Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
+	@Transactional
+	@Modifying
+	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER)\r\n"
+			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER')" , nativeQuery = true)
+	
+	String setTasktData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
+	@Transactional
+	@Modifying
+	@Query(value = "INSERT INTO VRM_TPRE (VF_MAIN_OBJ_ID,VF_CURRENT_USER,REVIEW_PLAN_ID,REVIEW_TYPE,\r\n"
+			+ "REVIEW_FREQ,SUB_FREQUENCY,REVIEW_STATUS)\r\n"
+			+ "VALUES (:v_VF_MAIN_OBJ_ID,'PLAN_CHECKER',:v_review_id,:v_review_type,:v_review_freq,\r\n"
+			+ ":v_review_sub_freq,'PENDING ASSESSMENT')" , nativeQuery = true)
+	String setTableTPREData(@Param("v_review_id") String reviewId,
+		       @Param("v_review_type") String Review_Type,
+		       @Param("v_review_freq") String Review_Freq,
+		       @Param("v_review_sub_freq") String Sub_Frequency,
+		       @Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_I);
+	
+	
+	@Transactional
+	@Modifying
+	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL (FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER)\r\n"
+			+ "                VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER')", nativeQuery = true)
+	
+	String setTPRETaskData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 }

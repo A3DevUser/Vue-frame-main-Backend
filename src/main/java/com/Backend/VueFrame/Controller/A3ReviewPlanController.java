@@ -2,7 +2,6 @@ package com.Backend.VueFrame.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +18,7 @@ import com.Backend.VueFrame.Model.VfA3ReviewPlan;
 import com.Backend.VueFrame.Model.VfA3ReviewPlanStatus;
 import com.Backend.VueFrame.Repository.A3ReviewPlanRepo;
 import com.Backend.VueFrame.Repository.A3ReviewPlanStatusRepo;
+import com.Backend.VueFrame.Services.A3ReviewPlanService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -36,39 +36,16 @@ public class A3ReviewPlanController {
 	@Autowired
 	private A3ReviewPlanStatusRepo a3ReviewPlanStatusRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	@PostMapping("setReviewPlanData")
     public ResponseEntity<List<ReviewData>> postReviews(@RequestBody List<ReviewData> reviewDataList) {
-        try {
+   
             String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
 
-          
-//            	System.out.println("reviewData = " + reviewDataList.toString() + " reviewId = " + reviewId);
-//            	@SuppressWarnings("unused")
-//				String result = a3ReviewPlanRepo.setData(
-//						reviewId,
-//						((ReviewData) reviewDataList).getReview_Type(),
-//						((ReviewData) reviewDataList).getReviewName(),
-//						((ReviewData) reviewDataList).getReview_Freq(),
-//						((ReviewData) reviewDataList).getSub_Frequency(),
-//						((ReviewData) reviewDataList).getReviewStatus(),
-//						((ReviewData) reviewDataList).getVF_MAIN_OBJ_ID()
-//                        );
-
-            
             for (ReviewData reviewData : reviewDataList) {
                 String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
-
-//                String reviewId = reviewData.getReviewId();
-                
-//                System.out.println("reviewData = " + reviewData.get);
-//                String result = a3ReviewPlanRepo.setData(reviewData.getReviewId(),
-//                                                               reviewData.getReview_Type(),
-//                                                               reviewData.getReviewName(),
-//                                                               reviewData.getReview_Freq(),
-//                                                               reviewData.getSub_Frequency(),
-//                                                               reviewData.getReviewStatus(),
-//                                                               reviewData.getVF_MAIN_OBJ_ID());
 
                 VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId, reviewId, reviewData.getReviewName(),
                                                                reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID(),
@@ -84,9 +61,7 @@ public class A3ReviewPlanController {
             }
 
             return ResponseEntity.ok(reviewDataList);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-        }
+      
 	
 	}
 //	@PostMapping("updateStatusToAccept")
@@ -135,18 +110,14 @@ public class A3ReviewPlanController {
 	}
 	
 	
-	@GetMapping("getOutputReviewPlan2")
-	public String getOnBoardingData2(String reviewId, String vendorType) {
-		return a3ReviewPlanRepo.getOnBoardingData2(reviewId, vendorType);
-	}
-	
-	
-	@GetMapping("getQuestionData")
-	public List<Map<String, String>> getQuestionData(String pQueType, String pVenType) {
-		
-		return a3ReviewPlanRepo.getQuestionData(pQueType, pVenType);
-	}
-	
-	
+	@PostMapping("saveTPREdata")
+    public ResponseEntity<String> saveData(@RequestBody ReviewData yourDataDto) {
+        // Extract necessary data from yourDataDto
+
+		a3PlanServ.saveData(yourDataDto.getReviewId(), yourDataDto.getReview_Type(),
+                             yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), yourDataDto.getVF_MAIN_OBJ_ID());
+
+        return ResponseEntity.ok("Data saved successfully.");
+    }
 
 }
