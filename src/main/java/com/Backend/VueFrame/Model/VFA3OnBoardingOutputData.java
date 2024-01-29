@@ -29,8 +29,8 @@ public class VFA3OnBoardingOutputData {
 	private String QUESTION;
 	
 	@Column(name = "RESPONSE")
-	@JsonProperty("RESPONSE")
-	private String RESPONSE;
+	@JsonProperty("RESPONSE_DISPLAY_VAL")
+	private String RESPONSE_DISPLAY_VAL;
 	
 	@Column(name = "VF_MAIN_OBJ_ID")
 	@JsonProperty("VF_MAIN_OBJ_ID")
@@ -72,12 +72,12 @@ public class VFA3OnBoardingOutputData {
 	}
 
 	
-	public String getRESPONSE() {
-		return RESPONSE;
+	public String getRESPONSE_DISPLAY_VAL() {
+		return RESPONSE_DISPLAY_VAL;
 	}
 
-	public void setRESPONSE(String RESPONSE) {
-		this.RESPONSE = RESPONSE;
+	public void setRESPONSE_DISPLAY_VAL(String RESPONSE_DISPLAY_VAL) {
+		this.RESPONSE_DISPLAY_VAL = RESPONSE_DISPLAY_VAL;
 	}
 
 	public String getVF_MAIN_OBJ_ID() {
@@ -91,13 +91,13 @@ public class VFA3OnBoardingOutputData {
 	
 
 	public VFA3OnBoardingOutputData(String id, String Associate_Vend, String QUESTION_ID, String QUESTION,
-			String RESPONSE, String VF_MAIN_OBJ_ID) {
+			String RESPONSE_DISPLAY_VAL, String VF_MAIN_OBJ_ID) {
 		super();
 		this.id = id;
 		this.Associate_Vend = Associate_Vend;
 		this.QUESTION_ID = QUESTION_ID;
 		this.QUESTION = QUESTION;
-		this.RESPONSE = RESPONSE;
+		this.RESPONSE_DISPLAY_VAL = RESPONSE_DISPLAY_VAL;
 		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 	}
 
@@ -105,6 +105,17 @@ public class VFA3OnBoardingOutputData {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 		
 		
