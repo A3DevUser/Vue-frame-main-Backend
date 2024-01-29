@@ -61,7 +61,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	@Query(value = "INSERT INTO VRM_PLAN_REVIEW_TABLE (review_id,review_type,review_name,review_freq,sub_frequency,review_status,VF_MAIN_OBJ_ID,VF_CURRENT_USER)\r\n"
 			+ "     VALUES(:v_review_id,:v_review_type,:v_review_name,:v_review_freq,:v_review_sub_freq,:v_review_status,\r\n"
 			+ "            :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER')", nativeQuery = true)
-	String setData(@Param("v_review_id") String reviewId,
+	void setData(@Param("v_review_id") String reviewId,
 			       @Param("v_review_type") String Review_Type,
 			       @Param("v_review_name")String reviewName,
 			       @Param("v_review_freq") String Review_Freq,
@@ -72,10 +72,10 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	
 	@Transactional
 	@Modifying
-	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER)\r\n"
-			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER')" , nativeQuery = true)
+	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER,VF_CREATED_ON)\r\n"
+			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER',SYSDATE)" , nativeQuery = true)
 	
-	String setTasktData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
+	void setTasktData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
 	@Transactional

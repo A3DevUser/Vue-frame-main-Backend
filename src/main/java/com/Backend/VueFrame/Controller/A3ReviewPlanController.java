@@ -2,6 +2,7 @@ package com.Backend.VueFrame.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,9 +46,10 @@ public class A3ReviewPlanController {
 		
 		ReviewData firstReviewData = reviewDataList.get(0);
 
+		String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
 	    // Save data using the saveData method
-		saveData(firstReviewData);
-            String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
+		saveData(firstReviewData,reviewId);
+            
 
             for (ReviewData reviewData : reviewDataList) {
                 String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
@@ -116,10 +118,24 @@ public class A3ReviewPlanController {
 	}
 	
 	
-	private void saveData(ReviewData yourDataDto) {
+	@GetMapping("getOutputReviewPlan2")
+	public String getOnBoardingData2(String reviewId, String vendorType) {
+		return a3ReviewPlanRepo.getOnBoardingData2(reviewId, vendorType);
+	}
+
+
+	@GetMapping("getQuestionData")
+	public List<Map<String, String>> getQuestionData(String pQueType, String pVenType) {
+
+		return a3ReviewPlanRepo.getQuestionData(pQueType, pVenType);
+	}
+	
+	
+	private void saveData(ReviewData yourDataDto, String reviewId) {
 	    // Extract necessary data from yourDataDto
-	    a3PlanServ.saveData(yourDataDto.getReviewId(), yourDataDto.getReview_Type(),
-	            yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), yourDataDto.getVF_MAIN_OBJ_ID());
+	    a3PlanServ.saveData(reviewId, yourDataDto.getReview_Type(),
+	            yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), yourDataDto.getVF_MAIN_OBJ_ID(),
+	            yourDataDto.getReviewName(),yourDataDto.getReviewStatus());
 	}
 
 }

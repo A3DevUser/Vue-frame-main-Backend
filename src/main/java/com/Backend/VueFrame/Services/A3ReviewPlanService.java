@@ -24,13 +24,13 @@ public class A3ReviewPlanService {
 	
 	@Transactional
     public void saveData(String reviewId, String reviewType,
-                         String reviewFreq, String subFrequency, String vfMainObjId) {
+                         String reviewFreq, String subFrequency, String vfMainObjId, String reviewName, String reviewStatus) {
         
         // Call the first method
-		a3ReviewPlanRepo.setTableTPREData(reviewId, reviewType,reviewFreq, subFrequency, vfMainObjId);
+		a3ReviewPlanRepo.setData(reviewId, reviewType,reviewName,reviewFreq, subFrequency, reviewStatus,vfMainObjId);
 
         // Call the second method
-		a3ReviewPlanRepo.setTPRETaskData(vfMainObjId);
+		a3ReviewPlanRepo.setTasktData(vfMainObjId);
     }
 
 }
