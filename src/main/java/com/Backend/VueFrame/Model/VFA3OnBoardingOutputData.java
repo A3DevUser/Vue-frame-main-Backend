@@ -21,13 +21,16 @@ public class VFA3OnBoardingOutputData {
 	private String Associate_Vend;
 	
 	@Column(name = "TEST_ID")
-	private String testId;
+	@JsonProperty("QUESTION_ID")
+	private String QUESTION_ID;
 	
 	@Column(name = "TEST_TITLE")
-	private String testTitle;
+	@JsonProperty("QUESTION")
+	private String QUESTION;
 	
 	@Column(name = "RESPONSE")
-	private String response;
+	@JsonProperty("RESPONSE")
+	private String RESPONSE;
 	
 	@Column(name = "VF_MAIN_OBJ_ID")
 	@JsonProperty("VF_MAIN_OBJ_ID")
@@ -46,51 +49,56 @@ public class VFA3OnBoardingOutputData {
 		return Associate_Vend;
 	}
 
-	public void setAssociate_Vend(String associate_Vend) {
-		Associate_Vend = associate_Vend;
+	public void setAssociate_Vend(String Associate_Vend) {
+		this.Associate_Vend = Associate_Vend;
 	}
 
-	public String getTestId() {
-		return testId;
+	
+
+	public String getQUESTION_ID() {
+		return QUESTION_ID;
 	}
 
-	public void setTestId(String testId) {
-		this.testId = testId;
+	public void setQUESTION_ID(String QUESTION_ID) {
+		this.QUESTION_ID = QUESTION_ID;
 	}
 
-	public String getTestTitle() {
-		return testTitle;
+	public String getQUESTION() {
+		return QUESTION;
 	}
 
-	public void setTestTitle(String testTitle) {
-		this.testTitle = testTitle;
+	public void setQUESTION(String QUESTION) {
+		this.QUESTION = QUESTION;
 	}
 
-	public String getResponse() {
-		return response;
+	
+	public String getRESPONSE() {
+		return RESPONSE;
 	}
 
-	public void setResponse(String response) {
-		this.response = response;
+	public void setRESPONSE(String RESPONSE) {
+		this.RESPONSE = RESPONSE;
 	}
 
 	public String getVF_MAIN_OBJ_ID() {
 		return VF_MAIN_OBJ_ID;
 	}
 
-	public void setVF_MAIN_OBJ_ID(String vF_MAIN_OBJ_ID) {
-		VF_MAIN_OBJ_ID = vF_MAIN_OBJ_ID;
+	public void setVF_MAIN_OBJ_ID(String VF_MAIN_OBJ_ID) {
+		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 	}
 
-	public VFA3OnBoardingOutputData(String id, String associate_Vend, String testId, String testTitle,
-			String response, String vF_MAIN_OBJ_ID) {
+	
+
+	public VFA3OnBoardingOutputData(String id, String Associate_Vend, String QUESTION_ID, String QUESTION,
+			String RESPONSE, String VF_MAIN_OBJ_ID) {
 		super();
 		this.id = id;
-		Associate_Vend = associate_Vend;
-		this.testId = testId;
-		this.testTitle = testTitle;
-		this.response = response;
-		VF_MAIN_OBJ_ID = vF_MAIN_OBJ_ID;
+		this.Associate_Vend = Associate_Vend;
+		this.QUESTION_ID = QUESTION_ID;
+		this.QUESTION = QUESTION;
+		this.RESPONSE = RESPONSE;
+		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 	}
 
 	public VFA3OnBoardingOutputData() {

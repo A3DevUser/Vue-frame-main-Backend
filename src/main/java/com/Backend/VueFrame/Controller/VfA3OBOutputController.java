@@ -35,7 +35,7 @@ public class VfA3OBOutputController {
          List<VFA3OnBoardingOutputData> out = new ArrayList<>();
 
          for (VFA3OnBoardingOutputData obj : testItems) {
-             String testId = obj.getTestId() != null ? obj.getTestId() : "";
+             String testId = obj.getQUESTION_ID() != null ? obj.getQUESTION_ID() : "";
 //             String associateVend = obj.getAssociate_Vend() != null ? obj.getAssociate_Vend() : "";
              String vfMainObjId = obj.getVF_MAIN_OBJ_ID() != null ? obj.getVF_MAIN_OBJ_ID() : "";
 
