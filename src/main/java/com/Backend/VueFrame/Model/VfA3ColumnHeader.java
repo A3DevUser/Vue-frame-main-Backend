@@ -57,6 +57,9 @@ public class VfA3ColumnHeader {
 	
 	@Column (name = "IS_PAGE_TYPE")
 	private String isPageType;
+	
+	@Column(name = "IS_SCORING")
+	private String isScoring;
 
 	public int getSrNo() {
 		return srNo;
@@ -188,9 +191,20 @@ public class VfA3ColumnHeader {
 
 	
 	
+	
+	public String getIsScoring() {
+		return isScoring;
+	}
+
+	public void setIsScoring(String isScoring) {
+		this.isScoring = isScoring;
+	}
+
+	
+
 	public VfA3ColumnHeader(int srNo, String formName, String fieldName, String accessor, String columnFilter,
 			String sticky, String formId, String parentCell, String cellType, String auditType, String width,
-			String orderBy, String areaName, String portfolio, String sns, String isPageType) {
+			String orderBy, String areaName, String portfolio, String sns, String isPageType, String isScoring) {
 		super();
 		this.srNo = srNo;
 		this.formName = formName;
@@ -208,6 +222,7 @@ public class VfA3ColumnHeader {
 		this.portfolio = portfolio;
 		this.sns = sns;
 		this.isPageType = isPageType;
+		this.isScoring = isScoring;
 	}
 
 	public VfA3ColumnHeader() {
