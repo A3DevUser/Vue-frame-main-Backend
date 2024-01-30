@@ -77,6 +77,11 @@ public class VfVRMRatingData {
 		this.isMaterial = isMaterial;
 		this.dueDilligenceScore = dueDilligenceScore;
 	}
+
+	public VfVRMRatingData() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	
