@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.ReviewData;
@@ -128,6 +129,12 @@ public class A3ReviewPlanController {
 	public List<Map<String, String>> getQuestionData(String pQueType, String pVenType) {
 
 		return a3ReviewPlanRepo.getQuestionData(pQueType, pVenType);
+	}
+	
+	@GetMapping("getQuestionData2")
+	public String getQuestionData2(@RequestParam String assessType, @RequestParam String category) {
+
+		return a3PlanServ.getQuestionData2(assessType, category);
 	}
 	
 	

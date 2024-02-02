@@ -1,6 +1,7 @@
 package com.Backend.VueFrame.Services;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -32,5 +33,11 @@ public class A3ReviewPlanService {
         // Call the second method
 		a3ReviewPlanRepo.setTasktData(vfMainObjId);
     }
+	
+	
+	public String getQuestionData2(String assessType, String category) {
+
+		return a3ReviewPlanRepo.getQuestionData2(assessType, category);
+	}
 
 }

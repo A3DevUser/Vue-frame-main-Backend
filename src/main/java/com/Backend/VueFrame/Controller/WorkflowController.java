@@ -156,8 +156,8 @@ public class WorkflowController {
 	 
 	 //Get table data in JSON Format
 	 @GetMapping("getTableData")
-	 public String getJsonTableData(@RequestParam String formId, @RequestParam String VF_CURRENT_USER, 
-			 						@RequestParam(name = "daysFlag", defaultValue = "NO_VALUE") String daysFlag) {
+	 public List<Object> getJsonTableData(@RequestParam String formId, @RequestParam String VF_CURRENT_USER, 
+			 						@RequestParam(name = "daysFlag", defaultValue = "NO_VALUE") String daysFlag) throws JsonMappingException, JsonProcessingException {
 		 
 		 System.out.println("INSIDE getJsonTableData");
 		 return workFlowServ.getJsonData(formId, VF_CURRENT_USER, daysFlag);

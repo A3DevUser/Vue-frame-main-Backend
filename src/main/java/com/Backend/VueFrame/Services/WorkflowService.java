@@ -15,6 +15,7 @@ import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Repository.WorkflowRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -225,10 +226,18 @@ public class WorkflowService {
 	}
 
 
-	public String getJsonData(String formId, String VF_CURRENT_USER, String daysFlag) {
+	public List<Object> getJsonData(String formId, String VF_CURRENT_USER, String daysFlag) throws JsonMappingException, JsonProcessingException {
 		System.out.println("iNSIDE getJsonData formId = " + formId);
 		System.out.println("AFTER DATA FETCH => " + workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER, daysFlag));
-		return workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER, daysFlag);
+		
+		 ObjectMapper objectMapper = new ObjectMapper();
+
+	        // Convert JSON string to List<Object>
+	     List<Object> objectList = objectMapper.readValue(workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER, daysFlag), new TypeReference<List<Object>>() {});
+	        
+//		return workFlowRepo.getJsonDataFromTable(formId, VF_CURRENT_USER, daysFlag);
+	     
+	     return objectList;
 		
 	}
 
