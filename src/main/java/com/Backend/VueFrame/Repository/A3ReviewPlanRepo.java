@@ -38,6 +38,15 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	List<Map<String, String>> getQuestionData(@Param("p_question_type") String pQueType, @Param("p_vendor_type") String pVenType);
 	
 	
+	// IF THE FUNCTION RETURN TYPE IS CLOB THEN IT WILL NOT RUN IN SPRING BOOT
+//	@Query(value = "SELECT GET_QUESTIONS_DATA(:v_assess_type, :v_category) FROM DUAL", nativeQuery = true)
+//	String getQuestionData2(@Param("v_assess_type") String assessType, @Param("v_category") String category);
+
+	
+	@Procedure(procedureName = "GET_QUESTIONS_DATA_PROC", outputParameterName = "v_result")
+	String getQuestionData2(@Param("v_assess_type") String assessType, @Param("v_category") String category);
+
+	
 	@Procedure(procedureName = "VF_INSRT_INTO_REVIEW_PLAN")
 	String setReviewData(@Param("v_review_id") String reviewId, 
 	                     @Param("v_review_type") String Review_Type,
@@ -74,7 +83,6 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	@Modifying
 	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER,VF_CREATED_ON)\r\n"
 			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER',SYSDATE)" , nativeQuery = true)
-	
 	void setTasktData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
