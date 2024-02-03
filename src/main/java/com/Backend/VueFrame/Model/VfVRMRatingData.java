@@ -27,13 +27,16 @@ public class VfVRMRatingData {
 	
 	@Column(name = "DUE_DILLIGENCE_SCORE")
 	private String dueDilligenceScore;
+	
+	@Column(name = "MATERIAL_RAITING")
+	private String materialRaiting;
 
 	public String getVENDOR_ID() {
 		return VENDOR_ID;
 	}
 
 	public void setVENDOR_ID(String VENDOR_ID) {
-		VENDOR_ID = VENDOR_ID;
+		this.VENDOR_ID = VENDOR_ID;
 	}
 
 	public String getTpreScore() {
@@ -68,20 +71,35 @@ public class VfVRMRatingData {
 		this.dueDilligenceScore = dueDilligenceScore;
 	}
 
+	public String getMaterialRaiting() {
+		return materialRaiting;
+	}
+
+	public void setMaterialRaiting(String materialRaiting) {
+		this.materialRaiting = materialRaiting;
+	}
+
 	public VfVRMRatingData(String VENDOR_ID, String tpreScore, String tpreRating, String isMaterial,
-			String dueDilligenceScore) {
+			String dueDilligenceScore, String materialRaiting) {
 		super();
 		this.VENDOR_ID = VENDOR_ID;
 		this.tpreScore = tpreScore;
 		this.tpreRating = tpreRating;
 		this.isMaterial = isMaterial;
 		this.dueDilligenceScore = dueDilligenceScore;
+		this.materialRaiting = materialRaiting;
 	}
 
 	public VfVRMRatingData() {
 		super();
-		// TODO Auto-generated constructor stub
+
+
+
+		
+		
 	}
+
+	
 	
 	
 	
