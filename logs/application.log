@@ -352,3 +352,46 @@ org.hibernate.InstantiationException: No default constructor for entity:  : com.
 12:58:34.344 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 12:58:34.350 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 12:58:34.606 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:58:34.709 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 16760 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:58:34.709 [restartedMain] DEBUG c.B.V.VueframeBackendApplication - Running with Spring Boot v2.7.17-SNAPSHOT, Spring v5.3.30
+12:58:34.709 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:58:35.142 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:58:35.272 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 129 ms. Found 43 JPA repository interfaces.
+12:58:35.434 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:58:35.435 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:58:35.435 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:58:35.435 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:58:35.465 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:58:35.465 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 752 ms
+12:58:35.556 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+12:58:36.102 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+12:58:36.121 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:58:36.129 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:58:36.442 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:58:36.442 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:58:36.496 [restartedMain] DEBUG c.B.VueFrame.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+12:58:37.324 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:58:37.333 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@485e54ed, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ebf8a46, org.springframework.security.web.context.SecurityContextPersistenceFilter@230da014, org.springframework.security.web.header.HeaderWriterFilter@7a87d729, org.springframework.web.filter.CorsFilter@770196c6, org.springframework.security.web.authentication.logout.LogoutFilter@20b10a79, com.Backend.VueFrame.security.JwtAuthFilter@1379757a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@782891fd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c523f4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@559e81f0, org.springframework.security.web.session.SessionManagementFilter@49b37827, org.springframework.security.web.access.ExceptionTranslationFilter@79e44353, org.springframework.security.web.access.intercept.AuthorizationFilter@779ab4f2]
+12:58:37.384 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:58:37.394 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:58:37.399 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:58:37.406 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 2.734 seconds (JVM running for 96.761)
+12:58:37.409 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+12:58:42.715 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:58:42.716 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:58:42.719 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+13:50:33.566 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=11m56s912ms413µs200ns).
+15:45:13.609 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=2m38s700ms488µs600ns).
+15:46:05.396 [http-nio-8080-exec-2] ERROR errorLogger - Subject: JWT Token Generation, Details: Error DetailsAuthRequest [username=madhur1, password=Pass123]
+15:46:05.595 [http-nio-8080-exec-3] ERROR errorLogger - Subject: JWT Token Generation, Details: Error DetailsAuthRequest [username=madhur1, password=Pass123]
+15:46:05.754 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@2e59a44e (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.764 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@7f2327df (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.765 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@e295f78 (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.768 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@14c2bf5f (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.769 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@65d9838e (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.769 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@1dac886f (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.770 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@1c3c7aec (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.770 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@6a880b6 (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.770 [http-nio-8080-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@4e8af49f (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:05.835 [http-nio-8080-exec-2] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-2 - Failed to validate connection oracle.jdbc.driver.T4CConnection@5e31d2ab (Closed Connection). Possibly consider using a shorter maxLifetime value.
+15:46:21.719 [http-nio-8080-exec-6] ERROR errorLogger - Subject: JWT Token Generation, Details: Error DetailsAuthRequest [username=madhur1, password=1234]

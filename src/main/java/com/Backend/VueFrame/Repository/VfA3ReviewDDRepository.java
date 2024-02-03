@@ -25,5 +25,7 @@ public interface VfA3ReviewDDRepository extends JpaRepository<VfA3ReviewDD, Stri
     String getReviewA3Data(
         @Param("p_review_freq") String reviewFreq,@Param ("p_review_sub_freq") String reviewSubFreq
     ); 
+    
+    
 
 }
