@@ -60,6 +60,9 @@ public class VfA3ColumnHeader {
 	
 	@Column(name = "IS_SCORING")
 	private String isScoring;
+	
+	@Column(name = "is_dependent")
+	private String isdependent;
 
 	public int getSrNo() {
 		return srNo;
@@ -202,9 +205,20 @@ public class VfA3ColumnHeader {
 
 	
 
+	public String getIsdependent() {
+		return isdependent;
+	}
+
+	public void setIsdependent(String isdependent) {
+		this.isdependent = isdependent;
+	}
+
+	
+
 	public VfA3ColumnHeader(int srNo, String formName, String fieldName, String accessor, String columnFilter,
 			String sticky, String formId, String parentCell, String cellType, String auditType, String width,
-			String orderBy, String areaName, String portfolio, String sns, String isPageType, String isScoring) {
+			String orderBy, String areaName, String portfolio, String sns, String isPageType, String isScoring,
+			String isdependent) {
 		super();
 		this.srNo = srNo;
 		this.formName = formName;
@@ -223,6 +237,7 @@ public class VfA3ColumnHeader {
 		this.sns = sns;
 		this.isPageType = isPageType;
 		this.isScoring = isScoring;
+		this.isdependent = isdependent;
 	}
 
 	public VfA3ColumnHeader() {
