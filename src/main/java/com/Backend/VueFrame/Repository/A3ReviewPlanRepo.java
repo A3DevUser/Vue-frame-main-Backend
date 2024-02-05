@@ -82,7 +82,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	@Transactional
 	@Modifying
 	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER,VF_CREATED_ON)\r\n"
-			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER',SYSDATE)" , nativeQuery = true)
+			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER',to_char(sysdate, 'YYYY-MM-DD'))" , nativeQuery = true)
 	void setTasktData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
