@@ -43,7 +43,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 //	String getQuestionData2(@Param("v_assess_type") String assessType, @Param("v_category") String category);
 
 	
-	@Procedure(procedureName = "GET_QUESTIONS_DATA_PROC", outputParameterName = "v_result")
+	@Procedure(procedureName = "GET_QUESTIONS_DATA_PROC_2", outputParameterName = "v_result")
 	String getQuestionData2(@Param("v_assess_type") String assessType, @Param("v_category") String category);
 
 	

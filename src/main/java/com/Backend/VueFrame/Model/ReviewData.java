@@ -113,6 +113,8 @@ public class ReviewData {
 		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 		this.VENDOR_TYPE = VENDOR_TYPE;
 	}
+	
+	
 	public ReviewData() {
 		super();
 		// TODO Auto-generated constructor stub

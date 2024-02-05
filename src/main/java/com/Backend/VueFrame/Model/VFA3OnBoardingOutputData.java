@@ -25,8 +25,8 @@ public class VFA3OnBoardingOutputData {
 	private String QUESTION_ID;
 	
 	@Column(name = "TEST_TITLE")
-	@JsonProperty("QUESTION")
-	private String QUESTION;
+	@JsonProperty("QUESTION_NAME")
+	private String QUESTION_NAME;
 	
 	@Column(name = "RESPONSE")
 	@JsonProperty("RESPONSE_DISPLAY_VAL")
@@ -63,15 +63,15 @@ public class VFA3OnBoardingOutputData {
 		this.QUESTION_ID = QUESTION_ID;
 	}
 
-	public String getQUESTION() {
-		return QUESTION;
-	}
-
-	public void setQUESTION(String QUESTION) {
-		this.QUESTION = QUESTION;
-	}
-
 	
+	public String getQUESTION_NAME() {
+		return QUESTION_NAME;
+	}
+
+	public void setQUESTION_NAME(String qUESTION_NAME) {
+		QUESTION_NAME = qUESTION_NAME;
+	}
+
 	public String getRESPONSE_DISPLAY_VAL() {
 		return RESPONSE_DISPLAY_VAL;
 	}
@@ -90,13 +90,13 @@ public class VFA3OnBoardingOutputData {
 
 	
 
-	public VFA3OnBoardingOutputData(String id, String Associate_Vend, String QUESTION_ID, String QUESTION,
+	public VFA3OnBoardingOutputData(String id, String Associate_Vend, String QUESTION_ID, String QUESTION_NAME,
 			String RESPONSE_DISPLAY_VAL, String VF_MAIN_OBJ_ID) {
 		super();
 		this.id = id;
 		this.Associate_Vend = Associate_Vend;
 		this.QUESTION_ID = QUESTION_ID;
-		this.QUESTION = QUESTION;
+		this.QUESTION_NAME = QUESTION_NAME;
 		this.RESPONSE_DISPLAY_VAL = RESPONSE_DISPLAY_VAL;
 		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 	}
