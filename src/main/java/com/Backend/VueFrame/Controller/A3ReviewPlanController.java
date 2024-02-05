@@ -96,19 +96,27 @@ public class A3ReviewPlanController {
 	
 
 	@PostMapping("updateStatusToAccept")
-	public void setStatus(@RequestBody List<VfA3ReviewPlanStatus> reviewDataList) {
-	    for (VfA3ReviewPlanStatus reviewData : reviewDataList) {
-	        if ("approve".equalsIgnoreCase(reviewData.getReviewStatus())) {
+	public void setStatus(@RequestBody List<Map<String, String>> reviewDataList) {
+		
+//		for (int i =0; i<=0; i++)
+//		{
+//			VfA3ReviewPlanStatus reviewData = reviewDataList.get(i);
+//		}
+//	    for (VfA3ReviewPlanStatus reviewData : reviewDataList) {
+//	    	
+//	    	System.out.println("reviewData = " + reviewData.toString());
+////	        if ("approve".equalsIgnoreCase(reviewData.getReviewStatus())) {
 	            try {
 	                ObjectMapper objectMapper = new ObjectMapper();
-	                String jsonData = objectMapper.writeValueAsString(reviewData);
-
+	                String jsonData = objectMapper.writeValueAsString(reviewDataList);
+	                
+	                System.out.println("jsonData "+jsonData);
 	                a3ReviewPlanStatusRepo.setReviewPlan(jsonData);
 	            } catch (Exception e) {
 	                e.printStackTrace();
 	            }
-	        }
-	    }
+//	        }
+//	    }
 	}
 
 	
@@ -141,7 +149,7 @@ public class A3ReviewPlanController {
 	private void saveData(ReviewData yourDataDto, String reviewId) {
 	    // Extract necessary data from yourDataDto
 	    a3PlanServ.saveData(reviewId, yourDataDto.getReview_Type(),
-	            yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), yourDataDto.getVF_MAIN_OBJ_ID(),
+	            yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), reviewId,
 	            yourDataDto.getReviewName(),yourDataDto.getReviewStatus());
 	}
 
