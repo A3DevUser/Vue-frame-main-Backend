@@ -129,8 +129,8 @@ public class A3ReviewPlanController {
 	
 	
 	@GetMapping("getOutputReviewPlan2")
-	public String getOnBoardingData2(String reviewId, String vendorType) {
-		return a3ReviewPlanRepo.getOnBoardingData2(reviewId, vendorType);
+	public String getOnBoardingData2(String reviewId) {
+		return a3ReviewPlanRepo.getOnBoardingData2(reviewId);
 	}
 
 

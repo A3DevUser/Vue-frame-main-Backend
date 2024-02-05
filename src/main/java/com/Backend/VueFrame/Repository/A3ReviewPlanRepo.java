@@ -29,7 +29,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	
 	
 	@Procedure(procedureName = "GET_ONBOARDING_DATA_2", outputParameterName = "v_result")
-	String getOnBoardingData2(@Param("v_reviewId") String reviewId, @Param("v_vendor_type") String vendorType);
+	String getOnBoardingData2(@Param("v_reviewId") String reviewId);
 	
 	
 	@Query(value = "SELECT QUESTION_ID, QUESTION_TYPE, RISK_DOMAIN, QUESTION, RESPONSE_TYPE, RESPONSE_DISPLAY_VAL, "
@@ -43,7 +43,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 //	String getQuestionData2(@Param("v_assess_type") String assessType, @Param("v_category") String category);
 
 	
-	@Procedure(procedureName = "GET_QUESTIONS_DATA_PROC", outputParameterName = "v_result")
+	@Procedure(procedureName = "GET_QUESTIONS_DATA_PROC_2", outputParameterName = "v_result")
 	String getQuestionData2(@Param("v_assess_type") String assessType, @Param("v_category") String category);
 
 	
