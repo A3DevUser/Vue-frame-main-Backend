@@ -25,10 +25,10 @@ public class A3ReviewPlanService {
 	
 	@Transactional
     public void saveData(String reviewId, String reviewType,
-                         String reviewFreq, String subFrequency, String vfMainObjId, String reviewName, String reviewStatus) {
+                         String reviewFreq, String subFrequency, String vfMainObjId, String reviewName) {
         
         // Call the first method
-		a3ReviewPlanRepo.setData(reviewId, reviewType,reviewName,reviewFreq, subFrequency, reviewStatus,vfMainObjId);
+		a3ReviewPlanRepo.setData(reviewId, reviewType,reviewName,reviewFreq, subFrequency,vfMainObjId);
 
         // Call the second method
 		a3ReviewPlanRepo.setTasktData(vfMainObjId);
