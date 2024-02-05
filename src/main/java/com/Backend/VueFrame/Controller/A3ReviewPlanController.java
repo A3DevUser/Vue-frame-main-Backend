@@ -98,6 +98,7 @@ public class A3ReviewPlanController {
 	@PostMapping("updateStatusToAccept")
 	public void setStatus(@RequestBody List<Map<String, String>> reviewDataList) {
 		
+		System.out.println("reviewDataList = " + reviewDataList.toString());
 //		for (int i =0; i<=0; i++)
 //		{
 //			VfA3ReviewPlanStatus reviewData = reviewDataList.get(i);
@@ -148,8 +149,8 @@ public class A3ReviewPlanController {
 	
 	private void saveData(ReviewData yourDataDto, String reviewId) {
 	    // Extract necessary data from yourDataDto
-	    a3PlanServ.saveData(reviewId, yourDataDto.getReview_Type(),
-	            yourDataDto.getReview_Freq(), yourDataDto.getSub_Frequency(), reviewId,
+	    a3PlanServ.saveData(reviewId, yourDataDto.getReviewType(),
+	            yourDataDto.getReviewFreq(), yourDataDto.getReviewSubFreq(), reviewId,
 	            yourDataDto.getReviewName(),yourDataDto.getReviewStatus());
 	}
 
