@@ -151,7 +151,7 @@ public class A3ReviewPlanController {
 	    // Extract necessary data from yourDataDto
 	    a3PlanServ.saveData(reviewId, yourDataDto.getReviewType(),
 	            yourDataDto.getReviewFreq(), yourDataDto.getReviewSubFreq(), reviewId,
-	            yourDataDto.getReviewName(),yourDataDto.getReviewStatus());
+	            yourDataDto.getReviewName());
 	}
 
 }
