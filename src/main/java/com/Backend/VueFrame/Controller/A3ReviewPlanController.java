@@ -73,6 +73,42 @@ public class A3ReviewPlanController {
       
 	
 	}
+	
+	// this api is not required now (but before removing need to confirm first)
+	
+//	@PostMapping("updateRegeneratedData")
+//    public void updateRegeneratedData(@RequestBody List<Map<String, String>> regeneratedDataList) {
+//		
+//		Map<String, String> regeneratedData = regeneratedDataList.get(0);
+//
+//		String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
+//		
+//		
+//		a3PlanServ.saveData(reviewId, regeneratedData.get(""), regeneratedData.get("REVIEW_FREQ"), regeneratedData.get("REVIEW_CYCLE"), 
+//				reviewId, regeneratedData.get("")); // reviewName is not comming in object.
+//	
+//            
+//
+//            for (Map<String, String> obj : regeneratedDataList) {
+//                String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
+//
+//                VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId, reviewId, obj.get(""), // reviewName is not comming in object.
+//                                                               obj.get("ASSOCIATE_VEND"), obj.get("VENDOR_ID"),
+//                                                               obj.get("VF_MAIN_OBJ_ID"), 
+//                                                               obj.get("")); // vendor_type is not comming in object.
+//
+//                VfA3ReviewPlanStatus reviewPlanStatus = new VfA3ReviewPlanStatus(reviewId,
+//                                                                                 obj.get(""), // reviewName is not comming in object.
+//                                                                                 obj.get(""), // vendorStatus is not comming in object.
+//                                                                                 obj.get("")); // reviewComment is not comming in object.
+//
+//                a3ReviewPlanRepo.saveAndFlush(reviewPlan);
+//                a3ReviewPlanStatusRepo.saveAndFlush(reviewPlanStatus);
+//            }
+//           
+//	}
+	
+	
 //	@PostMapping("updateStatusToAccept")
 //	public void setStatus(@RequestBody List<ReviewData> reviewDataList) {
 //		
