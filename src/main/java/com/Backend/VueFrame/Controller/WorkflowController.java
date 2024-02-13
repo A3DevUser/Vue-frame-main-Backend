@@ -64,7 +64,6 @@ public class WorkflowController {
 //	        logServ.log("d", "Debug Subject", "Debug Details" + json);
 	        workFlowServ.callInsertDataFromDynamicJsonArray(json, currLoggedInUser);
 	    }
-
 	    return json;
 	}
 	
