@@ -5,6 +5,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.VFA3OnBoardingOutputData;
 import com.Backend.VueFrame.Repository.VFA3OBOutputRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("VF/")
@@ -42,11 +46,27 @@ public class VfA3OBOutputController {
              obj.setId("OB-" + testId + vfMainObjId);
              out.add(obj);
          }
+         
+         System.out.println("out = "+out);
 
          List<VFA3OnBoardingOutputData> list = vfa3TestRepo.saveAllAndFlush(out);
 
          return list;
      }
+     
+     
+//     @PostMapping("SubmitOnBoardingData")
+//     public void submitData(@RequestBody String json) throws JsonMappingException, JsonProcessingException {
+//    	 
+//    	 ObjectMapper mapper = new ObjectMapper();
+// 		
+// 		 List<Map<String, String>> list = mapper.readValue(json, ArrayList.class);
+//
+//    	 for(Map<String, String> obj : list) {
+//    		 System.out.println(obj);
+//    	 }
+//     }
+     
 
      @GetMapping("getOBOutpuByIds")
  	

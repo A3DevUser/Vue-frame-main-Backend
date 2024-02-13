@@ -29,8 +29,8 @@ public class VFA3OnBoardingOutputData {
 	private String QUESTION_NAME;
 	
 	@Column(name = "RESPONSE")
-	@JsonProperty("RESPONSE_DISPLAY_VAL")
-	private String RESPONSE_DISPLAY_VAL;
+	@JsonProperty("RPT_DISPLAY_VAL")
+	private String RPT_DISPLAY_VAL;
 	
 	@Column(name = "VF_MAIN_OBJ_ID")
 	@JsonProperty("VF_MAIN_OBJ_ID")
@@ -72,13 +72,7 @@ public class VFA3OnBoardingOutputData {
 		QUESTION_NAME = qUESTION_NAME;
 	}
 
-	public String getRESPONSE_DISPLAY_VAL() {
-		return RESPONSE_DISPLAY_VAL;
-	}
-
-	public void setRESPONSE_DISPLAY_VAL(String RESPONSE_DISPLAY_VAL) {
-		this.RESPONSE_DISPLAY_VAL = RESPONSE_DISPLAY_VAL;
-	}
+	
 
 	public String getVF_MAIN_OBJ_ID() {
 		return VF_MAIN_OBJ_ID;
@@ -88,16 +82,23 @@ public class VFA3OnBoardingOutputData {
 		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 	}
 
+	public String getRPT_DISPLAY_VAL() {
+		return RPT_DISPLAY_VAL;
+	}
+
+	public void setRPT_DISPLAY_VAL(String rPT_DISPLAY_VAL) {
+		RPT_DISPLAY_VAL = rPT_DISPLAY_VAL;
+	}
 	
 
 	public VFA3OnBoardingOutputData(String id, String Associate_Vend, String QUESTION_ID, String QUESTION_NAME,
-			String RESPONSE_DISPLAY_VAL, String VF_MAIN_OBJ_ID) {
+			String RPT_DISPLAY_VAL, String VF_MAIN_OBJ_ID) {
 		super();
 		this.id = id;
 		this.Associate_Vend = Associate_Vend;
 		this.QUESTION_ID = QUESTION_ID;
 		this.QUESTION_NAME = QUESTION_NAME;
-		this.RESPONSE_DISPLAY_VAL = RESPONSE_DISPLAY_VAL;
+		this.RPT_DISPLAY_VAL = RPT_DISPLAY_VAL;
 		this.VF_MAIN_OBJ_ID = VF_MAIN_OBJ_ID;
 	}
 
@@ -105,6 +106,11 @@ public class VFA3OnBoardingOutputData {
 		super();
 		
 	}
+
+
+	
+	
+	
 	
 	
 	
