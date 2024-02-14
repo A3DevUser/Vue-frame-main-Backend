@@ -58,10 +58,11 @@ public class WorkflowController {
 //    }
 //	
 	@PostMapping("callWorkflowProcedure")
-	public String insertData(@RequestBody(required = false) String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
+	public Map<String, String> insertData(@RequestBody(required = false) String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
 	    
 		String status = "";
-		String alert_msg = "";
+		
+		Map<String, String> alert_msg = new HashMap<>();
 		
 		if (json != null) {
 //	        logServ.log("e", "Error", "Error Details" + json);
@@ -70,10 +71,13 @@ public class WorkflowController {
 	    }
 		
 		if (status.equals("Data Inserted Successfully!")) {
-			alert_msg = "{valid:'true', message:'Data Inserted Successfully!'}";
+			alert_msg.put("valid", "true");
+			alert_msg.put("message", "Data Inserted Successfully!");
 		}
 		else {
-			alert_msg = "{valid:'false', message:'"+status+"'}";
+			
+			alert_msg.put("valid", "false");
+			alert_msg.put("message", status);
 		}
 		
 	    return alert_msg;
