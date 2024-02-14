@@ -141,10 +141,13 @@ public class RptFilterDtls {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "RptFilterDtls [filId=" + filId + ", rptId=" + rptId + ", columnId=" + columnId + ", columnName="
+				+ columnName + ", colFilName=" + colFilName + ", colFilLabel=" + colFilLabel + ", colFilTyp="
+				+ colFilTyp + ", dsName=" + dsName + ", filOrder=" + filOrder + ", targetId=" + targetId + "]";
+	}
 	
 	
 }

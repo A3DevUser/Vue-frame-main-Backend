@@ -42,67 +42,75 @@ public class WorkflowService {
 //    }
 	
 	
-	public void callInsertDataFromDynamicJsonArray(String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
+	public String callInsertDataFromDynamicJsonArray(String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
 		
 		System.out.println("json = " + json);
 		// data inserting in table.
-		workFlowRepo.insertDataFromDynamicJsonArray(json);
+		String status = workFlowRepo.insertDataFromDynamicJsonArray(json);
 		
-		
-		ObjectMapper mapper = new ObjectMapper();
-		
-		List<Map<String, String>> list = mapper.readValue(json, ArrayList.class);
-		
-		for(Map<String, String> obj : list) {
+		// if data is inserted successfully then workflow procedure will run.
+		if (status.equals("Data Inserted Successfully!")) {
+			ObjectMapper mapper = new ObjectMapper();
 			
-			// this will give true/false if the current object's grid_id is "main grid" or not. 
-			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
+			List<Map<String, String>> list = mapper.readValue(json, ArrayList.class);
 			
-			if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
+			for(Map<String, String> obj : list) {
 				
-				System.out.println("workflow running - "+obj);
-				System.out.println(currLoggedInUser);
+				// this will give true/false if the current object's grid_id is "main grid" or not. 
+				Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
 				
-				
-				if(obj.get("VF_CREATED_BY").isBlank()) {
-					System.out.println("if working");
-					workFlowRepo.setGridData1(
-							obj.get("VF_STAGE"),
-							obj.get("VF_STATUS"),
-							obj.get("VF_ACTION"), 
-							obj.get("VF_ORGANISATION_ID"),
-							obj.get("VF_ROLE"),
-							obj.get("VF_PROCESS_INSTANCE_ID"),
-							obj.get("VF_INSTANCE_ID"),
-							currLoggedInUser,
-							obj.get("VF_CREATED_ON"),
-							obj.get("VF_MODIFIED_ON"),
-							obj.get("VF_MODIFIED_BY"),
-							obj.get("formId"),
-							obj.get("VF_CURRENT_USER"),
-							obj.get("VF_MAIN_OBJ_ID"));	
-				}
-				else {
-					System.out.println("else working");
-					workFlowRepo.setGridData1(
-							obj.get("VF_STAGE"),
-							obj.get("VF_STATUS"),
-							obj.get("VF_ACTION"), 
-							obj.get("VF_ORGANISATION_ID"),
-							obj.get("VF_ROLE"),
-							obj.get("VF_PROCESS_INSTANCE_ID"),
-							obj.get("VF_INSTANCE_ID"),
-							obj.get("VF_CREATED_BY"),
-							obj.get("VF_CREATED_ON"),
-							obj.get("VF_MODIFIED_ON"),
-							obj.get("VF_MODIFIED_BY"),
-							obj.get("formId"),
-							obj.get("VF_CURRENT_USER"),
-							obj.get("VF_MAIN_OBJ_ID"));	
-				}
-				
-			}	
+				if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
+					
+					System.out.println("workflow running - "+obj);
+					System.out.println(currLoggedInUser);
+					
+					
+					if(obj.get("VF_CREATED_BY").isBlank()) {
+						System.out.println("if working");
+						workFlowRepo.setGridData1(
+								obj.get("VF_STAGE"),
+								obj.get("VF_STATUS"),
+								obj.get("VF_ACTION"), 
+								obj.get("VF_ORGANISATION_ID"),
+								obj.get("VF_ROLE"),
+								obj.get("VF_PROCESS_INSTANCE_ID"),
+								obj.get("VF_INSTANCE_ID"),
+								currLoggedInUser,
+								obj.get("VF_CREATED_ON"),
+								obj.get("VF_MODIFIED_ON"),
+								obj.get("VF_MODIFIED_BY"),
+								obj.get("formId"),
+								obj.get("VF_CURRENT_USER"),
+								obj.get("VF_MAIN_OBJ_ID"));	
+					}
+					else {
+						System.out.println("else working");
+						workFlowRepo.setGridData1(
+								obj.get("VF_STAGE"),
+								obj.get("VF_STATUS"),
+								obj.get("VF_ACTION"), 
+								obj.get("VF_ORGANISATION_ID"),
+								obj.get("VF_ROLE"),
+								obj.get("VF_PROCESS_INSTANCE_ID"),
+								obj.get("VF_INSTANCE_ID"),
+								obj.get("VF_CREATED_BY"),
+								obj.get("VF_CREATED_ON"),
+								obj.get("VF_MODIFIED_ON"),
+								obj.get("VF_MODIFIED_BY"),
+								obj.get("formId"),
+								obj.get("VF_CURRENT_USER"),
+								obj.get("VF_MAIN_OBJ_ID"));	
+					}
+					
+				}	
+			}
 		}
+		
+		else {
+			return status;
+		}
+		
+		return status;
 		
     }
 	

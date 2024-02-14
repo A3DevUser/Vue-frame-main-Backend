@@ -55,9 +55,12 @@ public class RptFilterDtlsController {
 	 		
 	 	 // Filtering json data for stored value
 	 	 String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
+	 	 
+	 	 System.out.println(filteredJsonData);
 	 		
 	 	 List<RptFilterDtls> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<RptFilterDtls>>() {});
-
+	 	 
+	 	 System.out.println(convertedObject);
 			 
 		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(convertedObject);
 		 
