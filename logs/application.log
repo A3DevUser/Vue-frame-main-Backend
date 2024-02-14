@@ -80,3 +80,28 @@
 12:36:34.488 [Thread-10] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 12:36:34.489 [Thread-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
 12:36:34.733 [Thread-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+12:36:35.092 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 17.0.1 on CPL-DEV-170 with PID 10252 (D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\Swapnali\A3 Application\VueFrameBackEnd Main\Vue-frame-main-Backend)
+12:36:35.092 [restartedMain] DEBUG c.B.V.VueframeBackendApplication - Running with Spring Boot v2.7.17-SNAPSHOT, Spring v5.3.30
+12:36:35.092 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
+12:36:35.832 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:36:35.989 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 156 ms. Found 43 JPA repository interfaces.
+12:36:36.292 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:36:36.293 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:36:36.293 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:36:36.293 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+12:36:36.319 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:36:36.319 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1225 ms
+12:36:36.434 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+12:36:36.855 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+12:36:36.887 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+12:36:36.895 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+12:36:37.391 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:36:37.391 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:36:37.558 [restartedMain] DEBUG c.B.VueFrame.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+12:36:38.737 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+12:36:38.745 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@46246bc0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30652a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f439910, org.springframework.security.web.header.HeaderWriterFilter@8049340, org.springframework.web.filter.CorsFilter@32665338, org.springframework.security.web.authentication.logout.LogoutFilter@4a0aa9aa, com.Backend.VueFrame.security.JwtAuthFilter@35197df8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3048a013, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c7abbc9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3dcd6afe, org.springframework.security.web.session.SessionManagementFilter@d2aff2, org.springframework.security.web.access.ExceptionTranslationFilter@66112ead, org.springframework.security.web.access.intercept.AuthorizationFilter@4f380381]
+12:36:38.790 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+12:36:38.796 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:36:38.978 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:36:38.985 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Started VueframeBackendApplication in 3.969 seconds (JVM running for 78947.658)
+12:36:38.987 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
