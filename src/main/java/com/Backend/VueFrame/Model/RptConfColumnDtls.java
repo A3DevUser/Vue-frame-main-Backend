@@ -57,6 +57,9 @@ public class RptConfColumnDtls {
 	
 	@Column(name = "HIDE_SHOW")
 	private String hideShow;
+	
+	@Column(name = "MANDATORY")
+	private String mandatory;
 
 	
 	public String getFormId() {
@@ -189,9 +192,20 @@ public class RptConfColumnDtls {
 	}
 	
 	
+	public String getMandatory() {
+		return mandatory;
+	}
+
+	public void setMandatory(String mandatory) {
+		this.mandatory = mandatory;
+	}
+
+	
+	
+
 	public RptConfColumnDtls(String formId, String columnId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecId, String subSecName, String subSecWidth,
-			String subSecType, String orderBy, String categoryId, String gridId, String hideShow) {
+			String subSecType, String orderBy, String categoryId, String gridId, String hideShow, String mandatory) {
 		super();
 		this.formId = formId;
 		this.columnId = columnId;
@@ -209,8 +223,8 @@ public class RptConfColumnDtls {
 		this.categoryId = categoryId;
 		this.gridId = gridId;
 		this.hideShow = hideShow;
+		this.mandatory = mandatory;
 	}
-	
 
 	public RptConfColumnDtls() {
 		super();

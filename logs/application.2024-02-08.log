@@ -1,3 +1,6 @@
+<<<<<<< HEAD:logs/application.log
+10:32:43.438 [HikariPool-2 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=3d12h46m42s878ms537µs900ns).
+=======
 11:14:48.888 [restartedMain] INFO  c.B.V.VueframeBackendApplication - Starting VueframeBackendApplication using Java 19.0.2 on CPL-DAT-172 with PID 7024 (D:\Users\AkshayC\Desktop\VUE FRAME\Vueframe workspace\Vue-frame-main-Backend\target\classes started by AkshayC in D:\Users\AkshayC\Desktop\VUE FRAME\Vueframe workspace\Vue-frame-main-Backend)
 11:14:48.893 [restartedMain] DEBUG c.B.V.VueframeBackendApplication - Running with Spring Boot v2.7.17-SNAPSHOT, Spring v5.3.30
 11:14:48.894 [restartedMain] INFO  c.B.V.VueframeBackendApplication - No active profile set, falling back to 1 default profile: "default"
@@ -7128,3 +7131,4 @@ io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1589)
 20:33:36.535 [http-nio-8080-exec-10] ERROR errorLogger - Subject: JWT Token Generation, Details: Error DetailsAuthRequest [username=madhur1, password=1234]
+>>>>>>> 0543bac805b6c3e0de3a52a2fcf4d74f3a65754a:logs/application.2024-02-08.log
