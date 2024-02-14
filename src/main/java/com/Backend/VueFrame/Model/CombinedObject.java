@@ -16,6 +16,7 @@ public class CombinedObject {
 	private String gridId;
 	private String isMultiSelect;
 	private String dsId;
+	private String isImportExport;
 	
 	
 	public String getNavName() {
@@ -125,9 +126,20 @@ public class CombinedObject {
 	
 	
 	
+	
+	
+	public String getIsImportExport() {
+		return isImportExport;
+	}
+	public void setIsImportExport(String isImportExport) {
+		this.isImportExport = isImportExport;
+	}
+	
+	
+	
 	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
 			String isMain, String isMrow, String seqId, String cat, String targetId, String formId, String gridId,
-			String isMultiSelect, String dsId) {
+			String isMultiSelect, String dsId, String isImportExport) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -143,6 +155,7 @@ public class CombinedObject {
 		this.gridId = gridId;
 		this.isMultiSelect = isMultiSelect;
 		this.dsId = dsId;
+		this.isImportExport = isImportExport;
 	}
 	public CombinedObject() {
 		super();

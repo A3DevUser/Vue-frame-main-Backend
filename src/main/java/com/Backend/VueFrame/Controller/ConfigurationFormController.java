@@ -77,6 +77,7 @@ public class ConfigurationFormController {
 		                navBarData.setSeqId(combinedObject.getSeqId());
 		                navBarData.setCat(combinedObject.getCat());
 		                navBarData.setTargetId(combinedObject.getTargetId());
+		                navBarData.setIsImportExport(combinedObject.getIsImportExport());
 
 		                navBarDataList.add(navBarData);
 

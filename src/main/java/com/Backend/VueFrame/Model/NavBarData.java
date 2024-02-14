@@ -52,9 +52,11 @@ public class NavBarData {
 	@Column(name = "CATEGORY")
 	private String cat;
 	
-	
 	@Column(name = "TARGET_ID")
 	private String targetId;
+	
+	@Column(name = "IS_IMPORT_EXPORT")
+	private String isImportExport;
 	
 
 	public String getIsSecFlag() {
@@ -168,9 +170,21 @@ public class NavBarData {
 	}
 
 	
+	
+	public String getIsImportExport() {
+		return isImportExport;
+	}
+
+	public void setIsImportExport(String isImportExport) {
+		this.isImportExport = isImportExport;
+	}
+
+	
+	
+
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
 			String navType, String url, String number, String compType, String isSecFlag, String seqId, String cat,
-			String targetId) {
+			String targetId, String isImportExport) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
@@ -185,8 +199,8 @@ public class NavBarData {
 		this.seqId = seqId;
 		this.cat = cat;
 		this.targetId = targetId;
+		this.isImportExport = isImportExport;
 	}
-	
 
 	public NavBarData() {
 		super();
