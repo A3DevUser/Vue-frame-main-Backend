@@ -59,12 +59,24 @@ public class WorkflowController {
 //	
 	@PostMapping("callWorkflowProcedure")
 	public String insertData(@RequestBody(required = false) String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
-	    if (json != null) {
+	    
+		String status = "";
+		String alert_msg = "";
+		
+		if (json != null) {
 //	        logServ.log("e", "Error", "Error Details" + json);
 //	        logServ.log("d", "Debug Subject", "Debug Details" + json);
-	        workFlowServ.callInsertDataFromDynamicJsonArray(json, currLoggedInUser);
+			status = workFlowServ.callInsertDataFromDynamicJsonArray(json, currLoggedInUser);
 	    }
-	    return json;
+		
+		if (status.equals("Data Inserted Successfully!")) {
+			alert_msg = "{valid:'true', message:'Data Inserted Successfully!'}";
+		}
+		else {
+			alert_msg = "{valid:'false', message:'"+status+"'}";
+		}
+		
+	    return alert_msg;
 	}
 	
 	

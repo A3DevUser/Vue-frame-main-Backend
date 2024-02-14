@@ -37,8 +37,8 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //    void callWorkflowProcedure(String jsonData);
 //
 //	
-	 @Procedure(procedureName = "VF_JSONARRAYPACKAGE.InsertDataFromDynamicJsonArray")
-	    void insertDataFromDynamicJsonArray(@Param("p_json_array") String json);
+	 @Procedure(procedureName = "VF_JSONARRAYPACKAGE.InsertDataFromDynamicJsonArray", outputParameterName = "v_alert")
+	    String insertDataFromDynamicJsonArray(@Param("p_json_array") String json);
 	 
 	 @Procedure(procedureName = "SET_GRID_DATA")
 		void setGridData(@Param("p_gridId") String gridId);
@@ -81,7 +81,8 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //	 
 	 
 	 // it will return is_main and formId on the basis of gridId
-	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') as IS_MAIN, FORM_ID FROM VF_GRID_DETAILS WHERE GRID_ID = :grid_id", nativeQuery = true)
+	 @Query(value = "SELECT DECODE(IS_MAIN,'true',IS_MAIN,null,'false') as IS_MAIN, FORM_ID FROM VF_GRID_DETAILS \r\n"
+	 			  + "WHERE GRID_ID = GET_STORED_VALUE_FROM_COLUMN(:grid_id)", nativeQuery = true)
 	 Map<String,String> getIsMainAndFormId(@Param("grid_id") String grid_id);
 	 
 	 @Query(value = "SELECT COLUMN_NAME FROM VF_DEFAULT_COLS", nativeQuery = true)
