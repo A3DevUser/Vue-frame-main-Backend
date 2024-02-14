@@ -77,7 +77,7 @@ public class WorkflowController {
 		else {
 			
 			alert_msg.put("valid", "false");
-			alert_msg.put("message", status);
+			alert_msg.put("message", "Failed To Insert Data");
 		}
 		
 	    return alert_msg;
