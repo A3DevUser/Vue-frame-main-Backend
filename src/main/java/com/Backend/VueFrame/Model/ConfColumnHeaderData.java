@@ -55,6 +55,8 @@ public class ConfColumnHeaderData {
 	@Column(name = "HIDE_SHOW")
 	private String hideShow;
 	
+	@Column(name = "MANDATORY") 
+	private String mandatory;
 	
 
 	public String getColumnId() {
@@ -185,9 +187,22 @@ public class ConfColumnHeaderData {
 		this.hideShow = hideShow;
 	}
 	
+	
+	
+	
+	public String getMandatory() {
+		return mandatory;
+	}
+
+	public void setMandatory(String mandatory) {
+		this.mandatory = mandatory;
+	}
+
+	
+
 	public ConfColumnHeaderData(String columnId, String formId, String fieldName, String accessor,
 			String columnFilterType, String secId, String cellType, String width, String subSecName, String subSecId,
-			String subSecWidth, String subSecType, String number, String gridId, String hideShow) {
+			String subSecWidth, String subSecType, String number, String gridId, String hideShow, String mandatory) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -204,6 +219,7 @@ public class ConfColumnHeaderData {
 		this.number = number;
 		this.gridId = gridId;
 		this.hideShow = hideShow;
+		this.mandatory = mandatory;
 	}
 
 	public ConfColumnHeaderData() {
