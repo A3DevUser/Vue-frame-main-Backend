@@ -74,6 +74,10 @@ public class WorkflowController {
 			alert_msg.put("valid", "true");
 			alert_msg.put("message", "Data Inserted Successfully!");
 		}
+		else if (status.equals("Data Already Exist")) {
+			alert_msg.put("valid", "false");
+			alert_msg.put("message", "Data Already Exist");
+		}
 		else {
 			
 			alert_msg.put("valid", "false");

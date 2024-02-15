@@ -62,7 +62,7 @@ public class RptFilterDtlsController {
 	 	 
 	 	 System.out.println(convertedObject);
 			 
-		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(convertedObject);
+//		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(convertedObject);
 		 
 		 return obj;
 		 
