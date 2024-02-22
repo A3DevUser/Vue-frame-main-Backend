@@ -17,5 +17,9 @@ public interface vfConfEditableCellPathRepository extends JpaRepository<vfConfEd
 	
 	@Procedure(procedureName = "VF_GET_EDITABLE_PATH_PROC", outputParameterName = "v_result")
     String getEditableCellPath();
+	
+	
+	@Procedure(procedureName = "VF_GET_EDITABLE_GID_FORMID", outputParameterName = "v_result")
+    String getEditableGidFormId();
 
 }

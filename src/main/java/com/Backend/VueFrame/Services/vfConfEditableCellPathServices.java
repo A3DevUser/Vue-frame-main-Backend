@@ -20,6 +20,8 @@ public class vfConfEditableCellPathServices {
 	}
 	
 	
- 
+	public String getEditableGidFormId(){
+		return vfConfEditableCellPathRepo.getEditableGidFormId();
+	}
 
 }

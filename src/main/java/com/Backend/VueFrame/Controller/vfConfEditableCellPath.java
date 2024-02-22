@@ -21,5 +21,11 @@ public class vfConfEditableCellPath {
 	public String getEditableCellPath(){
 		return vfConfEditableCellPathServ.getEditableCellPath();
 	}
+	
+	
+	@GetMapping("getEditableGidFormId") 
+	public String getEditableGidFormId(){
+		return vfConfEditableCellPathServ.getEditableGidFormId();
+	}
 
 }
