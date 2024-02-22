@@ -41,8 +41,6 @@ public class RptFilterDtlsController {
 
 		 for (RptFilterDtls i :  setData) {
 			 rptFilterDtlsServs.setRptFilIdSeq(i);
-             obj.put("filId",i.getFilId());
-             obj.put("rptId",i.getRptId());
 		 }
 		 
 		 // using ObjectMapper dependancy to convert object into string.
@@ -62,7 +60,7 @@ public class RptFilterDtlsController {
 	 	 
 	 	 System.out.println(convertedObject);
 			 
-//		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(convertedObject);
+		 List<RptFilterDtls> list = rptFilterDtlsServs.setRptFilterDtls(convertedObject);
 		 
 		 return obj;
 		 
