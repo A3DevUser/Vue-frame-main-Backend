@@ -57,7 +57,7 @@ public class WorkflowService {
 			for(Map<String, String> obj : list) {
 				
 				// this will give true/false if the current object's grid_id is "main grid" or not. 
-				Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
+				Map<String, String> isMainAndFomrIdMap = getIsMainAndFormId(obj.get("GRID_ID"));
 				
 				if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 					
@@ -133,7 +133,7 @@ public class WorkflowService {
 		
 		for(Map<String, String> obj : list) {
 			// {single object}
-			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
+			Map<String, String> isMainAndFomrIdMap = getIsMainAndFormId(obj.get("GRID_ID"));
 			
 			String formId = isMainAndFomrIdMap.get("FORM_ID");
 			
@@ -174,7 +174,7 @@ public class WorkflowService {
 		
 		for(Map<String, String> obj : list) {
 			
-			Map<String, String> isMainAndFomrIdMap = workFlowRepo.getIsMainAndFormId(obj.get("GRID_ID"));
+			Map<String, String> isMainAndFomrIdMap = getIsMainAndFormId(obj.get("GRID_ID"));
 			
 			String formId = isMainAndFomrIdMap.get("FORM_ID");
 
@@ -207,6 +207,18 @@ public class WorkflowService {
 //		workFlowRepo.insertDataFromDynamicJsonArray(StrReturnList);
 		callInsertDataFromDynamicJsonArray(StrReturnList, currLoggedInUser);
 		
+	}
+	
+	
+	public Map<String,String> getIsMainAndFormId(String gridId) throws JsonMappingException, JsonProcessingException {
+		
+		String data = workFlowRepo.getIsMainAndFormIdRepo(gridId);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		Map<String, String> map = mapper.readValue(data, HashMap.class);
+		
+		return map;
 	}
 
 	

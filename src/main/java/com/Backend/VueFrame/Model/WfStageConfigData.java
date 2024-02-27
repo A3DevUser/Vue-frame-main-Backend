@@ -56,6 +56,9 @@ public class WfStageConfigData {
 	@Column (name  ="TARGET_ID")
 	private String targetId;
 	
+	@Column (name  ="END_DATE")
+	private String endDate;
+	
 	
 	public String getConfigId() {
 		return configId;
@@ -185,9 +188,18 @@ public class WfStageConfigData {
 		this.targetId = targetId;
 	}
 	
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+
 	public WfStageConfigData(String configId, String stage, String status, String action, String org,
 			String nextApprover, String role, String objId, String formId, String isStartSatge, String isEndStage,
-			String configName, String nextStage, String wfId, String nextStatus, String targetId) {
+			String configName, String nextStage, String wfId, String nextStatus, String targetId, String endDate) {
 		super();
 		this.configId = configId;
 		this.stage = stage;
@@ -205,11 +217,24 @@ public class WfStageConfigData {
 		this.wfId = wfId;
 		this.nextStatus = nextStatus;
 		this.targetId = targetId;
+		this.endDate = endDate;
 	}
 
 	public WfStageConfigData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "WfStageConfigData [configId=" + configId + ", stage=" + stage + ", status=" + status + ", action="
+				+ action + ", org=" + org + ", nextApprover=" + nextApprover + ", role=" + role + ", objId=" + objId
+				+ ", formId=" + formId + ", isStartSatge=" + isStartSatge + ", isEndStage=" + isEndStage
+				+ ", configName=" + configName + ", nextStage=" + nextStage + ", wfId=" + wfId + ", nextStatus="
+				+ nextStatus + ", targetId=" + targetId + "]";
+	}
+	
+	
+	
 		
 }

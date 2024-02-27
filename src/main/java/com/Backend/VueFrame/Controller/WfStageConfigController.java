@@ -49,11 +49,13 @@ public class WfStageConfigController {
 		// converting object into string
 		String pJsonData = mapper.writeValueAsString(setData);
 		 		
-		System.out.println(pJsonData);
+		System.out.println("pJsonData = "+pJsonData);
 		 		
 		// Filtering json data for stored value
 		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
-		 		
+		
+		System.out.println("filteredJsonData = "+filteredJsonData);
+		
 		List<WfStageConfigData> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<WfStageConfigData>>() {});
 		
 		List<WfStageConfigData> list = wfStageConfigServs.setWfStageConfig(convertedObject);

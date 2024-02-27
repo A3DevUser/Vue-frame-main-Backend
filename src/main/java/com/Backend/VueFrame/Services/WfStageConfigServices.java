@@ -16,6 +16,8 @@ public class WfStageConfigServices {
 	
 	
 	public WfStageConfigData setConfigId(WfStageConfigData setData) {
+		System.out.println(setData);
+		
 		if(setData.getConfigId() == null) { // it's for workflow edit functionality
 			String seq = wfStageConfigRepo.setStageSequence();
 			String formatedstr = "SC-"+seq;
@@ -23,13 +25,21 @@ public class WfStageConfigServices {
 			return setData;
 		}
 		
+		System.out.println(setData);
+		
 		return setData;
 	}
 	
 	public List<WfStageConfigData> setWfStageConfig(List<WfStageConfigData> setData) {
 		
+		System.out.println("setData before savaAllAndFlush = "+setData);
+		
 		List<WfStageConfigData> list = wfStageConfigRepo.saveAllAndFlush(setData);
 		
+		System.out.println("WfStageConfigData = "+list);
 		return list;
 	}
+	
 }
+
+

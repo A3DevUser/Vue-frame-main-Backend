@@ -25,6 +25,7 @@ import com.Backend.VueFrame.Repository.WorkflowRepository;
 import com.Backend.VueFrame.Services.ColumnHeaderService;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
 import com.Backend.VueFrame.Services.RptDetailsServices;
+import com.Backend.VueFrame.Services.WorkflowService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
@@ -43,7 +44,7 @@ public class ConfigurationFormController {
 	    private ColumnHeaderService confServ;
 	    
 	    @Autowired
-	    private WorkflowRepository workflowRepo;
+	    private WorkflowService workflowServ;
 	    
 	    @Autowired
 		private RptDetailsServices rptDetailsServs;
@@ -157,8 +158,8 @@ public class ConfigurationFormController {
 	        // taking 1st object's gridId
 	        String gridId = gridData.get(0).getGridId();
 	       
-	        // using predefined method from workflowRepository to get is_main table or not.
-	        Map<String, String> map1 = workflowRepo.getIsMainAndFormId(gridId);
+	        // using predefined method from workflowService to get is_main table or not.
+	        Map<String, String> map1 = workflowServ.getIsMainAndFormId(gridId);
 	        
 //	        String is_main;
 //	        

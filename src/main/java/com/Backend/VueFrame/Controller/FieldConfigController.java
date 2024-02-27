@@ -46,13 +46,14 @@ public class FieldConfigController {
 		// converting object into string
 		String pJsonData = mapper.writeValueAsString(setData);
 		 		
-		System.out.println(pJsonData);
+		System.out.println("pJsonData = "+pJsonData);
 		 		
 		// Filtering json data for stored value
 		String filteredJsonData = rptDetailsServs.getJsonFilterforStoredVal(pJsonData);
 		 		
 		List<FieldConfigData> convertedObject = mapper.readValue(filteredJsonData, new TypeReference<List<FieldConfigData>>() {});
 
+		System.out.println("convertedObject = "+pJsonData);
 		
 		List<FieldConfigData> list = fieldConfigServices.setFieldConfig(convertedObject);
 		
