@@ -151,6 +151,11 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 
 	 @Procedure(procedureName = "InsertAuditId")
         void setAuditId(@Param("audit_json_param") String auditId);
+	 
+	 
+	 @Procedure(procedureName = "GET_APPROVED_DATA_TO_ADD_TBL", outputParameterName = "v_result")
+	    String getApprovedDataToAddTbl(@Param("v_form_id") String formId); 
+	 
 }
 
 

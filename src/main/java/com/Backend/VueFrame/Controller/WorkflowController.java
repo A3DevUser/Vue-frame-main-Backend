@@ -254,5 +254,11 @@ public class WorkflowController {
 		 workFlowRepo.setAuditId(auditId);
 	    }
 	 
+	@GetMapping("getApprovedDataToAddTbl")
+	public String getApprovedDataToAddTbl(String formId) {
+			
+		return workFlowServ.getApprovedDataToAddTbl(formId);    
+	}
+	 
 	
 }
