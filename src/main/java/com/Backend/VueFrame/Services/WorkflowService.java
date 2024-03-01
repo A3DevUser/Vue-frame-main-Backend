@@ -45,12 +45,14 @@ public class WorkflowService {
 	public String callInsertDataFromDynamicJsonArray(String json, String currLoggedInUser) throws JsonMappingException, JsonProcessingException {
 		
 		System.out.println("json = " + json);
+		ObjectMapper mapper = new ObjectMapper();
+		
 		// data inserting in table.
 		String status = workFlowRepo.insertDataFromDynamicJsonArray(json);
 		
 		// if data is inserted successfully then workflow procedure will run.
 		if (status.equals("Data Inserted Successfully!")) {
-			ObjectMapper mapper = new ObjectMapper();
+			
 			
 			List<Map<String, String>> list = mapper.readValue(json, ArrayList.class);
 			
@@ -127,7 +129,11 @@ public class WorkflowService {
 		
 		Map<String, String> objIdMap = new HashMap<>();
 		
-		List<String> defCols = workFlowRepo.getDefaultCols();
+		String arr_list = workFlowRepo.getDefaultCols();
+		
+		List<String> defCols = mapper.readValue(arr_list, ArrayList.class);
+		
+		System.out.println("defCols - "+defCols);
 		
 		System.out.println("converted json = "+list);
 		

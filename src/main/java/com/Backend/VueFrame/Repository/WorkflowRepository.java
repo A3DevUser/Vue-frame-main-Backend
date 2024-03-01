@@ -91,8 +91,13 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 	 String getIsMainAndFormIdRepo(@Param("p_grid_id") String grid_id);
 	 
 	 
-	 @Query(value = "SELECT COLUMN_NAME FROM VF_DEFAULT_COLS", nativeQuery = true)
-	 List<String> getDefaultCols();
+//	 @Query(value = "SELECT COLUMN_NAME FROM VF_DEFAULT_COLS", nativeQuery = true)
+//	 List<String> getDefaultCols();
+	 
+	 
+	 @Procedure(procedureName = "vf_getDefaultCols")
+	 String getDefaultCols();
+	 
 	 
 	 @Query(value = "SELECT VF_IMPORT_EXPORT_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
 	 String getImportVfObjIdSeq();
