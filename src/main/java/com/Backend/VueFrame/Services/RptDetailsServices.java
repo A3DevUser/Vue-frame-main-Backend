@@ -24,11 +24,14 @@ public class RptDetailsServices {
 	@Autowired
     private ConfigurationFomrService confService;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	
 	public RptDetails setRptIdSeq(@RequestBody RptDetails setData) {
 		if(setData.getRptId().isBlank()) {
-			String seq = rptDetailsRepo.setRptIdSeq();
-		    String formattedSeq = "RPT-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("RptDetailsSeqId");
+//		    String formattedSeq = "RPT-" + seq;
 		    setData.setRptId(formattedSeq);
 		    return setData;
 		}

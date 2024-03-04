@@ -13,8 +13,8 @@ public interface SectionRepository extends JpaRepository<SectionData, String> {
 
 	List<SectionData> getByFormId(String formId);
 	
-	@Query(value = "SELECT SECTION_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setSectionSequence();
+//	@Query(value = "SELECT SECTION_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setSectionSequence();
 	
 
 }

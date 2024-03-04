@@ -20,6 +20,7 @@ public class EmailController {
 	@Autowired private LoggerService log;
 
 	// Sending a simple Email
+	//not in use
 	@PostMapping("/sendMail")
 	public String
 	sendMail(@RequestBody Emailsample details)
@@ -35,6 +36,7 @@ public class EmailController {
 	}
 
 	// Sending email with attachment
+	//not in use
 	@PostMapping("/sendMailWithAttachment")
 	public String sendMailWithAttachment(
 		@RequestBody EmailDetails details)

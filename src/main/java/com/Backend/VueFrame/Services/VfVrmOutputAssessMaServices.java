@@ -17,10 +17,12 @@ public class VfVrmOutputAssessMaServices {
 	@Autowired
 	private VfVrmOutputAssessMaRepository vfVrmOutputAssessMaRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	public VfVrmOutputAssessMa setAssessMaSeq(@RequestBody VfVrmOutputAssessMa setData) {
-		String seq = vfVrmOutputAssessMaRepo.setAssessMaSeq();
-	    String formattedSeq = "MA-" + seq;
+		String formattedSeq = a3PlanServ.getSeqId("VfVrmOutputAssessMaSeqId");
+//	    String formattedSeq = "MA-" + seq;
 	    setData.setMaId(formattedSeq);
 	    return setData;
 	}

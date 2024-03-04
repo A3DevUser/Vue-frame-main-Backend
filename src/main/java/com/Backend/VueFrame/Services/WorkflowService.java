@@ -25,6 +25,9 @@ public class WorkflowService {
 	@Autowired
 	private WorkflowRepository workFlowRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	public List<WorkflowData> getWorkFlowData(@RequestParam String formId) {
 		
 		return workFlowRepo.getByFormId(formId);
@@ -60,6 +63,8 @@ public class WorkflowService {
 				
 				// this will give true/false if the current object's grid_id is "main grid" or not. 
 				Map<String, String> isMainAndFomrIdMap = getIsMainAndFormId(obj.get("GRID_ID"));
+				
+				System.out.println(isMainAndFomrIdMap.get("FORM_ID"));
 				
 				if(isMainAndFomrIdMap.get("IS_MAIN").equals("true")) {
 					
@@ -193,7 +198,7 @@ public class WorkflowService {
 					}
 					else if(colName.equals("VF_OBJ_ID")) {
 						String v_grid_id = obj.get("GRID_ID");
-						String getImportVfObjId = workFlowRepo.getImportVfObjIdSeq();
+						String getImportVfObjId = a3PlanServ.getSeqId("WorkflowImpExpSeqId");
 						String formatedObjId = v_grid_id+"-"+getImportVfObjId;
 						obj.put(colName, formatedObjId);
 					}
@@ -235,8 +240,8 @@ public class WorkflowService {
 	
 	public WorkflowData setWfId(@RequestBody WorkflowData setData) {
 		if(setData.getWfId() == null) { // it's for workflow edit functionality
-			String seq = workFlowRepo.setWfSequence();
-		    String formattedWfId = "WF-" + seq;
+			String formattedWfId = a3PlanServ.getSeqId("WorkflowSeqId");
+//		    String formattedWfId = "WF-" + seq;
 		    setData.setWfId(formattedWfId);
 		    return setData;
 		}

@@ -17,9 +17,12 @@ public class VfVrmOutputAssessDdqServices {
 	@Autowired
 	private VfVrmOutputAssessDdqRepository vfVrmOutputAssessDdqRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	public VfVrmOutputAssessDdq setAssessDdqSeq(@RequestBody VfVrmOutputAssessDdq setData) {
-		String seq = vfVrmOutputAssessDdqRepo.setAssessDdqSeq();
-	    String formattedSeq = "DDQ-" + seq;
+		String formattedSeq = a3PlanServ.getSeqId("VfVrmOutputAssessDdqSeqId");
+//	    String formattedSeq = "DDQ-" + seq;
 	    setData.setDdqId(formattedSeq);
 	    return setData;
 	}

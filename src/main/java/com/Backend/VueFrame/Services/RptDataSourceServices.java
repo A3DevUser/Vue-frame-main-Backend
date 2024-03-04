@@ -17,11 +17,13 @@ public class RptDataSourceServices {
 	@Autowired
 	private RptDataSourceRepository rptDataSourceRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	public RptDataSource setDSIdGen(@RequestBody RptDataSource setData) {
 		if(setData.getDsId().isBlank()) {
-			String seq = rptDataSourceRepo.setDSIdGen();
-		    String formattedSeq = "DS-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("RptDataSourceSeqId");
+//		    String formattedSeq = "DS-" + seq;
 		    setData.setDsId(formattedSeq);
 		    return setData;
 		}

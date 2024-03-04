@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.Backend.VueFrame.Model.VfVrmOutputAssessDdq;
 
 public interface VfVrmOutputAssessDdqRepository extends JpaRepository<VfVrmOutputAssessDdq, String> {
-	
-	@Query(value = "SELECT VRM_ASSESS_DDQ_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setAssessDdqSeq();
+	//not in use
+//	@Query(value = "SELECT VRM_ASSESS_DDQ_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setAssessDdqSeq();
 }

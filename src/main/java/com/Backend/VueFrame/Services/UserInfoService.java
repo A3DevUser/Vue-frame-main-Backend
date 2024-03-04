@@ -24,6 +24,9 @@ public class UserInfoService implements UserDetailsService {
 
 	@Autowired
 	private PasswordEncoder encoder; 
+	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { 
@@ -46,8 +49,8 @@ public class UserInfoService implements UserDetailsService {
 
 	
 	 public String addUser(@RequestBody UserInfo userInfo) {
-	        String seq = repository.setUserId();
-	        String UserId = "USER-" + seq;
+	        String UserId = a3PlanServ.getSeqId("UserInfoSeqId");
+//	        String UserId = "USER-" + seq;
 	        userInfo.setId(UserId);
 
 	        userInfo.setPassword(encoder.encode(userInfo.getPassword()));

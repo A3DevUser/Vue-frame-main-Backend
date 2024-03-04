@@ -7,7 +7,8 @@ import com.Backend.VueFrame.Model.WfStageConfigData;
 
 public interface WfStageConfigRepository extends JpaRepository<WfStageConfigData, String> {
 	
-	@Query(value="SELECT VF_STAGE_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setStageSequence();
+	//not in use
+//	@Query(value="SELECT VF_STAGE_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setStageSequence();
 	
 }

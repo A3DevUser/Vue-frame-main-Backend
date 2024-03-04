@@ -1,5 +1,6 @@
 package com.Backend.VueFrame.Services;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +11,16 @@ import com.Backend.VueFrame.Model.DropDownData;
 import com.Backend.VueFrame.Model.DropDownParamModel;
 import com.Backend.VueFrame.Repository.DropDownRepository;
 
+
+
 @Service
 public class DropDownServices {
 
 	@Autowired
 	private DropDownRepository eDropRepo;
+	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	public DropDownData getDataByDropdata(String formId, String colId,String gridId){
 		
@@ -51,8 +57,8 @@ public class DropDownServices {
 	
 	public DropDownData setDropDownId(@RequestBody DropDownData ddData) {
 		if(ddData.getDropdownId() == null) {
-		    String seq = eDropRepo.setDdId();
-		    String formattedParamId = "DD-" + seq;
+		    String formattedParamId = a3PlanServ.getSeqId("DropDownSeqId");
+//		    String formattedParamId = "DD-" + seq;
 		    ddData.setDropdownId(formattedParamId);
 		    return ddData;
 		}

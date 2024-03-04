@@ -48,6 +48,8 @@ public class ColumnHeaderController {
 //	public List<ColumnHeaderData> getColumnByOrder(){
 //		return columnServ.getOrderData();
 //	} 
+	
+	//not in use
 	//setColumnHead
 	@PostMapping("setColumnHead") 
 	public List<ColumnHeaderData> setColumnData(@RequestBody List<ColumnHeaderData> setData) {
@@ -59,7 +61,7 @@ public class ColumnHeaderController {
 	}
 	
 	@GetMapping("getcol")
-	public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId, @RequestParam String emd) {
+	public String getlistofColumns(@RequestParam String formId, @RequestParam String emd) {
 		return columnServ.getlistofColumns(formId,emd); 
 	}
 	

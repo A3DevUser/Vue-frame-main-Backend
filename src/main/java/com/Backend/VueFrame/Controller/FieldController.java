@@ -22,6 +22,7 @@ public class FieldController {
 	@Autowired
 	private FieldServices fieldServ;
 	
+	//not in use
 	@GetMapping("getField")
 	public List<FieldData> getFieldData(@RequestParam String formId) {
 		

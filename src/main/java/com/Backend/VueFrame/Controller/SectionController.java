@@ -29,7 +29,7 @@ public class SectionController {
 		return secServ.getSecData(formId);
 	}
 
-	
+	//not in use
 	@PostMapping("setSection")
 	public List<SectionData> setData(@RequestBody List<SectionData> setData) {
 		

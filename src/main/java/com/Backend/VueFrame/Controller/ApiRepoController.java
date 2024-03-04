@@ -21,7 +21,7 @@ public class ApiRepoController {
 	@Autowired
 	private ApiRepoSevices apiRepoServ;
 	
-	
+	//not in use
 	@GetMapping("getApiById")
 	public List<ApiRepoData> getApi(@RequestParam String apiId, @RequestParam String formId) {
 		

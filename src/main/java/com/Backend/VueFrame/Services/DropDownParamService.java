@@ -16,11 +16,14 @@ public class DropDownParamService {
 	@Autowired
 	private DropDownParamRepo eDropRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	 public DropDownParamModel setParamData(DropDownParamModel setData) {
 		 
 		 if(setData.getparamId() == null) {
-			 String seq = eDropRepo.setParamSequence();
-			 String formattedParamId = "P-" + seq;
+			 String formattedParamId = a3PlanServ.getSeqId("DropDownParamSeqId");
+//			 String formattedParamId = "P-" + seq;
 			 setData.setparamId(formattedParamId);
 			 return setData;
 		 }

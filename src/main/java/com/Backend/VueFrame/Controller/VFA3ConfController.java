@@ -43,7 +43,7 @@ public class VFA3ConfController {
 	        return confServ.fetchScheme(areaName);
 	    }
 	    
-	    
+	    //not in use
 	    @GetMapping("fetchAccountData")
 	    public List<VFA3AccountData> fetchAccount(@RequestParam String schemeCode) {
 	    	
@@ -52,7 +52,7 @@ public class VFA3ConfController {
 	        return vfA3AccountRepo.fetchAccount(schemeCode);
 	    }
 
-	    
+	    //not in use
 	    @GetMapping("fetchAccountById")
 	    public List<VFA3AccountData> fetchAccountById(@RequestParam String schemeCode, @RequestParam String accountId) {
 	    	

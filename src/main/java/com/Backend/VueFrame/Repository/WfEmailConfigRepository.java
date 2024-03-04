@@ -9,9 +9,9 @@ import com.Backend.VueFrame.Model.Emailsample;
 import com.Backend.VueFrame.Model.WfEmailConfigData;
 
 public interface WfEmailConfigRepository extends JpaRepository<Emailsample, String> {
-	
-	@Query(value = "SELECT VF_EMAIL_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setEcSequence();
+	//not in use
+//	@Query(value = "SELECT VF_EMAIL_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setEcSequence();
 
 	List<Emailsample> findByStatus(String string);
 

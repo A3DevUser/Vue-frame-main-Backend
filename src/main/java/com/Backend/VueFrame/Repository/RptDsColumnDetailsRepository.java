@@ -7,6 +7,7 @@ import com.Backend.VueFrame.Model.RptDsColumnDetails;
 
 public interface RptDsColumnDetailsRepository extends JpaRepository<RptDsColumnDetails, String>{
 	
-	@Query(value = "SELECT VF_RPT_DS_COL_ID.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setDsColId();
+	//not in use
+//	@Query(value = "SELECT VF_RPT_DS_COL_ID.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setDsColId();
 }

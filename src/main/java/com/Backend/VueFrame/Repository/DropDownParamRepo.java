@@ -12,7 +12,8 @@ public interface DropDownParamRepo extends JpaRepository<DropDownParamModel, Str
 	
 	List<DropDownParamModel> findByparamId(String paramId);
 	
-	@Query(value = "SELECT PARAMETER_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setParamSequence();
+	//not in use
+//	@Query(value = "SELECT PARAMETER_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setParamSequence();
 }
 

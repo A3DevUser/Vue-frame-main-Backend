@@ -10,9 +10,9 @@ import org.springframework.data.repository.query.Param;
 import com.Backend.VueFrame.Model.RptDetails;
 
 public interface RptDetailsRepository extends JpaRepository<RptDetails, String>{
-	
-	@Query(value = "SELECT RPT_ID_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setRptIdSeq();
+	//not in use
+//	@Query(value = "SELECT RPT_ID_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setRptIdSeq();
 	
 	List<RptDetails> getByRptId(String rptId);
 	

@@ -25,7 +25,7 @@ public class VFA3ReviewOutputController {
 	@Autowired
 	private VFA3ReviewOutputRepository vfReviewRepo;
 	
-	
+	//not in use
 	@PostMapping("SubmitReviewData")
     public List<VFA3ReviewOutputData> submitData(@RequestBody List<VFA3ReviewOutputData> testItems) {
         List<VFA3ReviewOutputData> out = new ArrayList<>();
@@ -44,7 +44,7 @@ public class VFA3ReviewOutputController {
         return list;
     }
 
-	
+	//not in use
     @GetMapping("getReviewOutpuByIds")
 	
 	public List<VFA3ReviewOutputData> getAccountById(@RequestParam List<String> id) {

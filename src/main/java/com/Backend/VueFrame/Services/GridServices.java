@@ -16,7 +16,7 @@ public class GridServices {
 	@Autowired
 	private GridRepository gridRepo;
 	
-	public List<GridData> getGridData(@RequestParam String formId) {
+	public String getGridData(@RequestParam String formId) {
 		
 		return gridRepo.getGridData(formId);
 		

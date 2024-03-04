@@ -19,8 +19,9 @@ public interface NavBarRepository extends JpaRepository<NavBarData, String> {
 
 	Object findTopByOrderByFormIdDesc();
 	
-	@Query(value = "SELECT FORM_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setFormIdSequence();
+	//not in use
+//	@Query(value = "SELECT FORM_ID_SEQUENCE.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setFormIdSequence();
 
 	List<NavBarData> save(List<Object> setData);
 	

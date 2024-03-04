@@ -23,6 +23,7 @@ public class VfVrmOutputAssessMaController {
 	@Autowired
 	private VfVrmOutputAssessMaServices vfVrmOutputAssessMaServ;
 	
+	//not in use
 	@PostMapping("setAssessMaData")
 	public Object setAssessMaData(@RequestBody List<VfVrmOutputAssessMa> setData) {
 		

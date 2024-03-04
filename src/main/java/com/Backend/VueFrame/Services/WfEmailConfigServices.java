@@ -15,6 +15,9 @@ public class WfEmailConfigServices {
 	@Autowired
 	private WfEmailConfigRepository wfEmailConfigRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 //	public List<WfEmailConfigData> setWfEmailConfig(List<WfEmailConfigData> setData) {
 //		
 //		List<WfEmailConfigData> list = wfEmailConfigRepo.saveAllAndFlush(setData);
@@ -24,8 +27,8 @@ public class WfEmailConfigServices {
 	
 	public WfEmailConfigData setEcId(@RequestBody WfEmailConfigData setData) {
 		if(setData.getEcId() == null) {
-			String seq = wfEmailConfigRepo.setEcSequence();
-		    String formatedstr = "EC-" + seq;
+			String formatedstr = a3PlanServ.getSeqId("WfEmailConfigSeqId");
+//		    String formatedstr = "EC-" + seq;
 		    setData.setEcId(formatedstr);
 		    return setData;
 		}

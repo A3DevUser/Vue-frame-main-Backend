@@ -17,11 +17,14 @@ public class RptExpressionServices {
 	@Autowired
 	private RptExpressionRepository rptExpressionRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	
 	public RptExpression setExpId(@RequestBody RptExpression setData) {
 		if(setData.getExpId().isBlank()) {
-			String seq = rptExpressionRepo.setExpId();
-		    String formattedSeq = "EXP-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("RptExpressionSeqId");
+//		    String formattedSeq = "EXP-" + seq;
 		    setData.setExpId(formattedSeq);
 		    return setData;
 		}

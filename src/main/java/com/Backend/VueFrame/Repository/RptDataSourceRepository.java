@@ -9,8 +9,9 @@ import com.Backend.VueFrame.Model.RptDataSource;
 
 public interface RptDataSourceRepository extends JpaRepository<RptDataSource, String> {
 	
-	@Query(value = "SELECT RPT_DS_ID_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setDSIdGen();
+	//not in use
+//	@Query(value = "SELECT RPT_DS_ID_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setDSIdGen();
 	
 	
 	@Procedure(procedureName = "VF_DATASOURCE_CONFIG_DATA_OBJ", outputParameterName = "v_result")

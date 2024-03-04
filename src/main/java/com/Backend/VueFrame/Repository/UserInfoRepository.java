@@ -13,9 +13,9 @@ import com.Backend.VueFrame.Model.UserInfo;
 public interface UserInfoRepository extends JpaRepository<UserInfo, Integer> { 
 	Optional<UserInfo> findByName(String username); 
 	
-	
-	@Query(value = "SELECT vf_user_id_seq.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setUserId();
+	//not in use
+//	@Query(value = "SELECT vf_user_id_seq.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setUserId();
 	
 }
 

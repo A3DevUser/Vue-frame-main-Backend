@@ -10,7 +10,8 @@ import com.Backend.VueFrame.Model.DropDownData;
 
 @Repository
 public interface DropDownRepository extends JpaRepository<DropDownData, String> {
-
+    
+	//not in use
 	@Query(value = "select * from VF_COL_Dropdowns where FORM_ID = :formId and COL_ID = :colId   and GRID_ID = :gridId", nativeQuery = true)
 	DropDownData getdropdownquery(@Param("formId") String formId, @Param("colId") String colId,
 			@Param("gridId") String gridId);
@@ -19,11 +20,12 @@ public interface DropDownRepository extends JpaRepository<DropDownData, String> 
 		  @Procedure(procedureName="VF_DD_DYNAMIC_RUN", outputParameterName = "result")
 		  String getListofDropdown(@Param("query_string") String query_string);
 		  
-		  @Query(value = "SELECT vf_col_dd_id.NEXTVAL FROM DUAL", nativeQuery = true)
-		  String setDdId();
+		  //not in use
+//		  @Query(value = "SELECT vf_col_dd_id.NEXTVAL FROM DUAL", nativeQuery = true)
+//		  String setDdId();
 		 
 		 
-
+          //not in use
 		  @Query(value = "SELECT JSON_OBJECT('ddId' IS (SELECT DROPDOWN_ID FROM VF_COL_Dropdowns \r\n"
 		  		+ "WHERE FORM_ID = :formId AND COL_ID = :colId AND GRID_ID = :gridId),\r\n"
 		  		+ "'colId' IS NVL((SELECT JSON_ARRAYAGG(column_id ORDER BY column_id)\r\n"

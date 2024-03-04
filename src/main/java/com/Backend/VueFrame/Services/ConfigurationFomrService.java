@@ -35,6 +35,9 @@ public class ConfigurationFomrService {
 	
 	@Autowired
 	private ColumnHeaderRepository columnRepo;
+	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 //	
 //    @Autowired
 //    private GenerateSeqRepository generateSeqRepo;
@@ -43,8 +46,8 @@ public class ConfigurationFomrService {
 	
 	//Generate FomrId
 	public NavBarData setFormId(@RequestBody NavBarData setData) {
-	    String seq = navRepo.setFormIdSequence();
-	    String formattedFormId = "FORM-" + seq;
+	    String formattedFormId = a3PlanServ.getSeqId("NavBarSeqId");
+//	    String formattedFormId = "FORM-" + seq;
 	    setData.setFormId(formattedFormId);
 	    return setData;
 	}
@@ -67,8 +70,8 @@ public class ConfigurationFomrService {
 	 //Set GridId in Grid Table
     
     public GridData setGridId(@RequestBody GridData setData) {
-    	String seq = gridRepo.setGridSequence();
-    	String formattedGridId = "GID-" + seq;
+    	String formattedGridId = a3PlanServ.getSeqId("MainGridSeqId");
+//    	String formattedGridId = "GID-" + seq;
     	setData.setGridId(formattedGridId);
     	return setData;
 	}
@@ -114,8 +117,8 @@ public class ConfigurationFomrService {
 	    public SectionData setSectionId(@RequestBody SectionData setData) {
 	    	// if secId already not present (it's for form edit functionality)
 	    	if(setData.getSecId() == null) {
-	    		String seq = sectionRepo.setSectionSequence();
-			    String formattedSecId = "S-" + seq;
+	    		String formattedSecId = a3PlanServ.getSeqId("SectionSeqId");
+//			    String formattedSecId = "S-" + seq;
 			    setData.setSecId(formattedSecId);
 			    return setData;
 	    	}
@@ -142,8 +145,8 @@ public class ConfigurationFomrService {
       
       
       public ColumnHeaderData setColumnId(@RequestBody ColumnHeaderData setData) {
-    		String seq = columnRepo.setColumnSequence();
-      	    String formattedColumnId = "COL-" + seq;
+    		String formattedColumnId = a3PlanServ.getSeqId("ColumnHeaderSeqId");
+//      	    String formattedColumnId = "COL-" + seq;
       	    setData.setColumnId(formattedColumnId);
       	    return setData;
   	}

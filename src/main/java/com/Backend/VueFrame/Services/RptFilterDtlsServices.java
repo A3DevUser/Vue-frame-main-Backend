@@ -18,11 +18,13 @@ public class RptFilterDtlsServices {
 	@Autowired
 	private RptFilterDtlsRepository rptFilterDtlsRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	public RptFilterDtls setRptFilIdSeq(@RequestBody RptFilterDtls setData) {
 		if(setData.getFilId().isBlank()) {
-			String seq = rptFilterDtlsRepo.setRptFilIdSeq();
-		    String formattedSeq = "FIL-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("RptFilterDtlsSeqId");
+//		    String formattedSeq = "FIL-" + seq;
 		    setData.setFilId(formattedSeq);
 		    return setData;
 		}

@@ -47,13 +47,13 @@ public class A3ReviewPlanController {
 		
 		ReviewData firstReviewData = reviewDataList.get(0);
 
-		String reviewId = "Rev-" + a3ReviewPlanRepo.reviewPlan();
+		String reviewId = a3PlanServ.getSeqId("A3ReviewPlanSeqId");
 	    // Save data using the saveData method
 		saveData(firstReviewData,reviewId);
             
 
             for (ReviewData reviewData : reviewDataList) {
-                String reviewPlanId = "RP-" + a3ReviewPlanRepo.reviewPlanId();
+                String reviewPlanId = a3PlanServ.getSeqId("ReviewPlanSeqId");
 
                 VfA3ReviewPlan reviewPlan = new VfA3ReviewPlan(reviewPlanId, reviewId, reviewData.getReviewName(),
                                                                reviewData.getASSOCIATE_VEND(), reviewData.getVENDOR_ID(),
@@ -133,5 +133,12 @@ public class A3ReviewPlanController {
 	            yourDataDto.getReviewFreq(), yourDataDto.getReviewSubFreq(), reviewId,
 	            yourDataDto.getReviewName());
 	}
+	
+	
+//	@GetMapping("getSeqId")
+//	public String getSeqId(String formSeqDtls) {
+//
+//		return a3PlanServ.getSeqId(formSeqDtls);
+//	}
 
 }

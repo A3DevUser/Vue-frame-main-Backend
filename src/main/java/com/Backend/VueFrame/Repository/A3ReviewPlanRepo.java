@@ -17,11 +17,13 @@ import com.Backend.VueFrame.Model.VfA3ReviewPlan;
 
 public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> {
 	
-	@Query(value = "SELECT VF_A3_REVIEW_PLAN.NEXTVAL FROM DUAL", nativeQuery = true)
-	String reviewPlan();
+//	@Query(value = "SELECT VF_A3_REVIEW_PLAN.NEXTVAL FROM DUAL", nativeQuery = true)
+	@Procedure(procedureName = "VF_CONF_SEQ_ID_PROC", outputParameterName = "v_SeqId")
+	String getSeqId(@Param ("p_FormSeqDtls") String formSeqDtls);
 	
-	@Query(value = "select vf_review_plan_id.NEXTVAL FROM DUAL", nativeQuery = true)
-	String reviewPlanId();
+	//not in use
+//	@Query(value = "select vf_review_plan_id.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String reviewPlanId();
 	
 	
 	@Procedure(procedureName = "GET_ONBOARDING_DATA", outputParameterName = "v_result")
@@ -31,7 +33,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	@Procedure(procedureName = "GET_ONBOARDING_DATA_3", outputParameterName = "v_result")
 	String getOnBoardingData2(@Param("v_reviewId") String reviewId);
 	
-	
+	//not in use
 	@Query(value = "SELECT QUESTION_ID, QUESTION_TYPE, RISK_DOMAIN, QUESTION, RESPONSE_TYPE, RESPONSE_DISPLAY_VAL, "
 				 + "RESPONSE_RATING, MANDATORY_EVIDENCE,\r\n"
 				 + "VENDOR_TYPE FROM VF_VRM_QUESTION_DATA WHERE QUESTION_TYPE = :p_question_type and VENDOR_TYPE = :p_vendor_type", nativeQuery = true)
@@ -67,9 +69,10 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 	
 	@Transactional
 	@Modifying
-	@Query(value = "INSERT INTO VRM_PLAN_REVIEW_TABLE (review_id,review_type,review_name,review_freq,sub_frequency,review_status,VF_MAIN_OBJ_ID,VF_CURRENT_USER, VF_CREATED_BY)\r\n"
-			+ "     VALUES(:v_review_id,:v_review_type,:v_review_name,:v_review_freq,:v_review_sub_freq, 'Pending Approval',\r\n"
-			+ "            :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER', 'madhur1')", nativeQuery = true)
+//	@Query(value = "INSERT INTO VRM_PLAN_REVIEW_TABLE (review_id,review_type,review_name,review_freq,sub_frequency,review_status,VF_MAIN_OBJ_ID,VF_CURRENT_USER, VF_CREATED_BY)\r\n"
+//			+ "     VALUES(:v_review_id,:v_review_type,:v_review_name,:v_review_freq,:v_review_sub_freq, 'Pending Approval',\r\n"
+//			+ "            :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER', 'madhur1')", nativeQuery = true)
+	@Procedure(procedureName = "VF_setData")
 	void setData(@Param("v_review_id") String reviewId,
 			       @Param("v_review_type") String Review_Type,
 			       @Param("v_review_name")String reviewName,
@@ -78,13 +81,17 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 			       @Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
+	
 	@Transactional
 	@Modifying
-	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER,VF_CREATED_ON)\r\n"
-			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER',to_char(sysdate, 'YYYY-MM-DD'))" , nativeQuery = true)
+//	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL ( FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER,VF_CREATED_ON)\r\n"
+//			+ "     VALUES ('FORM-1145', :v_VF_MAIN_OBJ_ID, 'VRM_PLAN_CHECKER',to_char(sysdate, 'YYYY-MM-DD'))" , nativeQuery = true)
+	@Procedure(procedureName = "VF_setTasktData")
 	void setTasktData(@Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_ID);
 	
 	
+	
+	//not in use
 	@Transactional
 	@Modifying
 	@Query(value = "INSERT INTO VRM_TPRE (VF_MAIN_OBJ_ID,VF_CURRENT_USER,REVIEW_PLAN_ID,REVIEW_TYPE,\r\n"
@@ -97,7 +104,7 @@ public interface A3ReviewPlanRepo extends JpaRepository<VfA3ReviewPlan, String> 
 		       @Param("v_review_sub_freq") String Sub_Frequency,
 		       @Param("v_VF_MAIN_OBJ_ID") String VF_MAIN_OBJ_I);
 	
-	
+	//not in uses
 	@Transactional
 	@Modifying
 	@Query(value = "INSERT INTO VF_ASSIGNMENT_TASK_TBL (FORM_ID, VF_MAIN_OBJ_ID, VF_CURRENT_USER)\r\n"

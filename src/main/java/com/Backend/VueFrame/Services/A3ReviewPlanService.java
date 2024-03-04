@@ -39,5 +39,11 @@ public class A3ReviewPlanService {
 
 		return a3ReviewPlanRepo.getQuestionData2(assessType, category);
 	}
+	
+	
+	public String getSeqId(String formSeqDtls) {
+
+		return a3ReviewPlanRepo.getSeqId(formSeqDtls);
+	}
 
 }

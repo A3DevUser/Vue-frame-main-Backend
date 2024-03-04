@@ -36,27 +36,28 @@ public class UserController {
 	@Autowired
 	private AuthenticationManager authenticationManager; 
 
+	//not in use
 	@GetMapping("/welcome") 
 	public String welcome() { 
 		return "Welcome this endpoint is not secure"; 
 	} 
-	
+	//not in use
 	@GetMapping("/user/welcomeSecure") 
 	public String welcomeSecure() { 
 		return "Welcome this endpoint is secure"; 
 	} 
-
+	//not in use
 	@PostMapping("/addNewUser") 
 	public String addNewUser(@RequestBody UserInfo userInfo) { 
 		return service.addUser(userInfo); 
 	} 
-
+	//not in use
 	@GetMapping("/user/userProfile") 
 	@PreAuthorize("hasAuthority('ROLE_USER')") 
 	public String userProfile() { 
 		return "Welcome to User Profile"; 
 	} 
-
+	//not in use
 	@GetMapping("/admin/adminProfile") 
 	@PreAuthorize("hasAuthority('ROLE_ADMIN')") 
 	public String adminProfile() { 

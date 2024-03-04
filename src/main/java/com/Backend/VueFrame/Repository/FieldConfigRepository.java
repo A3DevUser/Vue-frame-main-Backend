@@ -7,7 +7,8 @@ import com.Backend.VueFrame.Model.FieldConfigData;
 
 public interface FieldConfigRepository extends JpaRepository<FieldConfigData, String> {
 	
-	@Query(value = "SELECT VF_FIELD_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setFieldSequence();
+	//not in use
+//	@Query(value = "SELECT VF_FIELD_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setFieldSequence();
 
 }

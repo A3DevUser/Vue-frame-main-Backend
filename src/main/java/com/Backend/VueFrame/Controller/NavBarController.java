@@ -23,7 +23,7 @@ public class NavBarController {
 	@Autowired
 	private NavBarServices navServ;
 	
-	
+	//not in use
 	@GetMapping("getNavEleFormId")
 	public List<NavBarData> getNavDataByFormId(@RequestParam String formId) {		
 		return navServ.getNavBarData(formId);
@@ -36,6 +36,7 @@ public class NavBarController {
 
 	}	
 	
+	//not in use
 	@PostMapping("setFormData")
 	public List<NavBarData> setNavData(@RequestBody List<NavBarData> setData) {
 		List<NavBarData> list =  navServ.SetNavData(setData);

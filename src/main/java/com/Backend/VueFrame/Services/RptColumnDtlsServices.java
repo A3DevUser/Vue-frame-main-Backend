@@ -18,11 +18,13 @@ public class RptColumnDtlsServices {
 	@Autowired
 	private RptColumnDtlsRepository rptColumnDtlsRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	public RptColumnDtls setRptColId(@RequestBody RptColumnDtls setData) {
 		if(setData.getRptColId().isBlank()) {
-			String seq = rptColumnDtlsRepo.setRptColIdSeq();
-		    String formattedSeq = "RPTC-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("RptColumnDtlsSeqId");
+//		    String formattedSeq = "RPTC-" + seq;
 		    setData.setRptColId(formattedSeq);
 		    return setData;
 		}

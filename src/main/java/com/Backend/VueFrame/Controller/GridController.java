@@ -25,12 +25,12 @@ public class GridController {
 	
 	
 	@GetMapping("getByGrid")
-	public List<GridData> getGrid(@RequestParam String formId) {
+	public String getGrid(@RequestParam String formId) {
 		
 		return gridServ.getGridData(formId);
 	}
 	
-	
+	//not in use
 	@PostMapping("setGridData")
 	public List<GridData> setGridData(@RequestBody List<GridData> setData) {
 		

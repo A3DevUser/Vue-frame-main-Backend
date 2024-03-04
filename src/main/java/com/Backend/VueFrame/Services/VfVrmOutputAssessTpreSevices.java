@@ -17,9 +17,12 @@ public class VfVrmOutputAssessTpreSevices {
 	@Autowired
 	private VfVrmOutputAssessTpreRepository vfVrmOutputAssessTpreRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	public VfVrmOutputAssessTpre setAssessTpreSeq(@RequestBody VfVrmOutputAssessTpre setData) {
-			String seq = vfVrmOutputAssessTpreRepo.setAssessTpreSeq();
-		    String formattedSeq = "TPRE-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("VfVrmOutputAssessTpreSeqId");
+//		    String formattedSeq = "TPRE-" + seq;
 		    setData.setTpreId(formattedSeq);
 		    return setData;
 	}

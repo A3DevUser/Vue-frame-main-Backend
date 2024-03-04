@@ -15,6 +15,9 @@ public class FieldConfigServices {
 	@Autowired
 	private FieldConfigRepository fieldConfigRepository;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
+	
 	public List<FieldConfigData> setFieldConfig(List<FieldConfigData> setData) {
 		
 		List<FieldConfigData> list = fieldConfigRepository.saveAllAndFlush(setData);
@@ -24,8 +27,8 @@ public class FieldConfigServices {
 	
 	public FieldConfigData setFieldId(@RequestBody FieldConfigData setData) {
 		if(setData.getFieldId() == null) {
-			String seq = fieldConfigRepository.setFieldSequence();
-		    String formatedstr = "FC-" + seq;
+			String formatedstr = a3PlanServ.getSeqId("FieldConfigSeqId");
+//		    String formatedstr = "FC-" + seq;
 		    setData.setFieldId(formatedstr);
 		    return setData;
 		}

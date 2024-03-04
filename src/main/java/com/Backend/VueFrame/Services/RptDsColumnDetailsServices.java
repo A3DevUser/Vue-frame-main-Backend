@@ -17,11 +17,13 @@ public class RptDsColumnDetailsServices {
 	@Autowired
 	private RptDsColumnDetailsRepository rptDsColumnDetailsRepo;
 	
+	@Autowired
+	private A3ReviewPlanService a3PlanServ;
 	
 	public RptDsColumnDetails setDsColId(@RequestBody RptDsColumnDetails setData) {
 		if(setData.getColumnId().isBlank()) {
-			String seq = rptDsColumnDetailsRepo.setDsColId();
-		    String formattedSeq = "DSC-" + seq;
+			String formattedSeq = a3PlanServ.getSeqId("RptDsColumnDetailsSeqId");
+//		    String formattedSeq = "DSC-" + seq;
 		    setData.setColumnId(formattedSeq);
 		    return setData;
 		}

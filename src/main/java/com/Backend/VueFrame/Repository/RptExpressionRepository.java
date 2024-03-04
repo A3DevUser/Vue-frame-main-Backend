@@ -8,9 +8,9 @@ import org.springframework.data.repository.query.Param;
 import com.Backend.VueFrame.Model.RptExpression;
 
 public interface RptExpressionRepository extends JpaRepository<RptExpression, String> {
-	
-	@Query(value = "SELECT RPT_DS_EXP_ID_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
-	String setExpId();
+	//not in use
+//	@Query(value = "SELECT RPT_DS_EXP_ID_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+//	String setExpId();
 	
 	
 	@Procedure(procedureName = "VF_RPT_QUERY_COLUMNS", outputParameterName = "v_result")

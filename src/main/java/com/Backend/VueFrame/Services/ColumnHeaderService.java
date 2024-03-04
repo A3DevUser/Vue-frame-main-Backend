@@ -37,7 +37,7 @@ public class ColumnHeaderService {
 		return list;
 	}
 	
-    public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId,@RequestParam  String emd) {
+    public String getlistofColumns(@RequestParam String formId,@RequestParam  String emd) {
         
         return columnHeadRepo.getlistofColumns(formId,emd);
         //return null;

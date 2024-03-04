@@ -38,6 +38,7 @@ public class DropDownController {
 	@Autowired
 	private RptDetailsServices rptDetailsServs;
 	
+	//not in use
 	//For getting list of the parameter as a json object for execution of Dropdown
 	@GetMapping("DropData1")
 	public String getdropdownCol(@RequestParam String formId, @RequestParam String colId,
@@ -47,6 +48,7 @@ public class DropDownController {
 		return dropJson;
 	}
 	
+	//not in use
 	//Old Code for executing DropDown where there were no Dropdowns 
 	@GetMapping("DropData")
 	public String getdropdownData(@RequestParam String formId, @RequestParam String colId,

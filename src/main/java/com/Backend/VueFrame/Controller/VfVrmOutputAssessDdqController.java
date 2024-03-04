@@ -23,6 +23,7 @@ public class VfVrmOutputAssessDdqController {
 	@Autowired
 	private VfVrmOutputAssessDdqServices vfVrmOutputAssessDdqServ;
 	
+	//not in use
 	@PostMapping("setAssessDdqData")
 	public Object setAssessDdqData(@RequestBody List<VfVrmOutputAssessDdq> setData) {
 		

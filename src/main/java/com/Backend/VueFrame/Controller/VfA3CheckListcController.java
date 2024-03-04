@@ -22,7 +22,7 @@ public class VfA3CheckListcController {
 	@Autowired
 	private VfA3CheckListRepository vfA3CheckListRepo;
 	
-	
+	//not in use
 	@GetMapping("VFA3Checklist")
 	public List<VfA3CheckListData> getCheckListData(@RequestParam String formId) {
 		return vfA3CheckListRepo.getByFormId(formId);
